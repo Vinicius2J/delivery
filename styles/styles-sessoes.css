@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+main {
+    width: 800px;
+    height: 4000px;
+
+    margin-top: 100px;
+
+    background-color: white;
+
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+
+main > h1 {
+    text-align: center;
+    font-family: monospace, sans-serif;
+    font-size: 3em;
+    font-weight: bolder;
+}
+
+section#combos {
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+section#combos > h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    text-align: center;
+
+    padding: 5px;
+}
+
+section#combos > div {
+    width: 56vw;
+    height: 1px;
+    background-color: rgb(255, 0, 0);
+}
+
+section#combos > article {
+    background-color: rgba(0, 0, 0, 0.637);
+
+    width: 770px;
+    height: 250px;
+
+    margin: 15px;
+}
+
+section#combos > article:hover {
+    box-shadow: 0px 0px 14px black;
+}
+
+/*Hanburgues*/
+
+section#hanburguer {
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+section#hanburguer > h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    text-align: center;
+
+    padding: 5px;
+}
+
+section#hanburguer > div {
+    width: 56vw;
+    height: 1px;
+    background-color: rgb(255, 0, 0);
+}
+
+section#hanburguer > article {
+    background-color: rgba(0, 0, 0, 0.637);
+
+    width: 770px;
+    height: 250px;
+
+    margin: 15px;
+}
+
+section#hanburguer > article:hover {
+    box-shadow: 0px 0px 14px black;
+}
+
+/*Bebidas*/
+
+section#bebidas {
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+section#bebidas > h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    text-align: center;
+
+    padding: 5px;
+}
+
+section#bebidas > div {
+    width: 56vw;
+    height: 1px;
+    background-color: rgb(255, 0, 0);
+}
+
+section#bebidas > article {
+    background-color: rgba(0, 0, 0, 0.637);
+
+    width: 770px;
+    height: 250px;
+
+    margin: 15px;
+}
+
+section#bebidas > article:hover {
+    box-shadow: 0px 0px 14px black;
+}
+
+/*Sachês*/
+
+section#saches {
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+section#saches > h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    text-align: center;
+
+    padding: 5px;
+}
+
+section#saches > div {
+    width: 56vw;
+    height: 1px;
+    background-color: rgb(255, 0, 0);
+}
+
+section#saches > article {
+    background-color: rgba(0, 0, 0, 0.637);
+
+    width: 770px;
+    height: 250px;
+
+    margin: 15px;
+}
+
+section#saches > article:hover {
+    box-shadow: 0px 0px 14px black;
+}
+
+/*Diversos*/
+
+section#diversos {
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+section#diversos > h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    text-align: center;
+
+    padding: 5px;
+}
+
+section#diversos > div {
+    width: 56vw;
+    height: 1px;
+    background-color: rgb(255, 0, 0);
+}
+
+section#diversos > article {
+    background-color: rgba(0, 0, 0, 0.637);
+
+    width: 770px;
+    height: 250px;
+
+    margin: 15px;
+}
+
+section#diversos > article:hover {
+    box-shadow: 0px 0px 14px black;
+}
+
+
+/*Cabeçario fixo*/
+
+header > section#botoes-cima {
+
+    height: 45px;
+    width: 800px;
+
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+
+    background-color: white;
+}
+  
+  .minha-div-fixa {
+    position: fixed;
+    top: 0;
+  }
+
+header > section#botoes-cima > button {
+    
+    width: 152px;
+
+    color: rgb(0, 0, 0);
+
+    background: none;   
+    outline: none;
+    border: none;
+
+    font-weight: bolder;
+    font-size: 12pt;
+}
+
+header > section#botoes > button#btn-combos {
+    color: red;
+}
+  
