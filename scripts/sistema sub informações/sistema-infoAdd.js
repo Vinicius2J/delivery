@@ -10,18 +10,18 @@ function informaçõesAdicionais() {
     var paginaInformaçõesAdicionais = document.getElementById('infoAdd').style.display = 'flex';
 
     paginaInicial = document.getElementById('pagina').style.display = 'none';
-    footer = document.querySelector('footer').style.display = 'none';
+    footer = document.querySelector('footer').style.display= 'none';
 
     var botaoVoltarInfoAdd = document.getElementById('voltarInfo');
 
     botaoVoltarInfoAdd.addEventListener("click", () => {
         
         paginaInformaçõesAdicionais = document.getElementById('infoAdd').style.display = 'none';
+        
 
         paginaInicial = document.getElementById('pagina').style.display = 'flex';
         paginaInicial = document.getElementById('pagina').style.flexDirection = 'column';
 
-        footer = document.querySelector('footer').style.display = 'flex';
-
+        footer = document.querySelector('footer').style.display= 'flex';
     })
 }

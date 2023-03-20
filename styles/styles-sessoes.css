@@ -2,7 +2,7 @@
 
 main {
     width: 800px;
-    height: 4000px;
+    height: 3200px;
 
     margin-top: 100px;
 
@@ -51,6 +51,16 @@ section#combos > article {
     height: 250px;
 
     margin: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section#combos > article > h1 {
+    color: white;
+    font-size: 3em;
+    font-family: monospace;
 }
 
 section#combos > article:hover {
@@ -59,7 +69,7 @@ section#combos > article:hover {
 
 /*Hanburgues*/
 
-section#hanburguer {
+section#hamburguer {
     height: 800px;
 
     display: flex;
@@ -70,7 +80,7 @@ section#hanburguer {
 }
 
 
-section#hanburguer > h1 {
+section#hamburguer  > h1 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 2em;
     text-align: center;
@@ -78,22 +88,32 @@ section#hanburguer > h1 {
     padding: 5px;
 }
 
-section#hanburguer > div {
+section#hamburguer > div {
     width: 56vw;
     height: 1px;
     background-color: rgb(255, 0, 0);
 }
 
-section#hanburguer > article {
+section#hamburguer > article {
     background-color: rgba(0, 0, 0, 0.637);
 
     width: 770px;
     height: 250px;
 
     margin: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-section#hanburguer > article:hover {
+section#hamburguer > article > h1 {
+    font: normal 2em arial;
+    color: white;
+
+}
+
+section#hamburguer > article:hover {
     box-shadow: 0px 0px 14px black;
 }
 
@@ -138,7 +158,7 @@ section#bebidas > article:hover {
 
 /*Sachês*/
 
-section#saches {
+section#lanches {
     height: 800px;
 
     display: flex;
@@ -149,7 +169,7 @@ section#saches {
 }
 
 
-section#saches > h1 {
+section#lanches > h1 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 2em;
     text-align: center;
@@ -157,13 +177,13 @@ section#saches > h1 {
     padding: 5px;
 }
 
-section#saches > div {
+section#lanches > div {
     width: 56vw;
     height: 1px;
     background-color: rgb(255, 0, 0);
 }
 
-section#saches > article {
+section#lanches > article {
     background-color: rgba(0, 0, 0, 0.637);
 
     width: 770px;
@@ -172,7 +192,7 @@ section#saches > article {
     margin: 15px;
 }
 
-section#saches > article:hover {
+section#lanches > article:hover {
     box-shadow: 0px 0px 14px black;
 }
 
@@ -214,47 +234,5 @@ section#diversos > article {
 
 section#diversos > article:hover {
     box-shadow: 0px 0px 14px black;
-}
-
-
-/*Cabeçario fixo*/
-
-header > section#botoes-cima {
-
-    height: 45px;
-    width: 800px;
-
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-
-    display: flex;
-    flex-direction: row;
-
-    justify-content: center;
-
-    background-color: white;
-}
-  
-  .minha-div-fixa {
-    position: fixed;
-    top: 0;
-  }
-
-header > section#botoes-cima > button {
-    
-    width: 152px;
-
-    color: rgb(0, 0, 0);
-
-    background: none;   
-    outline: none;
-    border: none;
-
-    font-weight: bolder;
-    font-size: 12pt;
-}
-
-header > section#botoes > button#btn-combos {
-    color: red;
 }
   

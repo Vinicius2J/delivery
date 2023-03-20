@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/styles-sessoes.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style-inatividade.css">
+    <link rel="stylesheet" href="styles/style-carrinho.css">
 </head>
 <body>
     <!--Cabeçario-->
@@ -36,39 +37,28 @@
                 <img src="images/banner.gif">
             </section>
     
-            <section id="botoes-cima">
-                <button id="btn-combos" onclick="scrollToSectionCombos('combos')">COMBOS</button>
-                <button id="btn-hanburguer" onclick="scrollToSectionHamburguer('hanburguer')">HAMBÚRGUER</button>
-                <button id="btn-bebidas" onclick="scrollToSectionBebidas('bebidas')">BEBIDAS</button>
-                <button id="btn-saches" onclick="scrollToSectionSaches('saches')">SACHÊS</button>
-                <button id="btn-diversos" onclick="scrollToSectionDiversos('diversos')">DIVERSOS</button>
+            <section class="menu" id="botoes-cima">
+                <a href="#hamburguer" id="btn-combos">HAMBURGUES</a>
+                <a href="#bebidas" id="btn-bebidas">BEBIDAS</a>
+                <a href="#lanches" id="btn-saches">LANCHES</a>
+                <a href="#combos" id="btn-diversos">COMBOS</a>
             </section>
         </header>
 
         <main>
             <h1>Cardapio</h1>
-            <section id="combos" class="produtos">
+            <section id="hamburguer" class="produtos">
                
-                <h1>Combos</h1>
+                <h1>Hamburguer</h1>
                 <div></div>
 
-                <article> </article>
+                <article id="hamburguer1" class="pedido"><h1>HAMBURGUE 1</h1></article>
 
-                <article></article>
+                <article id="hamburguer2"><h1>HAMBURGUE 2</h1></article>
 
             </section>
 
-            <section id="hanburguer" class="produtos">
-                <h1>Hambúrguer</h1>
-                <div></div>
-
-                <article></article>
-
-                <article></article>
-
-            </section>
-
-            <section id="bebidas">
+            <section id="bebidas" class="produtos">
                 <h1>Bebidas</h1>
                 <div></div>
 
@@ -78,8 +68,8 @@
 
             </section>
 
-            <section id="saches">
-                <h1>Sachês</h1>
+            <section id="lanches">
+                <h1>Lanches</h1>
                 <div></div>
 
                 <article></article>
@@ -88,8 +78,8 @@
 
             </section>
 
-            <section id="diversos">
-                <h1>Diversos</h1>
+            <section id="combos">
+                <h1>Combos</h1>
                 <div></div>
 
                 <article></article>
@@ -97,25 +87,12 @@
                 <article></article>
 
             </section>
-
-        </main>
 
 
         
     </section>
 
-    <footer>
-        <section>
-            <article id="dados-Desenvolvedor">
-
-                <h3>Desenvolvido por</h1>
-                <a href="#"><img src="images/Logo.png" width="70px"></a>
-                <h3><a href="#">José Vinicius Batista Dos Santos</a></h3>
-            </article>
-        </section>
-
-            
-    </footer>
+    
 
     <!--Sessao de informações sobre o pagamento-->
     <section id="pagamentos">
@@ -252,7 +229,63 @@
         </article>
     </section>
 
+
+    <section id="fazer-pedidos">
+        <div id="container">
+            <h2 id="nomePedido">Hamburguer 1</h2>
+            <h3>*O valor total será calculado pelo sabor com maior preço</h3>
+            <div></div>
+            <section id="descricaoProduto">
+                <h1>Descrição do Pedido</h1>
+                <ul>
+                    <li>2 Carnes</li>
+                    <li>Molho da casa</li>
+                    <li>Batata Palha</li>
+                    <li>Ja vem KetChup</li>
+                </ul>
+            </section>
+            <section id="Acompanhamentos">
+                <h1>Acompanhamento</h1>
+
+                <form id="complemento">
+                    
+                </form>
+
+                
+                
+
+                <button id="confirmar">confirmar</button>
+            </section>
+            
+        </div>
+    </section>
+
+    <section id="pedidos">
+        <article id="cardapio">
+            <img src="images/casa.png" width="40px">
+            <p>Cardapio</p>
+        </article>
+
+        <article id="carrinho">
+            <img src="images/lista-pedidos.png" width="40px">
+            <p>Pedidos</p>
+        </article>
+    </section>
+
+    <footer>
+
+        <section>
+            <article id="dados-Desenvolvedor">
+                <h3>Desenvolvido por</h1>
+                <a href="#"><img src="images/Logo.png" width="70px"></a>
+                <h3><a href="#">José Vinicius Batista Dos Santos</a></h3>
+            </article>
+        </section>
+            
+    </footer>
+
     <!--Scirpts-->
+    <script src="scripts/sistema botao cor/botaoCor.js"></script>
     <script src="scripts/sistema scrool/sistema-Scrool.js"></script>
     <script src="scripts/sistema data e hora/sistema-inatividade.js"></script>
     <script src="scripts/sistema data e hora/hora.js"></script>

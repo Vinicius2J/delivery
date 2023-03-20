@@ -100,22 +100,49 @@ header > section#img-gif {
     margin-top: 25px;
 }
 
-header > section#botoes-cima > button {
+header > section#botoes-cima {
+
+    height: 45px;
+    width: 800px;
+
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    display: flex;
+    flex-direction: row;
+
+    
+    align-items: center;
+
+    background-color: white;
+}
+
+.minha-div-fixa {
+    position: fixed;
+    top: 0;
+  }
+
+header > section#botoes-cima > a {
+
+    margin-left: 100px;
 
     cursor: pointer;
-    
-    width: 152px;
 
-    background: none;
+    font-weight: bolder;
+    font-size: 14pt;
+
+    color: rgb(0, 0, 0);
+
+    background: none;   
     outline: none;
     border: none;
 
-    font-weight: bolder;
-    font-size: 12pt;
+    text-decoration: none;
 }
 
-header > section#botoes-cima > button#btn-combos {
-    color: red;
+header > section#botoes-cima > a#btn-combos {
+    margin-left: 75px;
+    color: #ff0022;
 }
 
 section#pagamentos {
@@ -425,7 +452,8 @@ footer > section {
     width: 100vw;
     height: 250px;
 
-    margin-top: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 
     display: flex;
     flex-direction: row;

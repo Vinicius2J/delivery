@@ -10,7 +10,8 @@ function horariosFuncionamento() {
     var paginaHorarios = document.getElementById('horarios-de-funcionamento').style.display = 'flex';
 
     paginaInicial = document.getElementById('pagina').style.display = 'none';
-    footer = document.querySelector('footer').style.display = 'none';
+
+    footer = document.querySelector('footer').style.display= 'none';
 
     let botaoVoltarHorarios = document.getElementById('voltar');
 
@@ -20,6 +21,6 @@ function horariosFuncionamento() {
         paginaInicial = document.getElementById('pagina').style.display = 'flex';
         paginaInicial = document.getElementById('pagina').style.flexDirection = 'column';
 
-        footer = document.querySelector('footer').style.display = 'flex';
+        footer = document.querySelector('footer').style.display= 'flex';
     })
 }
