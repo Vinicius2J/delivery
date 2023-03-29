@@ -1,0 +1,176 @@
+section#formFinal {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: white;
+
+    display: none;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+}
+
+section#formFinal > img {
+    width: 600px;
+    margin-left: 25px;
+}
+
+section#formFinal > h1 {
+
+    background-color: red;
+    color: white;
+
+    width: 100vw;
+    height: 5vh;
+
+    text-align: center;
+    padding: 15px;
+
+    cursor: pointer;
+
+    position: absolute;
+    top: 0px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 50px auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  input,
+  select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  input:focus,
+  select:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  button#finalizar_pedido {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+
+    display: flex;
+
+    width: 150px;
+    height: 35px;
+
+    left: 130px;
+    top: 100px;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button#finalizar_pedido:hover {
+    background-color: #02ff0a;
+  }
+
+  /*Confirar dados*/
+
+  section#confirmarDados {
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+  }
+
+  section#confirmarDados > article {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 800px;
+    margin: 50px auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  section#confirmarDados > article > h1 {
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    margin: 5px;
+  }
+
+  section#confirmarDados > article > .info {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px 9px;
+    font-weight: bold;
+    font-size: 14pt;
+  }
+
+  section#confirmarDados > article > #itensParaVer > p {
+    font-family: monospace, Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+  }
+
+  section#confirmarDados > article > #obs {
+    width: 95%;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    padding: 8px 10px;
+    padding-left: 10px!important;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #0f0f0f;
+    box-shadow: 0 0 4px rgba(0,0,0,.1);
+    transition: all .5s;
+  }
+
+  section#confirmarDados > article > button {
+    width: 120px;
+    height: 40px;
+
+    position: relative;
+    margin: auto;
+  }
+
+  #precoTotalInfo {
+    height: 130px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: end;
+  }
+  

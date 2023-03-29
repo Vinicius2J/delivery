@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style-inatividade.css">
     <link rel="stylesheet" href="styles/style-carrinho.css">
+    <link rel="stylesheet" href="styles/style-carrinho-form.css">
 </head>
 <body>
     <!--Cabeçario-->
@@ -45,11 +46,12 @@
             </section>
         </header>
 
-        <main>
+        <main id="pedidosGerais">
             <h1>Cardapio</h1>
             <section id="hamburguer" class="produtos">
                
                 <h1>Hamburguer</h1>
+
                 <div></div>
 
                 <article id="hamburguer1" class="pedido"><h1>HAMBURGUE 1</h1></article>
@@ -228,50 +230,133 @@
             <a href="index.html" rel="prev" class="botao-reconect">Reconectar</a>
         </article>
     </section>
-
-
+        
+        
     <section id="fazer-pedidos">
-        <div id="container">
-            <h2 id="nomePedido">Hamburguer 1</h2>
-            <h3>*O valor total será calculado pelo sabor com maior preço</h3>
-            <div></div>
-            <section id="descricaoProduto">
-                <h1>Descrição do Pedido</h1>
-                <ul>
-                    <li>2 Carnes</li>
-                    <li>Molho da casa</li>
-                    <li>Batata Palha</li>
-                    <li>Ja vem KetChup</li>
-                </ul>
-            </section>
-            <section id="Acompanhamentos">
-                <h1>Acompanhamento</h1>
+        <h1 id="nomePedido">&lt; Nome do pedido</h1>
+        
+        <h2>Bebidas</h2>
+        <div id="linha"></div>
 
-                <form id="complemento">
+        <section id="tituloCoca">
+            <h2>Coca Cola</h2> <button id="btnCoca" class="add">+</button> <button id="removePageCoca" class="remove" style="display: none;">-</button>
+        </section>
+
+        <article id="cocas" class="bebidas">
+
+            <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+            <h2 class="nomeBebida">Coca Cola 350ML</h2>
+            <section id="coca350ML">
+             <p class="preço">R$ 3,50</p>
+            <article id="btnsComprarCoca350ML"> <button onclick="addItem('Coca 350ML', 3.50), addQuantidadeCoca350()" class="add">+</button> <p id="quantidadeCoca350">0</p> <button id="removeQuanCOCA350" class="remove" onclick="removeItem('Coca 350ML', 3.50), removeQuantidadeCoca350()">-</button> </article>
+            </section>
+
+            <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+            <h2 class="nomeBebida">Coca Cola 500ML</h2>
+            <section id="coca350ML">
+             <p class="preço">R$ 5,00</p>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Coca 550ML', 5.50), addQuantidadeCoca550()">+</button> <p id="quantidadeCoca550">0</p> <button class="remove" class="remove" onclick="removeItem('Coca 550ML', 5.50),removeQuantidadeCoca550()">-</button> </article>
+            </section>
+
+            <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+            <h2 class="nomeBebida">Coca Cola 2L</h2>
+            <section id="coca350ML">
+             <p class="preço">R$ 12,00</p>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Coca 2L', 10), addQuantidadeCoca2L()">+</button> <p id="quantidadeCoca2L">0</p> <button class="remove" class="remove" onclick="removeItem('Coca 2L', 10),removeQuantidadeCoca2L()">-</button> </article>
+            </section>
+
+        </article>
+
+        <section id="itensCarrinho">
+            <article id="listaProdutos">
+                <h1>PEDIDOS</h1>
+                <ol id="itens-carrinho">
                     
-                </form>
-
+                </ol>
+            </article>
+    
+            <article id="preçoEbotaoContinuar">
+                <p id="preco-total">Preço total: R$ 0,00</p>
                 
-                
-
-                <button id="confirmar">confirmar</button>
-            </section>
+                <button onclick="limparCarrinho()" id="limparCarrinho">Limpar Carrinho</button>
+            </article>
             
-        </div>
+    </section>
+    <button id="btnProximoPagamento">PROXIMO</button>
+    </section>
+    
+
+    <section id="erroCarrinho">
+        <main>
+            <section id="imgErro">
+                <img src="images/erroCarrinho.svg" width="375px">
+            </section>
+            <section id="sobreErroCarrinho">
+                <h1>ATENÇÃO</h1>
+                <p>Seu carrinho esta vazio,para resolver este problema adicione um produto de sua preferencia no carrinho <span style="font-weight: bolder;">Boas! Compras</span></p>
+                <button onclick="sairErro()"">Recarregar</button>
+            </section>
+        </main>
     </section>
 
-    <section id="pedidos">
-        <article id="cardapio">
-            <img src="images/casa.png" width="40px">
-            <p>Cardapio</p>
-        </article>
-
-        <article id="carrinho">
-            <img src="images/lista-pedidos.png" width="40px">
-            <p>Pedidos</p>
-        </article>
+    <section id="erroFormIncompleto">
+        <main>
+            <section id="imgErroForm">
+                <img src="images/diaRuim.svg" width="375px">
+            </section>
+            <section id="sobreErroCarrinhoForm">
+                <h1>PUTS QUE DIA RUIM</h1>
+                <p>Nos parece que infelizmente você deixou de informar algum dado seu,nao deixe isso te desanimar e so aperta no botao de recarregar e inserir seus dados novamente.</p>
+                <button id="sairErroForm" onclick="sairErroForm()"">RECARREGAR</button>
+            </section>
+        </main>
     </section>
 
+    <section id="formFinal">
+        <h1 id="voltaCarrinho">&lt; SUAS INFORMAÇÔES</h1>
+        <img src="images/informações.svg">
+        <form onsubmit="return verificarDados()">
+            <label for="nome">Nome e sobrenome:</label>
+            <input type="text" id="nome" name="nome" required>
+          
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+          
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+          
+            <label for="forma-pagamento">Forma de pagamento:</label>
+            <select id="forma-pagamento" name="forma-pagamento" required>
+              <option value="">Selecione uma opção</option>
+              <option value="cartao">Cartão de crédito</option>
+              <option value="pix">Pix</option>
+            </select>
+          
+            <button type="submit" id="finalizar_pedido">Finalizar Pedidio</button>
+          </form>
+    </section>
+
+    <section id="confirmarDados">
+        <article>
+            <h1>Confirme seus dados</h1>
+            <p class="info" id="nomeInfo">Nome: </p>
+            <p class="info" id="emailInfo">Email: </p>
+            <p class="info" id="enderecoInfo">Endereço: </p>
+            <p class="info" id="formaPagamentoInfo">Fomra De Pagamento: </p>
+            <div id="TesteMandar"></div>
+            <h1>PRODUTOS</h1>
+            <div id="itensParaVer"></div>
+            <h1>OBSERVAÇÕES</h1>
+            <textarea _ngcontent-yyb-c139="" type="text" autocomplete="off" id="obs" rows="3" placeholder="Digite aqui" class="ng-valid ng-touched ng-dirty"></textarea>
+            <p class="info" id="precoTotalInfo">Preço Total R$0,00</p>
+            <button id="comprar"><a id="zap" rel="external" href="#" target="_blank">COMPRAR</a></button>
+            
+        </article>
+    </section>
+    
     <footer>
 
         <section>
@@ -281,10 +366,14 @@
                 <h3><a href="#">José Vinicius Batista Dos Santos</a></h3>
             </article>
         </section>
+
+        <div style="display: none;" id="mandar"></div>
             
     </footer>
 
     <!--Scirpts-->
+    <script src="scripts/sistema pedidos/sistema-pedidios.js"></script>
+    <script src="scripts/sistema pedidos/sistema-paginas-pedidos.js"></script>
     <script src="scripts/sistema botao cor/botaoCor.js"></script>
     <script src="scripts/sistema scrool/sistema-Scrool.js"></script>
     <script src="scripts/sistema data e hora/sistema-inatividade.js"></script>

@@ -35,9 +35,9 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    display: flex;
 }
+
+
 
 header > a {
     color: black;
@@ -427,6 +427,8 @@ section#infoAdd > section#allInfo > section.infoEndereço > a#telefone {
 footer {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5em;
+
+    display: flex;
 }
 
 footer > section > article#dados-Desenvolvedor {
