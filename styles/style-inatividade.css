@@ -7,14 +7,15 @@
 
 section#inatividade {
     width: 100vw;
-    height: 100vh;
+    height: 4215px;
+    background-color: rgba(0, 0, 0, 0.356);
 
     display: none;
     flex-direction: column;
 
     align-items: center;
-    justify-content: center;
-
+    
+    
     position: absolute;
 }
 
@@ -34,6 +35,8 @@ section#inatividade > article {
     align-items: center;
     justify-content: center;
     padding: 15px;
+
+    top: 150px;
 }
 
 section#inatividade > article > h1 {
@@ -120,4 +123,43 @@ section#inatividade > article > a {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
+}
+
+@media (max-width: 488px) {
+    section#inatividade {
+        display: none;
+
+        width: 486px;
+        height: 4400px;
+        background-color: rgba(0, 0, 0, 0.39);
+
+        position: absolute;
+        top: 0;
+    }
+
+    section#inatividade > article {
+        width: 400px;
+        height: 200px;
+        position: fixed;
+
+        top: 200px;
+    }
+
+    section#inatividade > article > h1 {
+        font-size: 1em;
+    }
+
+    section#inatividade > article > p {
+        font-size: 1em;
+    }
+    
+    .botao-reconect {
+        width: 150px;
+        overflow: hidden;
+    }
+
+    section#inatividade > article > a {
+        font-size: 16pt;
+    }
+ 
 }

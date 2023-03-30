@@ -1,7 +1,5 @@
-/*
-
 // Tempo de inatividade em milissegundos
-const inatividadeTempo = 3 * 30 * 1000 // 3 minutos em milissegundos
+const inatividadeTempo = 10 * 30 * 1000 // 10 minutos em milissegundos
 
 
 let ultimoTempoAtivo = Date.now();
@@ -23,5 +21,3 @@ document.addEventListener('mousemove', () => {
 
 // Inicia o temporizador para verificar a inatividade
 setInterval(verificarInatividade, 1000);
-
-*/
