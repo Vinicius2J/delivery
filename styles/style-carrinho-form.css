@@ -174,21 +174,28 @@ form {
     justify-content: end;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 488px) {
     section#formFinal{
-      height: 110vh;
+      height: 100vh;
     }
 
     section#formFinal > h1 {
-      width: 93vw;
+      width: 94vw;
     }
 
     section#confirmarDados > article > h1 {
-      font-size: 17pt;
+      font-size: 18pt;
+      height: 30px;
     }
 
     section#confirmarDados > article > .info {
       font-size: 12pt;
+      height: 19px;
+    }
+
+    section#confirmarDados > article > #itensParaVer > p{
+      font-size: 12pt;
+      font-weight: bold;
     }
   }
   

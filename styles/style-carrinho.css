@@ -400,7 +400,7 @@ a#zap {
 
 /*Sistema androidd*/
 
-@media (max-width: 400px) {
+@media (max-width: 488px) {
     article#btnsComprarCoca350ML {
         left: 45%;
         width: 300px;
@@ -411,7 +411,14 @@ a#zap {
         top: 9px;
 
         font-size: 12pt;
+        height: 30px;
+    }
 
+    button.add {
+        height: 30px;
+    }
+
+    button.remove {
         height: 30px;
     }
 
@@ -489,7 +496,7 @@ a#zap {
     }
 
     section#itensCarrinho > article#listaProdutos > ol > li {
-        font-size: 11pt;
+        font-size: 10pt;
         padding-top: 15px;
     }
 

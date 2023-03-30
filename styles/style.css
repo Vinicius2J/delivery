@@ -162,9 +162,17 @@ section#pagamentos > article#formasDePagamento {
     align-items: center;
 }
 
-section#pagamentos > article#formasDePagamento > h1#voltarPaginaInicial {
+section#pagamentos > article#formasDePagamento > h1 {
     font-family: Arial, Helvetica, sans-serif;
-    margin-left: 15px;
+    background-color: rgb(255, 1, 1);
+    width: 100vw;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
 
     color: white;
 
@@ -285,9 +293,18 @@ section#horarios-de-funcionamento > article#horarios {
 
 section#horarios-de-funcionamento > article#horarios > h1.voltarPaginaInicial {
     font-family: Arial, Helvetica, sans-serif;
-    margin-left: 15px;
+    background-color: rgb(255, 1, 1);
+    width: 100vw;
+    height: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
 
     color: white;
+
     cursor: pointer;
 }
 
@@ -333,12 +350,18 @@ section#infoAdd {
 
 section#infoAdd > h1 {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 1, 1);
+    width: 100vw;
+    height: 35px;
 
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
 
-    background-color: red;
+    align-items: center;
+    justify-content: center;
 
     color: white;
+
     cursor: pointer;
 }
 
@@ -520,7 +543,7 @@ footer > section > article {
     }
   }
 
-  @media (max-width: 460px) {
+  @media (max-width: 488px) {
     header {
         height: 800px;
         width: 100vw;
@@ -561,7 +584,9 @@ footer > section > article {
 
     header > section#info-iniciais {
         height: 100px;
-        width: 140vw;
+        width: 100vw;
+
+        margin: 0;
 
         display: flex;
         flex-direction: row;
@@ -612,21 +637,30 @@ footer > section > article {
     section#combos > article{
         width: 100vw;
         height: 200px;
+
+        margin: 0;
+        margin-top: 5px;
     }
 
     section#lanches > article{
         width: 100vw;
         height: 200px;
+        margin: 0;
+        margin-top: 5px;
     }
 
     section#bebidas > article{
         width: 100vw;
         height: 200px;
+        margin: 0;
+        margin-top: 5px;
     }
 
     section#hamburguer > article{
         width: 100vw;
         height: 200px;
+        margin: 0;
+        margin-top: 5px;
     }
 
 
@@ -644,6 +678,10 @@ footer > section > article {
         justify-content: center;
     }
 
+    footer {
+        width: 100vw;
+    }
+
     footer > section > article#dados-Desenvolvedor {
         height: 250px;
         width: 100vw;
@@ -657,7 +695,7 @@ footer > section > article {
     }
 
     section#infoAdd > section#allInfo {
-        width: 115vw;
+        width: 100vw;
     }
 
     section#infoAdd > section#allInfo > a {
@@ -677,14 +715,8 @@ footer > section > article {
         margin-left: 15px;
     }
 
-    /*Carrinho*/
-
-    section#tituloCoca > button {
-        height: 27px;
-    }
-
-    article#btnsComprarCoca350ML {
-        left: 60%;
+    section.semana > p {
+        width: 300px;
     }
 
   }
