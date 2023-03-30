@@ -520,23 +520,31 @@ footer > section > article {
     }
   }
 
-  @media (max-height: 680px) {
+  @media (max-width: 460px) {
     header {
-        height: 700px;
+        height: 800px;
         width: 100vw;
     }
 
     header > h1 {
         height: 37px;
+        width: 74vw;
+        margin-left: 45px;
+        text-align: center;
     }
 
     header > a {
-        font-size: 13pt;
+        font-size: 8pt;
+        margin-left: 0px;
     }
     
 
     header > section#botoes-cima {
         width: 100vw;
+    }
+
+    header > section#botoes-cima > a {
+        font-size: 9pt;
     }
 
     header > section#img-gif {
@@ -577,14 +585,24 @@ footer > section > article {
     }
 
     header > section#sub-info > p {
-        margin: 25px;
+        margin: 15px;
+        font-size: 12pt;
     }
 
     header > section#stutus {
         text-align: center;
-        height: 100px;  
+        height: 100px; 
+
+        font-size: 12pt;
     }
 
+    header > section#stutus > h2 {
+        font-size: 12pt;
+    }
+
+    header > section#stutus > p#aberto-fechado {
+        font-size: 12pt;
+    }
     
 
     main {
@@ -669,4 +687,4 @@ footer > section > article {
         left: 60%;
     }
 
-}
+  }

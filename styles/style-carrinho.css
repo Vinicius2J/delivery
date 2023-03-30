@@ -400,7 +400,7 @@ a#zap {
 
 /*Sistema androidd*/
 
-@media (max-height: 680px) {
+@media (max-width: 400px) {
     article#btnsComprarCoca350ML {
         left: 45%;
         width: 300px;
