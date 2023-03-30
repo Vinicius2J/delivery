@@ -200,7 +200,7 @@ function verificarCarrinho() {
                     let link = document.querySelector('a');
                     link.setAttribute('target', '_blank');
               
-                    link = document.getElementById("zap").href = 'https://wa.me/5521992042880?text='+text;
+                    link = document.getElementById("zap").href = 'https://wa.me/554188217121?text='+text;
               
                   };
             };
