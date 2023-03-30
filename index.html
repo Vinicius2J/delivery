@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedir Delivery</title>
+    <link rel="stylesheet" href="styles/style-mobile.css">
     <link rel="stylesheet" href="styles/styles-sessoes.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style-inatividade.css">
@@ -56,7 +57,7 @@
 
                 <article id="hamburguer1" class="pedido"><h1>HAMBURGUE 1</h1></article>
 
-                <article id="hamburguer2"><h1>HAMBURGUE 2</h1></article>
+                <article id="hamburguer2" class="pedido"><h1>HAMBURGUE 2</h1></article>
 
             </section>
 
@@ -64,29 +65,29 @@
                 <h1>Bebidas</h1>
                 <div></div>
 
-                <article></article>
+                <article class="pedido"></article>
 
-                <article></article>
+                <article class="pedido"></article>
 
             </section>
 
-            <section id="lanches">
+            <section id="lanches" class="produtos">
                 <h1>Lanches</h1>
                 <div></div>
 
-                <article></article>
+                <article class="pedido"></article>
 
-                <article></article>
+                <article class="pedido"></article>
 
             </section>
 
-            <section id="combos">
+            <section id="combos" class="produtos">
                 <h1>Combos</h1>
                 <div></div>
 
-                <article></article>
+                <article class="pedido"></article>
 
-                <article></article>
+                <article class="pedido"></article>
 
             </section>
 
@@ -356,21 +357,17 @@
             
         </article>
     </section>
-    
+    <div style="display: none;" id="mandar"></div>
     <footer>
-
-        <section>
+        <section id="sectionFooter">
             <article id="dados-Desenvolvedor">
                 <h3>Desenvolvido por</h1>
                 <a href="#"><img src="images/Logo.png" width="70px"></a>
                 <h3><a href="#">José Vinicius Batista Dos Santos</a></h3>
             </article>
         </section>
-
-        <div style="display: none;" id="mandar"></div>
-            
     </footer>
-
+    
     <!--Scirpts-->
     <script src="scripts/sistema pedidos/sistema-pedidios.js"></script>
     <script src="scripts/sistema pedidos/sistema-paginas-pedidos.js"></script>

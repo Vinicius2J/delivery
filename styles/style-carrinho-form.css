@@ -173,4 +173,22 @@ form {
     align-items: center;
     justify-content: end;
   }
+
+  @media (max-height: 680px) {
+    section#formFinal{
+      height: 110vh;
+    }
+
+    section#formFinal > h1 {
+      width: 93vw;
+    }
+
+    section#confirmarDados > article > h1 {
+      font-size: 17pt;
+    }
+
+    section#confirmarDados > article > .info {
+      font-size: 12pt;
+    }
+  }
   
