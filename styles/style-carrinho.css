@@ -223,6 +223,20 @@ section#itensCarrinho > article#preçoEbotaoContinuar > button:hover {
     transition: 1s;
 }
 
+section#botaoProximo {
+    width: 10px;
+    height: 10px;
+
+    background-color: rgb(255, 255, 255);
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 79vw;
+    height: 100px;
+}
+
 button#btnProximoPagamento {
     position: fixed;
     bottom: 40px;
@@ -399,11 +413,43 @@ a#zap {
 }
 
 /*Sistema androidd*/
+@media (max-width: 400px) {
+    section#fazer-pedidos > h2 {
+        position: relative;
+        right: 55px;
+    }
+
+    article#btnsComprarCoca350ML {
+        position: relative;
+        top: -30px;
+    }
+}
 
 @media (max-width: 488px) {
+
+    section#tituloCoca {
+        overflow: hidden;
+    }
+
+    section#botaoProximo {
+        width: 10px;
+        height: 10px;
+
+        background-color: rgb(255, 255, 255);
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        width: 59vw;
+        height: 100px;
+    }
+
     article#btnsComprarCoca350ML {
-        left: 45%;
+        left: 33%;
         width: 300px;
+
+        overflow: hidden;
     }
 
     article#btnsComprarCoca350ML > button {
@@ -432,6 +478,10 @@ a#zap {
         position: relative;
         top: 9px;
         font-size: 12pt;
+    }
+
+    section#fazer-pedidos {
+        height: 100vh;
     }
 
     section#fazer-pedidos > h2 {
@@ -482,7 +532,7 @@ a#zap {
         font-size: 10pt;
 
         position: fixed;
-        left: 15vh;
+        left: 17%;
     }
     section#erroCarrinho > main {
         width: 400px;

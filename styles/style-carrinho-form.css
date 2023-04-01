@@ -175,17 +175,26 @@ form {
   }
 
   @media (max-width: 488px) {
+
+    button#finalizar_pedido {
+      position: relative;
+      left: 100px;
+    }
+
     section#formFinal{
       height: 100vh;
     }
 
     section#formFinal > h1 {
-      width: 94vw;
+      width: 92vw;
+    }
+
+    section#confirmarDados > article {
+      width: 300px;
     }
 
     section#confirmarDados > article > h1 {
       font-size: 18pt;
-      height: 30px;
     }
 
     section#confirmarDados > article > .info {
