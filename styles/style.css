@@ -503,6 +503,43 @@ footer > section > article {
 
 /*Sistema android*/
 
+@media (max-width: 3000px) {
+    header > section#img-gif {
+        background-color: white;
+    }
+
+    header > section#img-gif > img {
+        width: 800px;
+        height: 200px;
+    }
+
+    header > section#botoes-cima {
+        height: 30px;
+        width: 800px;
+
+        display: flex;
+        flex-direction: row;
+
+        align-content: center;
+        justify-content: center;
+    }
+
+    header > section#botoes-cima > span {
+        width: 70px;
+    }
+
+    header > section#botoes-cima > a {
+        margin: 60px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    header > section#botoes-cima > a#btn-combos {
+        margin: 0;
+    }
+
+}
+
 @media (max-width: 800px) {
     header > section#botoes-cima {
         width: 700px;
