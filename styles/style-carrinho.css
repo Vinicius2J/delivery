@@ -413,17 +413,133 @@ a#zap {
 }
 
 /*Sistema androidd*/
-@media (max-width: 400px) {
-    section#fazer-pedidos > h2 {
-        position: relative;
-        right: 55px;
+
+@media (max-width: 1000px) {
+
+    section#itensCarrinho {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    section#botaoProximo {
+        background: none;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        width: 74vw;
+        height: 100px;
     }
 
     article#btnsComprarCoca350ML {
-        position: relative;
-        top: -30px;
+        left: 33%;
+        width: 300px;
+
+        overflow: hidden;
     }
+
+    article#btnsComprarCoca350ML > button {
+        position: relative;
+        top: 9px;
+
+        font-size: 12pt;
+        height: 30px;
+    }
+
+    button.add {
+        height: 30px;
+    }
+
+    button.remove {
+        height: 30px;
+    }
+
+    article#btnsComprarCoca350ML > button.remove {
+        font-size: 13pt;
+        position: relative;
+        top: 13px;
+    }
+
+    article#btnsComprarCoca350ML > p {
+        position: relative;
+        top: 9px;
+        font-size: 12pt;
+    }
+
+    section#fazer-pedidos {
+        height: 100vh;
+    }
+
+    section#fazer-pedidos > h2 {
+        font-size: 14pt;
+        position: relative;
+        width: 50vw;
+    }
+
+    section#tituloCoca > h2 {
+        font-size: 15pt;
+    }
+
+    h2.nomeBebida {
+        font-size: 11pt;
+    }
+
+    p.preço {
+        font-size: 10pt;
+    }
+
+    section#itensCarrinho > article#preçoEbotaoContinuar {
+        width: 150px;
+    }
+
+    section#itensCarrinho > article#preçoEbotaoContinuar > p {
+        font-size: 13pt;
+        text-align: center;
+    }
+
+    section#itensCarrinho > article#preçoEbotaoContinuar > button#limparCarrinho {
+        width: 130px;
+        height: 35px;
+        font-size: 10pt;
+
+        padding: 15;
+    }
+    button#btnProximoPagamento {
+        padding: 0;
+        width: 100px;
+        height: 30px;
+        font-size: 10pt;
+
+        position: fixed;
+        left: 17%;
+    }
+    section#erroCarrinho > main {
+        width: 400px;
+    }
+    section#erroCarrinho > main > section#imgErro {
+        width: 0px;
+    }
+
+    section#itensCarrinho > article#listaProdutos > ol > li {
+        font-size: 10pt;
+        padding-top: 15px;
+    }
+
+    section#formFinal > form {
+        height: 500px;
+    }
+
+    section#formFinal > img {
+        display: none;
+    }
+
 }
+
 
 @media (max-width: 488px) {
 
@@ -431,11 +547,21 @@ a#zap {
         overflow: hidden;
     }
 
-    section#botaoProximo {
-        width: 10px;
-        height: 10px;
+    section#itensCarrinho {
+        width: 100px;
+        display: flex;
+        flex-direction: column;
 
-        background-color: rgb(255, 255, 255);
+        align-items: center;
+
+        position: fixed;
+
+        border-left: 2px solid black;
+        
+    }
+
+    section#botaoProximo {
+        background: none;
 
         position: fixed;
         bottom: 0;
@@ -486,6 +612,8 @@ a#zap {
 
     section#fazer-pedidos > h2 {
         font-size: 14pt;
+        position: relative;
+        width: 50vw;
     }
 
     section#tituloCoca > h2 {
@@ -552,10 +680,82 @@ a#zap {
 
     section#formFinal > form {
         height: 500px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-content: center;
+        justify-content: center;
     }
 
     section#formFinal > img {
         display: none;
     }
 
+}
+
+
+
+@media (max-width: 400px) {
+
+    section#formFinal {
+        overflow: hidden;
+    }
+
+    section#fazer-pedidos > h2 {
+        position: relative;
+        right: 55px;
+    }
+
+    article#btnsComprarCoca350ML {
+        position: relative;
+        top: -30px;
+    }
+
+    button#btnCoca {
+        position: relative;
+        right: 15px;
+    }
+
+    button#removePageCoca {
+        position: relative;
+        right: 20px;
+        top: 1px;
+    }
+
+    section#tituloCoca > h1 {
+        font-size: 9pt;
+    }
+
+    button#btnProximoPagamento {
+        position: fixed;
+        left: 30px;
+    }
+
+    article#btnsComprarCoca350ML {
+        left: 0%;
+        top: -5px;
+        width: 300px;
+
+        overflow: hidden;
+    }
+
+    section#fazer-pedidos > h2 {
+        position: relative;
+        width: 35vw;
+    }
+
+    section#formFinal > form {
+        height: 500px;
+        width: 300px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-content: center;
+        justify-content: center;
+
+        margin-top: 100px;
+
+    }
 }
