@@ -333,9 +333,6 @@
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" placeholder="(opcional)">
           
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" required placeholder="(obrigatório)">
-          
             <label for="forma-pagamento">Forma de pagamento: *obrigatório*</label>
             <select id="forma-pagamento" name="forma-pagamento" required>
               <option value="">Selecione uma opção</option>
@@ -345,11 +342,18 @@
             </select>
 
             <label for="forma-envio">Forma de envio: *obrigatório*</label>
-            <select id="forma-envio">
-                <option value="">Selecione uma opção</option>
+            <select id="forma-envio" onchange="exibirEndereco(this)">
+                 <option value="">Selecione uma opção</option>
                  <option value="entrega">Entrega</option>
                  <option value="retirada">Retirada</option>
             </select>
+
+            <div id="endrecoCaso">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" placeholder="(obrigatório)">
+            </div>
+
+            
           
             <button type="submit" id="finalizar_pedido">Finalizar Pedidio</button>
           </form>
@@ -361,9 +365,9 @@
             <h1>Confirme seus dados</h1>
             <p class="info" id="nomeInfo">Nome: </p>
             <p class="info" id="emailInfo">Email: </p>
-            <p class="info" id="enderecoInfo">Endereço: </p>
             <p class="info" id="formaPagamentoInfo">Fomra De Pagamento: </p>
             <p class="info" id="formaEnvio">Forma de Envio: </p>
+            <p class="info" id="enderecoInfo">Endereço: </p>
             <div id="TesteMandar"></div>
             <h1>PRODUTOS</h1>
             <div id="itensParaVer"></div>

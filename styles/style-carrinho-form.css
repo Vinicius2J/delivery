@@ -104,6 +104,11 @@ form {
     font-size: 12pt;
   }
 
+  div#endrecoCaso {
+    display: none;
+    flex-direction: column;
+  }
+
   /*Confirar dados*/
 
   section#confirmarDados {

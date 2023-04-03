@@ -106,6 +106,22 @@ function sairErroForm() {
     document.getElementById('erroFormIncompleto').style.display = 'none';
 }
 
+//Função para se for selecioando a opçao entrega apraçer a opção de enderço abaixo
+
+var semEndereco
+var comEndereco
+
+var testeEndereco = 0;
+
+function exibirEndereco(select) {
+  let campoEndereco = document.getElementById('endrecoCaso');
+  if (select.value == "entrega") {
+    comEndereco = campoEndereco.style.display = 'flex';
+  }else {
+    semEndereco = campoEndereco.style.display = 'none';
+  };
+};
+
 //Verificar se tem item no carrinho
 function verificarCarrinho() {
     if (carrinho.itens.length === 0) {
@@ -131,88 +147,8 @@ function verificarCarrinho() {
             var endereco = document.getElementById('endereco').value;
             var formaPagamento = document.getElementById('forma-pagamento').value;
 
-            /*
-        
-            //Parte sem email
-            if (nomeSobrenome == "" || formaEnvio == "" || endereco == "" || formaPagamento == "") {
-                document.getElementById('erroFormIncompleto').style.display = 'flex';
-                document.getElementById('finalizar_pedido').style.display = 'none';
-
-                const btnVoltarPageForm = document.getElementById('sairErroForm');
-                btnVoltarPageForm.addEventListener('click', () => {
-                    document.getElementById('erroFormIncompleto').style.display = 'none';
-                    document.getElementById('finalizar_pedido').style.display = 'flex';
-                });
-            }else {
-                const divItens = document.getElementById('itensParaVer');
-                divItens.innerHTML = '';
-
-                carrinho.itens.forEach(item => {
-                    const p = document.createElement('p');
-                    p.textContent = `${item.quantidade}/9 - ${item.nome} 💵 R$:${item.preco} `;
-                    divItens.appendChild(p);
-                });
-
-                document.getElementById('confirmarDados').style.display = 'flex';
-                document.getElementById('formFinal').style.display = 'none';
-
-                document.getElementById('nomeInfo').innerHTML = `Nome: ${nomeSobrenome}`;
-                document.getElementById('emailInfo').style.display = 'none';
-                document.getElementById('enderecoInfo').innerHTML =  `Endereço: ${endereco}`;
-                document.getElementById('formaPagamentoInfo').innerHTML = `Forma de Pagamento: ${formaPagamento}`;
-                document.getElementById('formaEnvio').innerHTML = `Forma de Envio: ${formaEnvio}`;
-                document.getElementById('precoTotalInfo').innerHTML = `Preço Total: R$ ${carrinho.precoTotal.toFixed(2).replace('.',(','))}`;
-
-                //Função comprar
-
-                let botaoComprar = document.getElementById('comprar');
-                botaoComprar.addEventListener('click', comprar);
-
-                function comprar() {
-
-                    //pegar valor do nome do prodtuo
-                        const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-                        let nomePedido = '';
-                        let numeroPedido = '';
-                        for (let i = 0; i < 5; i++) {
-                          nomePedido += letras.charAt(Math.floor(Math.random() * letras.length));
-                          numeroPedido += letras.charAt(Math.floor(Math.random() * letras.length));
-                        };
-
-
-                    //Pegar valor Observações
-                    const nomeSobrenome = document.getElementById('nome').value;
-                    const endereco = document.getElementById('endereco').value;
-                    const formaPagamento = document.getElementById('forma-pagamento').value;
-                    const observacoes = document.getElementById('obs').value;
-
-                    const div1 = document.getElementById("itens-carrinho");
-                    const div2 = document.getElementById("mandar");
-                    // Obter todos os valores dentro da div1
-                    const valores = div1.textContent.trim().split('\n');
-                    // Adicionar valores à div2 com tag <p>
-                    valores.forEach((valor) => {
-                    const p = document.createElement("p");
-                    p.textContent = valor;  
-                    div2.appendChild(p);
-                    });
-              
-                    //Mensagem que vai ser envidad por whatssap para o numero de  telefone da loja
-              
-                    text = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n*\n\n*⇩ Dados Entraga ⇩*\n\n*Endereço: ${endereco}*\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
-              
-                    let link = document.querySelector('a');
-                    link.setAttribute('target', '_blank');
-              
-                    link = document.getElementById("zap").href = 'https://wa.me/554188217121?text='+text;
-              
-                  };
-            };
-
-            */
-
             //Parte com Email
-            if (nomeSobrenome == "" || formaEnvio == "" || endereco == "" || formaPagamento == "") {
+            if (nomeSobrenome == "" || formaEnvio == "" || formaPagamento == "") {
               document.getElementById('erroFormIncompleto').style.display = 'flex';
               document.getElementById('finalizar_pedido').style.display = 'none';
 
@@ -235,6 +171,7 @@ function verificarCarrinho() {
                 document.getElementById('formFinal').style.display = 'none';
 
                 document.getElementById('nomeInfo').innerHTML = `Nome: ${nomeSobrenome}`;
+
                 document.getElementById('emailInfo').style.display = 'flex';
 
                 if (email == "") {
@@ -243,7 +180,11 @@ function verificarCarrinho() {
                   document.getElementById('emailInfo').innerHTML = `Email: ${email}`;
                 };
 
-                document.getElementById('enderecoInfo').innerHTML =  `Endereço: ${endereco}`;
+                if (semEndereco) {
+                  document.getElementById('enderecoInfo').style.display = 'none';
+                }else {
+                  document.getElementById('enderecoInfo').innerHTML =  `Endereço: ${endereco}`;
+                }
                 document.getElementById('formaPagamentoInfo').innerHTML = `Forma de Pagamento: ${formaPagamento}`;
                 document.getElementById('formaEnvio').innerHTML = `Forma de Envio: ${formaEnvio}`;
                 document.getElementById('precoTotalInfo').innerHTML = `Preço Total: R$ ${carrinho.precoTotal.toFixed(2).replace('.',(','))}`;
@@ -284,8 +225,8 @@ function verificarCarrinho() {
               
                     //Mensagem que vai ser envidad por whatssap para o numero de  telefone da loja
 
-                    if (email == "") {
-                      textSemEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n*\n\n*⇩ Dados Entraga ⇩*\n\n*Endereço: ${endereco}*\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
+                    if (email == "" || semEndereco) {
+                      textSemEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n*\n\n*⇩ Dados Entraga ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
 
                       let link = document.querySelector('a');
                       link.setAttribute('target', '_blank');
