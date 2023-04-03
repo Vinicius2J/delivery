@@ -229,7 +229,7 @@
 
     <section id="inatividade">
         <article>
-            <h1>PARECE QUE VOCÊ FICOU MUITO TEMPO INATIVO</h1>
+            <h1>Opá Parece que o nosso estabelcimento acabou de fechar/abrir</h1>
             <p>Click no botao ai em-baixo para reconectar a pagina</p>
             <a href="index.html" rel="prev" class="botao-reconect">Reconectar</a>
         </article>
@@ -239,38 +239,90 @@
     <section id="fazer-pedidos">
         <h1 id="nomePedido">&lt; Nome do pedido</h1>
         
-        <h2>Bebidas</h2>
+        <h2>Alimentos</h2>
         <div id="linha"></div>
 
-        <section id="tituloCoca">
-            <h2>Coca Cola</h2> <button id="btnCoca" class="add">+</button> <button id="removePageCoca" class="remove" style="display: none;">-</button>
+        <section class="tituloHamburger">
+            <h2>Hamburguers</h2> <button id="btnCoca" class="add">+</button> <button id="removePageCoca" class="remove" style="display: none;">-</button>
         </section>
 
         <article id="cocas" class="bebidas">
 
             <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
-            <h2 class="nomeBebida">Coca Cola 350ML</h2>
+            
+            <h2 class="nomeBebida">X-EGG</h2>
             <section id="coca350ML">
-             <p class="preço">R$ 3,50</p>
-            <article id="btnsComprarCoca350ML"> <button onclick="addItem('Coca 350ML', 3.50), addQuantidadeCoca350()" class="add">+</button> <p id="quantidadeCoca350">0</p> <button id="removeQuanCOCA350" class="remove" onclick="removeItem('Coca 350ML', 3.50), removeQuantidadeCoca350()">-</button> </article>
+             <p class="preço">R$ 11,00</p>
+             <p class="descricaoProduto">Descição X-EGG: Pão, maionese, hambúrguer, queijo, presunto, ovo, tomate, alface, milho, cheddar, catupiry e batata palha</p>
+            <article id="btnsComprarCoca350ML"> <button onclick="addItem('X-EGG', 11), addQuantidadeCoca350()" class="add">+</button> <p id="quantidadeCoca350">0</p> <button id="removeQuanCOCA350" class="remove" onclick="removeItem('X-EGG', 11), removeQuantidadeCoca350()">-</button> </article>
             </section>
 
             <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
-            <h2 class="nomeBebida">Coca Cola 500ML</h2>
+            <div id="linhaBotaoPro"></div>
+
+            <h2 class="nomeBebida">X-BURGUER</h2>
             <section id="coca350ML">
-             <p class="preço">R$ 5,00</p>
-            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Coca 550ML', 5.50), addQuantidadeCoca550()">+</button> <p id="quantidadeCoca550">0</p> <button class="remove" class="remove" onclick="removeItem('Coca 550ML', 5.50),removeQuantidadeCoca550()">-</button> </article>
+             <p class="preço">R$ 8,00</p>
+             <p class="descricaoProduto">Descrição X-BURGUER: Pão, maionese, hambúrguer, queijo, presunto, milho, cheddar, catupiry e batata palha</p>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-BURGUER', 8), addQuantidadeCoca550()">+</button> <p id="quantidadeCoca550">0</p> <button class="remove" class="remove" onclick="removeItem('X-BURGUER', 8),removeQuantidadeCoca550()">-</button> </article>
             </section>
 
             <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
-            <h2 class="nomeBebida">Coca Cola 2L</h2>
+            <div id="linhaBotaoPro"></div>
+
+            <h2 class="nomeBebida">X-SALADA</h2>
             <section id="coca350ML">
-             <p class="preço">R$ 12,00</p>
-            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Coca 2L', 10), addQuantidadeCoca2L()">+</button> <p id="quantidadeCoca2L">0</p> <button class="remove" class="remove" onclick="removeItem('Coca 2L', 10),removeQuantidadeCoca2L()">-</button> </article>
+             <p class="preço">R$ 11,00</p>
+             <p class="descricaoProduto">Descrição X-SALADA: Pão, maionese, hambúrguer, queijo, presunto, tomate, alface, milho, cheddar, caturipy e batata palha</p>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-SALADA', 11), addQuantidadeCoca2L()">+</button> <p id="quantidadeCoca2L">0</p> <button class="remove" class="remove" onclick="removeItem('X-SALADA', 11),removeQuantidadeCoca2L()">-</button> </article>
+
+            <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+            <div id="linhaBotaoPro"></div>
+
+            <h2 class="nomeBebida">X-BACON</h2>
+            <section id="coca350ML">
+             <p class="preço">R$ 14,00</p>
+             <p class="descricaoProduto">Descrição X-BACON: Pão, maionese, hambúrguer, queijo, presunto, bacon, tomate, alface, milho, cheddar, caturipy e batata palha</p>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-BACON', 14), addQuantidadeXbacon()">+</button> <p id="quantidadeXbacon">0</p> <button class="remove" class="remove" onclick="removeItem('X-BACON', 14),removeQuantidadeXbacon()">-</button> </article>
             </section>
+
+            <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+            <div id="linhaBotaoPro"></div>
+
+            <h2 class="nomeBebida">X-CALABRESA</h2>
+            <section id="coca350ML">
+             <p class="preço">R$ 14,00</p>
+             <p class="descricaoProduto">Descrição X-BACON: Pão, maionese, hambúrguer, queijo, presunto, calabresa, tomate, alface, milho, cheddar, caturipy e batata palha</p>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-CALABRESA', 14), addQuantidadeXcalabresa()">+</button> <p id="quantidadeXcalabresa">0</p> <button class="remove" class="remove" onclick="removeItem('X-CALABRESA', 14),removeQuantidadeXcalabresa()">-</button> </article>
+            </section>
+
+            <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+            <div id="linhaBotaoPro"></div>
+
+            <h2 class="nomeBebida">X-FRANGO</h2>
+            <section id="coca350ML">
+             <p class="preço">R$ 14,00</p>
+             <p class="descricaoProduto">Descrição X-BACON: Pão, maionese, hambúrguer, queijo, presunto, frango, tomate, alface, milho, cheddar, caturipy e batata palha</p>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-FRANGO', 14), addQuantidadeXcalabresa()">+</button> <p id="quantidadeXcalabresa">0</p> <button class="remove" class="remove" onclick="removeItem('X-FRANGO', 14),removeQuantidadeXcalabresa()">-</button> </article>
+            </section>
+
+            <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+            <div id="linhaBotaoPro"></div>
+
+            <h2 class="nomeBebida">X-TUDO</h2>
+            <section id="coca350ML">
+             <p class="preço">R$ 20,00</p>
+             <p class="descricaoProduto">Descrição X-BACON: Big Pão, hambúrguer, queijo, presunto, maionese, tomate, alface, bacon, calabresa, frango, milho, cheddar, catupiry e batata palha (Cortado ao meio) (Serve 2 pessoas)</p>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-FRANGO', 14), addQuantidadeXcalabresa()">+</button> <p id="quantidadeXcalabresa">0</p> <button class="remove" class="remove" onclick="removeItem('X-FRANGO', 14),removeQuantidadeXcalabresa()">-</button> </article>
+            </section>
+
 
         </article>
 
@@ -290,7 +342,10 @@
             
     </section>
 
+    
+
     <section id="botaoProximo">
+        <div id="linhaBotao"></div>
         <button id="btnProximoPagamento">PROXIMO</button>
     </section>
     
@@ -378,6 +433,16 @@
             
         </article>
     </section>
+
+    <section id="descricao">
+        <article id="containerDescricao">
+            <h2 id="tituloDescricao">Descição</h2>
+            <p id="todaDescrição">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus possimus voluptas odio officia? Doloremque sunt cupiditate voluptate beatae neque ut modi amet, nemo a velit aut laborum dolorum labore rerum!</p>
+
+            <button id="sairDescricao">Voltar</button>
+        </article>
+    </section>
+
     <div style="display: none;" id="mandar"></div>
     <footer>
         <section id="sectionFooter">
@@ -394,9 +459,9 @@
     <script src="scripts/sistema pedidos/sistema-paginas-pedidos.js"></script>
     <script src="scripts/sistema botao cor/botaoCor.js"></script>
     <script src="scripts/sistema scrool/sistema-Scrool.js"></script>
-    <script src="scripts/sistema data e hora/sistema-inatividade.js"></script>
     <script src="scripts/sistema data e hora/hora.js"></script>
     <script src="scripts/sistema sub informações/sistema-formasPagamento.js"></script>
+    <script src="scripts/sistema pedidos/sistema-enviar-pedidios.js"></script>
     <script src="scripts/sistema sub informações/sistema-horariosFuncionamento.js"></script>
     <script src="scripts/sistema sub informações/sistema-infoAdd.js"></script>
 </body>

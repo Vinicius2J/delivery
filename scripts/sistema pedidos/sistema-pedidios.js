@@ -51,25 +51,40 @@ let carrinho = {
     carrinho.precoTotal = 0;
     carrinho.totalItens = 0;
 
-     //COCA350ML
+     //XEGG
      let quantidadeCOCA350 = document.getElementById('quantidadeCoca350');
      let valorAtualCoca350 = parseInt(quantidadeCOCA350.textContent);
      let novoValor350 = valorAtualCoca350 = 0;
      quantidadeCOCA350.textContent = novoValor350;
 
-     //COCA550ML
+     //XBURGUER
 
      let quantidadeCOCA550 = document.getElementById('quantidadeCoca550');
-    let valorAtualCoca550 = parseInt(quantidadeCOCA550.textContent);
-    let novoValorCoca550 = valorAtualCoca550 = 0;
-    quantidadeCOCA550.textContent = novoValorCoca550;
+     let valorAtualCoca550 = parseInt(quantidadeCOCA550.textContent);
+     let novoValorCoca550 = valorAtualCoca550 = 0;
+     quantidadeCOCA550.textContent = novoValorCoca550;
 
-    //COCA 2L
+     //XSALADA
 
-    let quantidadeCOCA2L = document.getElementById('quantidadeCoca2L');
-    let valorAtualCoca2L = parseInt(quantidadeCOCA2L.textContent);
-    let novoValorCoca2L = valorAtualCoca2L = 0;
-    quantidadeCOCA2L.textContent = novoValorCoca2L;
+     let quantidadeCOCA2L = document.getElementById('quantidadeCoca2L');
+     let valorAtualCoca2L = parseInt(quantidadeCOCA2L.textContent);
+     let novoValorCoca2L = valorAtualCoca2L = 0;
+     quantidadeCOCA2L.textContent = novoValorCoca2L;
+
+     //XBACON
+
+     let quantidadeXBACON = document.getElementById('quantidadeXbacon');
+     let valorAtualXbacon = parseInt(quantidadeXBACON.textContent);
+     let novoValorXbacon = valorAtualXbacon = 0;
+     quantidadeXBACON.textContent = novoValorXbacon;
+
+     //XCALABRESA
+
+     let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
+     let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
+     let novoValorXcalabresa = valorAtualXcalabresa = 0;
+     quantidadeXCALABRESA.textContent = novoValorXcalabresa;
+
 
     renderizarCarrinho();
   };
@@ -250,6 +265,7 @@ function verificarCarrinho() {
     };
 
 //Função para adicionar quantidade escondida
+            
             //COCA 350ML
           
             function addQuantidadeCoca350() {
@@ -297,4 +313,35 @@ function verificarCarrinho() {
                 let novoValorCoca2L = valorAtualCoca2L - 1;
                 quantidadeCOCA2L.textContent = novoValorCoca2L;
               }
-          
+
+              //X BACON
+
+              function addQuantidadeXbacon() {
+                let quantidadeXBACON = document.getElementById('quantidadeXbacon');
+                let valorAtualXbacon = parseInt(quantidadeXBACON.textContent);
+                let novoValorXbacon = valorAtualXbacon + 1;
+                quantidadeXBACON.textContent = novoValorXbacon;
+              }
+
+              function removeQuantidadeXbacon() {
+                let quantidadeXBACON = document.getElementById('quantidadeXbacon');
+                let valorAtualXbacon = parseInt(quantidadeXBACON.textContent);
+                let novoValorXbacon = valorAtualXbacon - 1;
+                quantidadeXBACON.textContent = novoValorXbacon;
+              }
+
+              //X CALABRESA
+
+              function addQuantidadeXcalabresa() {
+                let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
+                let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
+                let novoValorXcalabresa = valorAtualXcalabresa + 1;
+                quantidadeXCALABRESA.textContent = novoValorXcalabresa;
+              }
+
+              function removeQuantidadeXcalabresa() {
+                let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
+                let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
+                let novoValorXcalabresa = valorAtualXcalabresa - 1;
+                quantidadeXCALABRESA.textContent = novoValorXcalabresa;
+              }

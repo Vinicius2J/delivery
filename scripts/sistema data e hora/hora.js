@@ -10,3 +10,8 @@ if (horaFechar > 18 || horaFechar < 00) {
     placaAbertoFechado.style.color = 'red';
     placaAbertoFechado.innerText = 'FECHADO';
 }
+
+if (horaFechar == 18 && horaFechar == 00) {
+    let paginaInatividade = document.getElementById('inatividade');
+    paginaInatividade.style.display = 'flex';
+}

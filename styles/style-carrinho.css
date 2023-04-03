@@ -1,6 +1,55 @@
 @charset "UTF-8";
 /*sistema pedidos*/
 
+section#descricao {
+    position: absolute;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+article#containerDescricao {
+    width: 400px;
+    height: 200px;
+
+    border-radius: 0;
+
+    background-color: rgba(0, 0, 0, 0.801);
+
+    color: rgb(255, 255, 255);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+article#containerDescricao > p {
+    padding: 15px;
+}
+
+article#containerDescricao > button {
+    width: 100px;
+    height: 30px;
+
+    background: none;
+    color: white;
+    
+    border: 1px solid white;
+    outline: none;
+}
+
 button.add {
     display: flex;
     align-items: center;
@@ -83,7 +132,16 @@ section#fazer-pedidos > article.bebidas {
     display: none;
 
     width: 100vw;
-    height: 40vh;
+
+    overflow-y: scroll;
+}
+
+p.descricaoProduto {
+    margin-left: 15px;
+    font-family: monospace;
+    font-size: 16pt;
+
+    max-width: 640px;
 }
 
 h2.nomeBebida {
@@ -104,7 +162,7 @@ article#btnsComprarCoca350ML {
 
     position: relative;
     left: 70%;
-    bottom: 35px;
+    bottom: 270px;
     
     width: 100px;
     height: 30px;
@@ -122,7 +180,7 @@ article#btnsComprarCoca350ML > p {
     font-family: monospace;
 }
 
-section#tituloCoca {
+section.tituloHamburger {
     display: flex;
     align-items: center;
 
@@ -135,10 +193,10 @@ section#tituloCoca {
 
 }
 
-section#tituloCoca > h2 {
+section.tituloHamburger > h2 {
     margin: 15px;
 }
-section#tituloCoca > button {
+section.tituloHamburger > button {
     margin-left: 15px;
 }
 
@@ -159,8 +217,6 @@ section#itensCarrinho {
 
     display: flex;
     flex-direction: column;
-
-    text-align: ce;
 
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -223,23 +279,42 @@ section#itensCarrinho > article#preçoEbotaoContinuar > button:hover {
     transition: 1s;
 }
 
+div#linhaBotao {
+    width: 80vw;
+    height: 1px;
+    background-color: black;
+    margin-top: 25px;
+
+    position: fixed;
+    bottom: 90px;
+    left: 0;
+}
+
+div#linhaBotaoPro {
+    width: 80vw;
+    height: 1px;
+    background-color: black;
+    margin-top: 25px;
+}
+
 section#botaoProximo {
     width: 10px;
     height: 10px;
 
-    background-color: rgb(255, 255, 255);
+    background: none;
 
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: relative;
+    bottom: 0px;
+    right: 172px;
 
-    width: 79vw;
-    height: 100px;
+    width: 85vw;
+    height: 250px;
+
 }
 
 button#btnProximoPagamento {
     position: fixed;
-    bottom: 40px;
+    bottom: 20px;
     left: 33%;
 
     width: 150px;
@@ -428,12 +503,12 @@ a#zap {
     section#botaoProximo {
         background: none;
 
-        position: fixed;
+        position: relative;
         bottom: 0;
         left: 0;
 
         width: 74vw;
-        height: 100px;
+        height: 200px;
     }
 
     article#btnsComprarCoca350ML {
@@ -481,7 +556,7 @@ a#zap {
         width: 50vw;
     }
 
-    section#tituloCoca > h2 {
+    section.tituloHamburger > h2 {
         font-size: 15pt;
     }
 
@@ -543,7 +618,7 @@ a#zap {
 
 @media (max-width: 488px) {
 
-    section#tituloCoca {
+    section.tituloHamburger {
         overflow: hidden;
     }
 
@@ -563,12 +638,12 @@ a#zap {
     section#botaoProximo {
         background: none;
 
-        position: fixed;
+        position: relative;
         bottom: 0;
         left: 0;
 
         width: 59vw;
-        height: 100px;
+        height: 200px;
     }
 
     article#btnsComprarCoca350ML {
@@ -616,7 +691,7 @@ a#zap {
         width: 50vw;
     }
 
-    section#tituloCoca > h2 {
+    section.tituloHamburger > h2 {
         font-size: 15pt;
     }
 
@@ -723,7 +798,7 @@ a#zap {
         top: 1px;
     }
 
-    section#tituloCoca > h1 {
+    section.tituloHamburger > h1 {
         font-size: 9pt;
     }
 
