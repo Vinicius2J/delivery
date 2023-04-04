@@ -309,7 +309,7 @@
             <section id="coca350ML">
              <p class="preço">R$ 14,00</p>
              <p class="descricaoProduto">Descrição X-BACON: Pão, maionese, hambúrguer, queijo, presunto, frango, tomate, alface, milho, cheddar, caturipy e batata palha</p>
-            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-FRANGO', 14), addQuantidadeXcalabresa()">+</button> <p id="quantidadeXcalabresa">0</p> <button class="remove" class="remove" onclick="removeItem('X-FRANGO', 14),removeQuantidadeXcalabresa()">-</button> </article>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-FRANGO', 14), addQuantidadeXfrango()">+</button> <p id="quantidadeXfrango">0</p> <button class="remove" class="remove" onclick="removeItem('X-FRANGO', 14),removeQuantidadeXfrango()">-</button> </article>
             </section>
 
             <!--/////////////////////////////////////////////////////////////////////////////////////-->
@@ -319,8 +319,19 @@
             <h2 class="nomeBebida">X-TUDO</h2>
             <section id="coca350ML">
              <p class="preço">R$ 20,00</p>
+             <p class="descricaoProduto">Descrição X-TUDO: Pão, hambúrguer, queijo, presunto, maionese, tomate, alface, bacon, calabresa, frango, milho, cheddar, caturipy e batata palha</p>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-TUDO', 20), addQuantidadeXtudo()">+</button> <p id="quantidadeXtudo">0</p> <button class="remove" class="remove" onclick="removeItem('X-TUDO', 20),removeQuantidadeXtudo()">-</button> </article>
+            </section>
+
+            <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+            <div id="linhaBotaoPro"></div>
+
+            <h2 class="nomeBebida">X-MONTE HERMOM</h2>
+            <section id="coca350ML">
+             <p class="preço">R$ 25,00</p>
              <p class="descricaoProduto">Descrição X-BACON: Big Pão, hambúrguer, queijo, presunto, maionese, tomate, alface, bacon, calabresa, frango, milho, cheddar, catupiry e batata palha (Cortado ao meio) (Serve 2 pessoas)</p>
-            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-FRANGO', 14), addQuantidadeXcalabresa()">+</button> <p id="quantidadeXcalabresa">0</p> <button class="remove" class="remove" onclick="removeItem('X-FRANGO', 14),removeQuantidadeXcalabresa()">-</button> </article>
+            <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-MONTE HERMOM', 25), addQuantidadeXmontehermom(), monstrarComplementos()">+</button> <p id="quantidadeXmontehermom">0</p> <button class="remove" class="remove" onclick="removeItem('X-MONTE HERMOM', 25),removeQuantidadeXmomtehermom()">-</button> </article>
             </section>
 
 
@@ -345,7 +356,6 @@
     
 
     <section id="botaoProximo">
-        <div id="linhaBotao"></div>
         <button id="btnProximoPagamento">PROXIMO</button>
     </section>
     
@@ -436,10 +446,34 @@
 
     <section id="descricao">
         <article id="containerDescricao">
-            <h2 id="tituloDescricao">Descição</h2>
-            <p id="todaDescrição">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus possimus voluptas odio officia? Doloremque sunt cupiditate voluptate beatae neque ut modi amet, nemo a velit aut laborum dolorum labore rerum!</p>
+            <h2 id="tituloDescricao">Complementos</h2>
+            <div id="todaDescrição">
+                    <form id="formComplemento">
+                        <label>
+                            <input type="radio" name="complemento" value="frango">
+                            Frango R$ 3,00
+                        </label>
+                        <label>
+                            <input type="radio" name="complemento" value="bacon">
+                            Bacon R$ 3,00
+                        </label>
+                        <label>
+                            <input type="radio" name="complemento" value="calabresa">
+                            Calabresa R$ 3,00
+                        </label>
+                        <label>
+                            <input type="radio" name="complemento" value="ovo">
+                            Ovo R$ 1,50
+                        </label>
 
-            <button id="sairDescricao">Voltar</button>
+                        <label>
+                            <input id="semComplemento" type="radio" name="complemento" value="0">
+                            Sem Complemento R$ 0,00
+                        </label>
+                    </form>
+            </div>
+
+            <button id="Confimar-Complemento">Comfirmar</button>
         </article>
     </section>
 

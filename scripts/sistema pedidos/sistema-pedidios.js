@@ -85,6 +85,27 @@ let carrinho = {
      let novoValorXcalabresa = valorAtualXcalabresa = 0;
      quantidadeXCALABRESA.textContent = novoValorXcalabresa;
 
+     //XFRANGO
+
+     let quantidadeXFRANGO = document.getElementById('quantidadeXfrango');
+     let valorAtualXfrango = parseInt(quantidadeXFRANGO.textContent);
+     let novoValorXfrango = valorAtualXfrango = 0;
+     quantidadeXFRANGO.textContent = novoValorXfrango;
+
+     //XTUDO
+
+     let quantidadeXtudo = document.getElementById('quantidadeXtudo');
+     let valorAtualXtudo = parseInt(quantidadeXtudo.textContent);
+     let novoValorXtudo = valorAtualXtudo = 0;
+     quantidadeXtudo.textContent = novoValorXtudo;
+
+     //XMONTEHERMOM
+
+     let quantidadeXmonthermom = document.getElementById('quantidadeXmontehermom');
+     let valorAtualXmontehermom = parseInt(quantidadeXmonthermom.textContent);
+     let novoValorXmontehermom = valorAtualXmontehermom = 0;
+     quantidadeXmonthermom.textContent = novoValorXmontehermom;
+
 
     renderizarCarrinho();
   };
@@ -116,6 +137,8 @@ btnVerificarCarrinho.addEventListener('click', verificarCarrinho);
 function sairErro() {
     document.getElementById('erroCarrinho').style.display = 'none';
 }
+
+//sair do erro do form
 
 function sairErroForm() {
     document.getElementById('erroFormIncompleto').style.display = 'none';
@@ -266,7 +289,7 @@ function verificarCarrinho() {
 
 //Função para adicionar quantidade escondida
             
-            //COCA 350ML
+            //X-EGG
           
             function addQuantidadeCoca350() {
                 let quantidadeCOCA350 = document.getElementById('quantidadeCoca350');
@@ -282,7 +305,7 @@ function verificarCarrinho() {
                 quantidadeCOCA350.textContent = novoValor350;
               }
             
-              //COCA550ML
+              //X-BURGUER
             
               function addQuantidadeCoca550() {
                 let quantidadeCOCA550 = document.getElementById('quantidadeCoca550');
@@ -298,7 +321,7 @@ function verificarCarrinho() {
                 quantidadeCOCA550.textContent = novoValorCoca550;
               }
             
-              //COCA 2L
+              //x-SALADA
             
               function addQuantidadeCoca2L() {
                 let quantidadeCOCA2L = document.getElementById('quantidadeCoca2L');
@@ -314,7 +337,7 @@ function verificarCarrinho() {
                 quantidadeCOCA2L.textContent = novoValorCoca2L;
               }
 
-              //X BACON
+              //X-BACON
 
               function addQuantidadeXbacon() {
                 let quantidadeXBACON = document.getElementById('quantidadeXbacon');
@@ -345,3 +368,50 @@ function verificarCarrinho() {
                 let novoValorXcalabresa = valorAtualXcalabresa - 1;
                 quantidadeXCALABRESA.textContent = novoValorXcalabresa;
               }
+
+              //X-FRANGO
+
+              function addQuantidadeXfrango() {
+                let quantidadeXFRANGO = document.getElementById('quantidadeXfrango');
+                let valorAtualXfrango = parseInt(quantidadeXFRANGO.textContent);
+                let novoValorXfrango = valorAtualXfrango + 1;
+                quantidadeXFRANGO.textContent = novoValorXfrango;
+              }
+
+              function removeQuantidadeXfrango() {
+                let quantidadeXFRANGO = document.getElementById('quantidadeXfrango');
+                let valorAtualXfrango = parseInt(quantidadeXFRANGO.textContent);
+                let novoValorXfrango = valorAtualXfrango - 1;
+                quantidadeXFRANGO.textContent = novoValorXfrango;
+              }
+
+
+             //X-TUDO
+
+             function addQuantidadeXtudo() {
+              let quantidadeXtudo = document.getElementById('quantidadeXtudo');
+              let valorAtualXtudo = parseInt(quantidadeXtudo.textContent);
+              let novoValorXtudo = valorAtualXtudo + 1;
+              quantidadeXtudo.textContent = novoValorXtudo;
+            }
+
+            function removeQuantidadeXtudo() {
+              let quantidadeXtudo = document.getElementById('quantidadeXtudo');
+              let valorAtualXtudo = parseInt(quantidadeXtudo.textContent);
+              let novoValorXtudo = valorAtualXtudo - 1;
+              quantidadeXtudo.textContent = novoValorXtudo;
+            }
+            
+            function addQuantidadeXmontehermom() {
+              let quantidadeXmonthermom = document.getElementById('quantidadeXmontehermom');
+              let valorAtualXmontehermom = parseInt(quantidadeXmonthermom.textContent);
+              let novoValorXmontehermom = valorAtualXmontehermom + 1;
+              quantidadeXmonthermom.textContent = novoValorXmontehermom;
+            }
+
+            function removeQuantidadeXmomtehermom() {
+              let quantidadeXmonthermom = document.getElementById('quantidadeXmontehermom');
+              let valorAtualXmontehermom = parseInt(quantidadeXmonthermom.textContent);
+              let novoValorXmontehermom = valorAtualXmontehermom - 1;
+              quantidadeXmonthermom.textContent = novoValorXmontehermom;
+           }

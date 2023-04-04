@@ -16,13 +16,31 @@ section#descricao {
     background-color: rgba(0, 0, 0, 0.37);
 }
 
+form#formComplemento {
+    background-color: black;
+    color: white;
+
+    height: 160px;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+label.nomeComplemento {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+input[type="radio"] {
+    margin-left: 20px;
+  }
+
 article#containerDescricao {
     width: 400px;
     height: 200px;
 
     border-radius: 0;
-
-    background-color: rgba(0, 0, 0, 0.801);
 
     color: rgb(255, 255, 255);
 
@@ -87,7 +105,9 @@ section#fazer-pedidos > div#linha {
     width: 100vw;
     height: 1px;
     background-color: black;
-    margin-top: 25px;
+    margin-top: 140px;
+
+    position: fixed;
 }
 
 section#fazer-pedidos {
@@ -162,7 +182,7 @@ article#btnsComprarCoca350ML {
 
     position: relative;
     left: 70%;
-    bottom: 270px;
+    bottom: 90px;
     
     width: 100px;
     height: 30px;
@@ -286,7 +306,7 @@ div#linhaBotao {
     margin-top: 25px;
 
     position: fixed;
-    bottom: 90px;
+    bottom: 70px;
     left: 0;
 }
 
@@ -308,13 +328,15 @@ section#botaoProximo {
     right: 172px;
 
     width: 85vw;
-    height: 250px;
+    height: 300px;
+
+    border-top: 1px solid black;
 
 }
 
 button#btnProximoPagamento {
     position: fixed;
-    bottom: 20px;
+    bottom: 10px;
     left: 33%;
 
     width: 150px;
@@ -491,6 +513,11 @@ a#zap {
 
 @media (max-width: 1000px) {
 
+    div#linhaBotao{
+        position: fixed;
+        bottom: 50px;
+    }
+
     section#itensCarrinho {
         width: 200px;
         display: flex;
@@ -505,24 +532,42 @@ a#zap {
 
         position: relative;
         bottom: 0;
-        left: 0;
+        left: -125px;
 
-        width: 74vw;
+        width: 83vw;
         height: 200px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-content: center;
+        justify-content: center;
+
+        border-top: 1px solid black;
     }
 
     article#btnsComprarCoca350ML {
-        left: 33%;
-        width: 300px;
+        left: 60%;
+        top: -70px;
+        width: 150px;
 
         overflow: hidden;
+        height: 60px;
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
     }
+
+   
 
     article#btnsComprarCoca350ML > button {
         position: relative;
         top: 9px;
 
-        font-size: 12pt;
+        font-size: 16pt;
         height: 30px;
     }
 
@@ -535,15 +580,15 @@ a#zap {
     }
 
     article#btnsComprarCoca350ML > button.remove {
-        font-size: 13pt;
+        font-size: 16pt;
         position: relative;
-        top: 13px;
+        top: 12px;
     }
 
     article#btnsComprarCoca350ML > p {
         position: relative;
         top: 9px;
-        font-size: 12pt;
+        font-size: 16pt;
     }
 
     section#fazer-pedidos {
@@ -591,7 +636,6 @@ a#zap {
         font-size: 10pt;
 
         position: fixed;
-        left: 17%;
     }
     section#erroCarrinho > main {
         width: 400px;
@@ -613,6 +657,28 @@ a#zap {
         display: none;
     }
 
+}
+
+@media (max-width: 800px) {
+    section#botaoProximo {
+        background: none;
+
+        position: relative;
+        bottom: 0;
+        left: -100px;
+
+        width: 74vw;
+        height: 200px;
+
+
+        display: flex;
+        flex-direction: column;
+
+        align-content: center;
+        justify-content: center;
+
+        border-top: 1px solid black;
+    }
 }
 
 
