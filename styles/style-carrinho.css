@@ -673,6 +673,10 @@ a#zap {
         width: 290px;
     }
 
+    p.preço {
+        font-size: 7pt;
+    }
+
     
 }
 
@@ -706,6 +710,8 @@ a#zap {
 
         width: 100vw;
         height: 60px;
+
+        border-top: 1px solid black;
     }
 
     article#btnsComprarCoca350ML {
@@ -763,7 +769,7 @@ a#zap {
     }
 
     p.preço {
-        font-size: 10pt;
+        font-size: 7pt;
     }
 
     section#itensCarrinho {
@@ -899,6 +905,9 @@ a#zap {
     section#fazer-pedidos > h2 {
         position: relative;
         width: 35vw;
+        height: 70px;
+
+        overflow: hidden;
     }
 
     section#formFinal > form {
@@ -915,8 +924,71 @@ a#zap {
 
     }
 
+    section.tituloHamburger {
+        height: 60px;
+        border-bottom: none;
+    }
+
     p.descricaoProduto {
         width: 150px;
         font-size: 9pt;
+    }
+
+    /*Descrição*/
+
+
+    section#descricao {
+        position: absolute;
+    
+        width: 100vw;
+        height: 100vh;
+    
+        display: none;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: center;
+    
+        background-color: rgba(0, 0, 0, 0.37);
+    }
+    
+    input[type="radio"] {
+        margin: 5px;
+      }
+    
+    article#containerDescricao {
+        width: 400px;
+        height: 400px;
+    
+        border-radius: 0;
+    
+        color: rgb(255, 255, 255);
+    
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: center;
+    
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    form#formComplemento {
+        height: 150px;
+    }
+    
+    article#containerDescricao > p {
+        padding: 15px;
+    }
+    
+    article#containerDescricao > button {
+        width: 100px;
+        height: 30px;
+    
+        background: none;
+        color: white;
+        
+        border: 1px solid white;
+        outline: none;
     }
 }
