@@ -3,53 +3,56 @@ let carrinho = {
     itens: [],
     precoTotal: 0
   };
+
+// objeto preço Complementos
+const complementoPreco = {
+   "COM FRANGO": 3.00,
+   "COM BACON": 3.00,
+   "COM CALABRESA": 3.00,
+   "COM OVO": 1.50,
+   "Sem Complemento": 0.00
+ };
+  
   
   // função para adicionar item ao carrinho
   
-  function addItem(nome, preco) {
-    const itemIndex = carrinho.itens.findIndex(item => item.nome === nome);
+  function addItem(nome, preco, complemento) {
+    complemento = ""
+
+    const itemIndex = carrinho.itens.findIndex(item => item.nome === nome && item.complemento === complemento);
     if (itemIndex !== -1) {
       carrinho.itens[itemIndex].quantidade += 1;
     } else {
-      carrinho.itens.push({ nome, preco, quantidade: 1 });
+      carrinho.itens.push({ nome, preco, quantidade: 1, complemento });
     }
     carrinho.precoTotal += preco;
     renderizarCarrinho();
   }
   
   // função para remover item do carrinho
+
+  function removeItem(nome, preco, complemento, itemIndex) {
+    const complementoSelecionado = document.querySelector('input[name="complemento"]:checked').value;
   
-  function removeItem(nome, preco) {
-    const itemIndex = carrinho.itens.findIndex(item => item.nome === nome);
-    let totalItens = carrinho.itens[itemIndex].quantidade;
-  
-    if (totalItens > 1) {
-  
-      if (itemIndex !== -1) {
-        carrinho.itens[itemIndex].quantidade -= 1;
-      } else {
-        carrinho.itens.push({ nome, preco, quantidade: 1 });
-      }
+    // verifica se a quantidade do item é maior que 0
+    if (carrinho.itens[itemIndex].quantidade > 0) {
+      let itensDoMeuCarrinho = carrinho.itens.splice(itemIndex, 1); // remove o item do array "itens" pelo índice
+    
       carrinho.precoTotal -= preco;
+    
+      carrinho.precoTotal -= parseFloat(complementoPreco[complementoSelecionado]);
+    
       renderizarCarrinho();
-  
-    }else {
-      const index = carrinho.itens.findIndex(item => item.nome === nome);
-      if (index !== -1 && carrinho.itens[index].preco === preco) {
-        carrinho.itens.splice(index, 1);
-        carrinho.precoTotal -= preco;
-        renderizarCarrinho();
-      } else {
-        console.log(`O item ${nome} não foi encontrado no carrinho.`);
-      };
     }
   }
+  
+  
+  
   
   // função para limpar o carrinho
   function limparCarrinho() {
     carrinho.itens = [];
     carrinho.precoTotal = 0;
-    carrinho.totalItens = 0;
 
      //XEGG
      let quantidadeCOCA350 = document.getElementById('quantidadeCoca350');
@@ -78,7 +81,7 @@ let carrinho = {
      let novoValorXbacon = valorAtualXbacon = 0;
      quantidadeXBACON.textContent = novoValorXbacon;
 
-     //XCALABRESA
+     //XCALAB RESA
 
      let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
      let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
@@ -109,26 +112,44 @@ let carrinho = {
 
     renderizarCarrinho();
   };
+
+  function adicionarComplemento() {
+    const complementoSelecionado = document.querySelector('input[name="complemento"]:checked').value;
+    
+    if (complementoSelecionado !== "0") {
+      const itemIndex = carrinho.itens.length - 1;
+      carrinho.itens[itemIndex].nome += " - " + complementoSelecionado;
+      carrinho.itens[itemIndex].preco +=  parseFloat(complementoPreco[complementoSelecionado]);
+      carrinho.precoTotal += parseFloat(complementoPreco[complementoSelecionado]);
+      renderizarCarrinho();
+    };
+  };
+  
   
 
   var itensDoMeuCarrinho;
+
   function renderizarCarrinho() {
     const itensCarrinho = document.querySelector('#itens-carrinho');
     const precoTotal = document.querySelector('#preco-total');
     const produtos = document.querySelector('#produtos');
-
+  
     itensCarrinho.innerHTML = '';
-    
-    
-    //registra se um item foi adicionado ao carrinho
+  
+    // verifica se tem algum complemento selecionado
+    const temComplemento = carrinho.itens.some(item => item.complemento !== "");
+  
+    // renderiza os itens do carrinho
     carrinho.itens.forEach(item => {
       const li = document.createElement('li');
-      li.textContent = ` ${item.quantidade+'°'} - 🛒 ${item.nome}`;
+      li.textContent = ` ${item.quantidade+'°'} - 🛒 ${item.nome} ${item.complemento}`;
       itensCarrinho.appendChild(li);
     });
+  
     precoTotal.textContent = `Preço total: R$ ${carrinho.precoTotal.toFixed(2).replace('.',(','))}`;
+  }
+  
 
-};
 //pegar a variavel do botao e cria o evento de click
 let btnVerificarCarrinho = document.getElementById('btnProximoPagamento');
 btnVerificarCarrinho.addEventListener('click', verificarCarrinho);

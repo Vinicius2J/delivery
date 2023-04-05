@@ -209,7 +209,7 @@ section.tituloHamburger {
     font: bold 13pt monospace;
 
     width: 100vw;
-    height: 30px;
+    height: 300px;
 
 }
 
@@ -254,7 +254,7 @@ section#itensCarrinho > article#listaProdutos {
 }
 
 section#itensCarrinho > article#listaProdutos > ol > li {
-    font-size: 14pt;
+    font-size: 10pt;
     display: flex;
 }
 
@@ -318,17 +318,15 @@ div#linhaBotaoPro {
 }
 
 section#botaoProximo {
-    width: 10px;
-    height: 10px;
+    display: flex;
+    align-items: center;
 
-    background: none;
+    margin: 15px;
 
-    position: relative;
-    bottom: 0px;
-    right: 172px;
+    font: bold 13pt monospace;
 
-    width: 85vw;
-    height: 300px;
+    width: 100vw;
+    height: 250px;
 
     border-top: 1px solid black;
 
@@ -336,7 +334,7 @@ section#botaoProximo {
 
 button#btnProximoPagamento {
     position: fixed;
-    bottom: 10px;
+    bottom: 5px;
     left: 33%;
 
     width: 150px;
@@ -528,27 +526,20 @@ a#zap {
     }
 
     section#botaoProximo {
-        background: none;
-
-        position: relative;
-        bottom: 0;
-        left: -125px;
-
-        width: 83vw;
-        height: 200px;
-
         display: flex;
-        flex-direction: column;
+        align-items: center;
 
-        align-content: center;
-        justify-content: center;
+        margin: 15px;
 
-        border-top: 1px solid black;
+        font: bold 13pt monospace;
+
+        width: 100vw;
+        height: 150px;
     }
 
     article#btnsComprarCoca350ML {
-        left: 60%;
-        top: -70px;
+        left: 30%;
+        top: 0px;
         width: 150px;
 
         overflow: hidden;
@@ -645,7 +636,7 @@ a#zap {
     }
 
     section#itensCarrinho > article#listaProdutos > ol > li {
-        font-size: 10pt;
+        font-size: 8pt;
         padding-top: 15px;
     }
 
@@ -657,28 +648,32 @@ a#zap {
         display: none;
     }
 
+    p.descricaoProduto {
+        font-size: 12pt;
+        width: 600px;
+    }
+
 }
 
 @media (max-width: 800px) {
     section#botaoProximo {
-        background: none;
-
-        position: relative;
-        bottom: 0;
-        left: -100px;
-
-        width: 74vw;
-        height: 200px;
-
-
         display: flex;
-        flex-direction: column;
+        align-items: center;
 
-        align-content: center;
-        justify-content: center;
+        margin: 15px;
 
-        border-top: 1px solid black;
+        font: bold 13pt monospace;
+
+        width: 100vw;
+        height: 150px;
     }
+
+    p.descricaoProduto {
+        font-size: 12pt;
+        width: 290px;
+    }
+
+    
 }
 
 
@@ -702,18 +697,19 @@ a#zap {
     }
 
     section#botaoProximo {
-        background: none;
+        display: flex;
+        align-items: center;
 
-        position: relative;
-        bottom: 0;
-        left: 0;
+        margin: 15px;
 
-        width: 59vw;
-        height: 200px;
+        font: bold 13pt monospace;
+
+        width: 100vw;
+        height: 60px;
     }
 
     article#btnsComprarCoca350ML {
-        left: 33%;
+        left: 5%;
         width: 300px;
 
         overflow: hidden;
@@ -755,6 +751,7 @@ a#zap {
         font-size: 14pt;
         position: relative;
         width: 50vw;
+        height: 35px;
     }
 
     section.tituloHamburger > h2 {
@@ -797,11 +794,12 @@ a#zap {
     button#btnProximoPagamento {
         padding: 0;
         width: 100px;
-        height: 30px;
+        height: 20px;
         font-size: 10pt;
 
         position: fixed;
-        left: 17%;
+        left: 25%;
+        bottom: 3px;
     }
     section#erroCarrinho > main {
         width: 400px;
@@ -814,8 +812,19 @@ a#zap {
         width: 300px;
     }
 
-    section#itensCarrinho > article#listaProdutos > ol > li {
+    section.tituloHamburger {
+        background-color: white;
+        border-bottom: 1px solid black;
+        position: relative;
+        height: 50px;
+    }
+
+    section.tituloHamburger > h2 {
         font-size: 10pt;
+    }
+
+    section#itensCarrinho > article#listaProdutos > ol > li {
+        font-size: 6pt;
         padding-top: 15px;
     }
 
@@ -831,6 +840,11 @@ a#zap {
 
     section#formFinal > img {
         display: none;
+    }
+
+    p.descricaoProduto {
+        width: 200px;
+        font-size: 10pt;
     }
 
 }
@@ -851,6 +865,7 @@ a#zap {
     article#btnsComprarCoca350ML {
         position: relative;
         top: -30px;
+        left: 20%;
     }
 
     button#btnCoca {
@@ -874,7 +889,7 @@ a#zap {
     }
 
     article#btnsComprarCoca350ML {
-        left: 0%;
+        left: -20%;
         top: -5px;
         width: 300px;
 
@@ -898,5 +913,10 @@ a#zap {
 
         margin-top: 100px;
 
+    }
+
+    p.descricaoProduto {
+        width: 150px;
+        font-size: 9pt;
     }
 }
