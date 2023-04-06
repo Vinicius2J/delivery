@@ -1,8 +1,17 @@
 @charset "UTF-8";
 /*sistema pedidos*/
 
+section#divLinha {
+    width: 100vw;
+    height: 100px;
+
+    position: relative;
+}
+
 article#article-Hamburgeurs {
     margin-top: 75px;
+
+    background-color: white;
 }
 
 article#todasBebidas {
@@ -10,6 +19,26 @@ article#todasBebidas {
     padding: 0;
 
     width: 100vw;
+}
+
+section#tituloHamburguer > header {
+    border-radius: 0;
+    box-shadow: none;
+
+    margin-bottom: 50px;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: top;
+
+    width: 80vw;
+    height: 30px;
+    text-align: center;
+
+    border-bottom: 1px solid black;
 }
 
 article#todasBebidas > header {
@@ -176,11 +205,14 @@ section#fazer-pedidos {
 
 }
 
+
+
 h1#nomePedido {
     text-align: center;
     font: bold 2.5em monospace;
 
     background-color: red;
+    background-attachment: fixed;
     color: white;
 
     padding: 15px;
@@ -189,6 +221,8 @@ h1#nomePedido {
     position: fixed;
 
     cursor: pointer;
+
+    z-index: 9999;
 }
 
 section#fazer-pedidos > h2 {
@@ -356,16 +390,7 @@ section#itensCarrinho > article#preçoEbotaoContinuar > button:hover {
     transition: 1s;
 }
 
-div#linhaBotao {
-    width: 80vw;
-    height: 1px;
-    background-color: black;
-    margin-top: 25px;
 
-    position: fixed;
-    bottom: 70px;
-    left: 0;
-}
 
 div#linhaBotaoPro {
     width: 80vw;
@@ -376,28 +401,33 @@ div#linhaBotaoPro {
 
 section#botaoProximo {
     display: flex;
-    align-items: center;    
+    align-items: center;
+    justify-content: center;  
 
     font: bold 13pt monospace;
 
-    width: 100vw;
-    height: 250px;
+    width: 78.6vw;
+    height: 50px;
 
-    border-top: 1px solid black;
+
+    background: none;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
 
 }
 
 button#btnProximoPagamento {
-    position: fixed;
-    bottom: 5px;
-    left: 33%;
 
     width: 150px;
-    height: 50px;
+    height: 30px;
 
-    background: none;
+    background-color: white;
 
     font: bold 16pt Arial, Helvetica, sans-serif;
+
+    margin-top: 5px;
 }
 
 button#btnProximoPagamento:hover {
@@ -586,8 +616,16 @@ a#zap {
 
         font: bold 13pt monospace;
 
-        width: 100vw;
-        height: 150px;
+        width: 76.7vw;
+        height: 40px;
+
+        position: fixed;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        background: none;
     }
 
     article#btnsComprarCoca350ML {
@@ -679,14 +717,29 @@ a#zap {
 
         padding: 15;
     }
+
     button#btnProximoPagamento {
-        padding: 0;
+        position: relative;
+        bottom: 5px;
+    
         width: 100px;
         height: 30px;
-        font-size: 10pt;
-
-        position: fixed;
+    
+        background-color: white;
+    
+        font: bold 10pt Arial, Helvetica, sans-serif;
+    
+        margin-top: 10px;
     }
+    
+    button#btnProximoPagamento:hover {
+        background-color: red;
+        color: white;
+    
+        transition: 1s;
+        border: 3px solid black;
+    }
+
     section#erroCarrinho > main {
         width: 400px;
     }
@@ -723,8 +776,15 @@ a#zap {
 
         font: bold 13pt monospace;
 
-        width: 100vw;
-        height: 150px;
+        width: 71.4vw;
+        height: 30px;
+
+        position: fixed;
+        background-color: white;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
     }
 
     p.descricaoProduto {
@@ -758,18 +818,6 @@ a#zap {
 
         border-left: 2px solid black;
         
-    }
-
-    section#botaoProximo {
-        display: flex;
-        align-items: center;
-
-        font: bold 13pt monospace;
-
-        width: 100vw;
-        height: 60px;
-
-        border-top: 1px solid black;
     }
 
     article#btnsComprarCoca350ML {
@@ -856,16 +904,41 @@ a#zap {
 
         padding: 0;
     }
-    button#btnProximoPagamento {
-        padding: 0;
-        width: 100px;
-        height: 20px;
-        font-size: 10pt;
+
+    section#botaoProximo {
+        display: flex;
+        align-items: center;    
+    
+        font: bold 13pt monospace;
+    
+        width: 65vw;
+        height: 50px;
+    
+        position: fixed;
+    
+        background: none;
+        position: fixed;
 
         position: fixed;
-        left: 25%;
-        bottom: 3px;
+        bottom: 0;
+        left: 0;
+    
     }
+    
+    button#btnProximoPagamento {
+        position: relative;
+        bottom: 5px;
+
+        background-color: rgb(255, 255, 255);
+    
+        width: 100px;
+        height: 30px;
+    
+        font: bold 10pt Arial, Helvetica, sans-serif;
+    
+        margin-top: 15px;
+    }
+
     section#erroCarrinho > main {
         width: 400px;
     }
@@ -928,16 +1001,23 @@ a#zap {
     }
 
     h2#tituloBebidas {
-        position: relative;
-        right: 0px;
-        height: 10px;
+        color: black;
+        margin-top: 90px;
+        padding-bottom: 15px;
+    
+        width: 30vw;
+    
+        font: bold 1em Arial, Helvetica, sans-serif;
+    }
+    
+    h2#tituloHamburguer {
+        color: black;
 
-        width: 63vw;
-
-        text-align: center;
-
-        border-bottom: 1px solid black;
-
+        padding-bottom: 15px;
+    
+        width: 30vw;
+    
+        font: bold 1em Arial, Helvetica, sans-serif;
     }
 
     article#btnsComprarCoca350ML {
@@ -961,11 +1041,6 @@ a#zap {
         font-size: 9pt;
     }
 
-    button#btnProximoPagamento {
-        position: relative;
-        left: 60px;
-        top: 0px;
-    }
 
     article#btnsComprarCoca350ML {
         left: -20%;
@@ -1056,4 +1131,53 @@ a#zap {
         border: 1px solid white;
         outline: none;
     }
+
+    section#botaoProximo {
+        display: flex;
+        align-items: center;    
+    
+        font: bold 13pt monospace;
+    
+        width: 60vw;
+        height: 60px;
+    
+        position: fixed;
+    
+        background: none;
+        position: fixed;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+    
+    }
+    
+    button#btnProximoPagamento {
+        position: relative;
+        bottom: 5px;
+        
+        background-color: white;
+    
+        width: 100px;
+        height: 30px;
+    
+        font: bold 10pt Arial, Helvetica, sans-serif;
+    
+        margin-top: 15px;
+    }
+
+    section#tituloHamburguer > header {
+        height: 35px;
+        width: 65vw;
+
+    }
+
+    article#todasBebidas > header {
+        width: 80vw;
+
+        background-attachment: red
+        ;
+    }
+
 }
