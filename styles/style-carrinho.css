@@ -1,6 +1,53 @@
 @charset "UTF-8";
 /*sistema pedidos*/
 
+article#todasBebidas {
+    margin: 0;
+    padding: 0;
+
+    width: 100vw;
+}
+
+article#todasBebidas > header {
+    border-radius: 0;
+    box-shadow: none;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: end;
+
+    
+
+    width: 80vw;
+    height: 100px;
+    text-align: center;
+
+}
+
+div#linhaBebidas {
+    width: 100vw;
+    height: 1px;
+    background-color: black;
+    margin-top: 125px;
+
+    position: fixed;
+}
+
+h2#tituloBebidas {
+    color: black;
+    margin-top: 90px;
+    padding-bottom: 15px;
+
+    width: 30vw;
+
+    font: bold 1.5em Arial, Helvetica, sans-serif;
+}
+
 section#descricao {
     position: absolute;
 
@@ -105,7 +152,7 @@ section#fazer-pedidos > div#linha {
     width: 100vw;
     height: 1px;
     background-color: black;
-    margin-top: 140px;
+    margin-top: 125px;
 
     position: fixed;
 }
@@ -140,7 +187,8 @@ h1#nomePedido {
 
 section#fazer-pedidos > h2 {
     color: black;
-    margin-top: 100px;
+    margin-top: 90px;
+    padding-bottom: 15px;
 
     width: 30vw;
 
@@ -210,6 +258,8 @@ section.tituloHamburger {
 
     width: 100vw;
     height: 300px;
+
+    border-bottom: 0px;
 
 }
 
@@ -319,9 +369,7 @@ div#linhaBotaoPro {
 
 section#botaoProximo {
     display: flex;
-    align-items: center;
-
-    margin: 15px;
+    align-items: center;    
 
     font: bold 13pt monospace;
 
@@ -529,8 +577,6 @@ a#zap {
         display: flex;
         align-items: center;
 
-        margin: 15px;
-
         font: bold 13pt monospace;
 
         width: 100vw;
@@ -587,6 +633,12 @@ a#zap {
     }
 
     section#fazer-pedidos > h2 {
+        font-size: 14pt;
+        position: relative;
+        width: 50vw;
+    }
+
+    h2#tituloBebidas {
         font-size: 14pt;
         position: relative;
         width: 50vw;
@@ -660,7 +712,6 @@ a#zap {
         display: flex;
         align-items: center;
 
-        margin: 15px;
 
         font: bold 13pt monospace;
 
@@ -685,6 +736,7 @@ a#zap {
 
     section.tituloHamburger {
         overflow: hidden;
+        border-bottom: none;
     }
 
     section#itensCarrinho {
@@ -703,8 +755,6 @@ a#zap {
     section#botaoProximo {
         display: flex;
         align-items: center;
-
-        margin: 15px;
 
         font: bold 13pt monospace;
 
@@ -754,14 +804,15 @@ a#zap {
     }
 
     section#fazer-pedidos > h2 {
-        font-size: 14pt;
         position: relative;
-        width: 50vw;
-        height: 35px;
+        right: 40px;
+        height: 100px;
     }
 
-    section.tituloHamburger > h2 {
-        font-size: 15pt;
+    h2#tituloBebidas {
+        position: relative;
+        right: 40px;
+        height: 100px;
     }
 
     h2.nomeBebida {
@@ -820,7 +871,6 @@ a#zap {
 
     section.tituloHamburger {
         background-color: white;
-        border-bottom: 1px solid black;
         position: relative;
         height: 50px;
     }
@@ -866,6 +916,20 @@ a#zap {
     section#fazer-pedidos > h2 {
         position: relative;
         right: 55px;
+        height: 100px;
+    }
+
+    h2#tituloBebidas {
+        position: relative;
+        right: 0px;
+        height: 10px;
+
+        width: 63vw;
+
+        text-align: center;
+
+        border-bottom: 1px solid black;
+
     }
 
     article#btnsComprarCoca350ML {
@@ -890,22 +954,15 @@ a#zap {
     }
 
     button#btnProximoPagamento {
-        position: fixed;
-        left: 30px;
+        position: relative;
+        left: 60px;
+        top: 0px;
     }
 
     article#btnsComprarCoca350ML {
         left: -20%;
         top: -5px;
         width: 300px;
-
-        overflow: hidden;
-    }
-
-    section#fazer-pedidos > h2 {
-        position: relative;
-        width: 35vw;
-        height: 70px;
 
         overflow: hidden;
     }

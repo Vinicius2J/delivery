@@ -1,20 +1,3 @@
-//Mostra as pagians das bebidas
-let botaoCoca = document.getElementById('btnCoca');
-
-botaoCoca.addEventListener('click', () => {
-    document.getElementById('cocas').style.display = 'block';
-    document.getElementById('removePageCoca').style.display = 'flex';
-
-    let btnRemovCoca = document.getElementById('removePageCoca');
-
-    btnRemovCoca.addEventListener('click', () => {
-        document.getElementById('cocas').style.display = 'none';
-        document.getElementById('removePageCoca').style.display = 'none';
-    })
-})
-
-//PEDIDIOS ABAIXO
-
 //HAMBURGUER 1
 let btn = document.getElementById('hamburguer1');
 btn.addEventListener('click', () => {

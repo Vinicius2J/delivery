@@ -113,6 +113,21 @@ const complementoPreco = {
     renderizarCarrinho();
   };
 
+  //mostra a pagina de complementos
+
+  function monstrarComplementos() {
+    document.getElementById('descricao').style.display = 'flex';
+};
+
+  //sair da pagina de complementos
+
+function sairComplemento() {
+    document.getElementById('descricao').style.display = 'none';
+};
+
+
+  //esta função adiciona o complemento ao seu carrinho
+
   function adicionarComplemento() {
     const complementoSelecionado = document.querySelector('input[name="complemento"]:checked').value;
     
