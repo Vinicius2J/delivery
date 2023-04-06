@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /*sistema pedidos*/
 
+article#article-Hamburgeurs {
+    margin-top: 75px;
+}
+
 article#todasBebidas {
     margin: 0;
     padding: 0;
@@ -12,20 +16,22 @@ article#todasBebidas > header {
     border-radius: 0;
     box-shadow: none;
 
-    margin: 0;
+    margin-bottom: 50px;
     padding: 0;
 
     display: flex;
     flex-direction: column;
 
     align-items: center;
-    justify-content: end;
+    justify-content: top;
 
     
 
     width: 80vw;
-    height: 100px;
+    height: 130px;
     text-align: center;
+
+    border-bottom: 1px solid black;
 
 }
 
@@ -202,6 +208,7 @@ section#fazer-pedidos > article.bebidas {
     width: 100vw;
 
     overflow-y: scroll;
+    overflow-x: hidden  ;
 }
 
 p.descricaoProduto {
@@ -304,7 +311,7 @@ section#itensCarrinho > article#listaProdutos {
 }
 
 section#itensCarrinho > article#listaProdutos > ol > li {
-    font-size: 10pt;
+    font-size: 8pt;
     display: flex;
 }
 
@@ -688,8 +695,9 @@ a#zap {
     }
 
     section#itensCarrinho > article#listaProdutos > ol > li {
-        font-size: 8pt;
+        font-size:  8pt;
         padding-top: 15px;
+        width: 170px;
     }
 
     section#formFinal > form {
