@@ -257,6 +257,7 @@
                      <p class="preço">R$ 11,00</p>
                      <p class="descricaoProduto">Descição X-EGG: Pão, maionese, hambúrguer, queijo, presunto, ovo, tomate, alface, milho, cheddar, catupiry e batata palha</p>
                     <article id="btnsComprarCoca350ML"> <button onclick="addItem('X-EGG', 11), addQuantidadeCoca350(),monstrarComplementos()" class="add">+</button> <p id="quantidadeCoca350">0</p> <button id="removeQuanCOCA350" class="remove" onclick="removeItem('X-EGG', 11), removeQuantidadeCoca350()">-</button> </article>
+                    <button class="tela-remover-complementoo" id="removXEGG">REMOVER COMPLEMENTO</button>
                     </section>
         
                     <!--/////////////////////////////////////////////////////////////////////////////////////-->
@@ -267,7 +268,8 @@
                     <section id="coca350ML">
                      <p class="preço">R$ 8,00</p>
                      <p class="descricaoProduto">Descrição X-BURGUER: Pão, maionese, hambúrguer, queijo, presunto, milho, cheddar, catupiry e batata palha</p>
-                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-BURGUER', 8), addQuantidadeCoca550(),monstrarComplementos()">+</button> <p id="quantidadeCoca550">0</p> <button class="remove" class="remove" onclick="removeItem('X-BURGUER', 8),removeQuantidadeCoca550()">-</button> </article>
+                    <article id="btnsComprarCoca350ML">  <button class="add" onclick="addItem('X-BURGUER', 8), addQuantidadeCoca550(),monstrarComplementos()">+</button> <p id="quantidadeCoca550">0</p> <button class="remove" class="remove" onclick="removeItem('X-BURGUER', 8),removeQuantidadeCoca550()">-</button>    </article>
+                    <button class="tela-remover-complementoo" id="removeXBURGUER">REMOVER COMPLEMENTO</button>
                     </section>
         
                     <!--/////////////////////////////////////////////////////////////////////////////////////-->
@@ -279,7 +281,8 @@
                      <p class="preço">R$ 11,00</p>
                      <p class="descricaoProduto">Descrição X-SALADA: Pão, maionese, hambúrguer, queijo, presunto, tomate, alface, milho, cheddar, caturipy e batata palha</p>
                     <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-SALADA', 11), addQuantidadeCoca2L(),monstrarComplementos()">+</button> <p id="quantidadeCoca2L">0</p> <button class="remove" class="remove" onclick="removeItem('X-SALADA', 11),removeQuantidadeCoca2L()">-</button> </article>
-        
+                    <button class="tela-remover-complementoo" id="removeXSALADA">REMOVER COMPLEMENTO</button>
+                    </section>        
                     <!--/////////////////////////////////////////////////////////////////////////////////////-->
         
                     <div id="linhaBotaoPro"></div>
@@ -290,6 +293,7 @@
                      <p class="descricaoProduto">Descrição X-BACON: Pão, maionese, hambúrguer, queijo, presunto, bacon, tomate, alface, milho, cheddar, caturipy e batata palha</p>
                     <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-BACON', 14), addQuantidadeXbacon(),monstrarComplementos()">+</button> <p id="quantidadeXbacon">0</p> <button class="remove" class="remove" onclick="removeItem('X-BACON', 14),removeQuantidadeXbacon()">-</button> </article>
                     </section>
+                    <button class="tela-remover-complementoo" id="removeXBACON">REMOVER COMPLEMENTO</button>
         
                     <!--/////////////////////////////////////////////////////////////////////////////////////-->
         
@@ -301,6 +305,7 @@
                      <p class="descricaoProduto">Descrição X-BACON: Pão, maionese, hambúrguer, queijo, presunto, calabresa, tomate, alface, milho, cheddar, caturipy e batata palha</p>
                     <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-CALABRESA', 14), addQuantidadeXcalabresa(),monstrarComplementos()">+</button> <p id="quantidadeXcalabresa">0</p> <button class="remove" class="remove" onclick="removeItem('X-CALABRESA', 14),removeQuantidadeXcalabresa()">-</button> </article>
                     </section>
+                    <button class="tela-remover-complementoo" id="removeXCALABRESA">REMOVER COMPLEMENTO</button>
         
                     <!--/////////////////////////////////////////////////////////////////////////////////////-->
         
@@ -312,7 +317,7 @@
                      <p class="descricaoProduto">Descrição X-BACON: Pão, maionese, hambúrguer, queijo, presunto, frango, tomate, alface, milho, cheddar, caturipy e batata palha</p>
                     <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-FRANGO', 14), addQuantidadeXfrango(),monstrarComplementos()">+</button> <p id="quantidadeXfrango">0</p> <button class="remove" class="remove" onclick="removeItem('X-FRANGO', 14),removeQuantidadeXfrango()">-</button> </article>
                     </section>
-        
+                    <button class="tela-remover-complementoo" id="removeXFRANGO">REMOVER COMPLEMENTO</button>
                     <!--/////////////////////////////////////////////////////////////////////////////////////-->
         
                     <div id="linhaBotaoPro"></div>
@@ -323,7 +328,7 @@
                      <p class="descricaoProduto">Descrição X-TUDO: Pão, hambúrguer, queijo, presunto, maionese, tomate, alface, bacon, calabresa, frango, milho, cheddar, caturipy e batata palha</p>
                     <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-TUDO', 20), addQuantidadeXtudo(), monstrarComplementos()">+</button> <p id="quantidadeXtudo">0</p> <button class="remove" class="remove" onclick="removeItem('X-TUDO', 20),removeQuantidadeXtudo()">-</button> </article>
                     </section>
-        
+                    <button class="tela-remover-complementoo" id="removeXTUDO">REMOVER COMPLEMENTO</button>
                     <!--/////////////////////////////////////////////////////////////////////////////////////-->
         
                     <div id="linhaBotaoPro"></div>
@@ -334,13 +339,43 @@
                      <p class="descricaoProduto">Descrição X-BACON: Big Pão, hambúrguer, queijo, presunto, maionese, tomate, alface, bacon, calabresa, frango, milho, cheddar, catupiry e batata palha (Cortado ao meio) (Serve 2 pessoas)</p>
                     <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('X-MONTE HERMOM', 25), addQuantidadeXmontehermom(), monstrarComplementos()">+</button> <p id="quantidadeXmontehermom">0</p> <button class="remove" class="remove" onclick="removeItem('X-MONTE HERMOM', 25),removeQuantidadeXmomtehermom()">-</button> </article>
                     </section>
+                    <button class="tela-remover-complementoo" id="removeXMONTE">REMOVER COMPLEMENTO</button>
 
             </article>
 
             <article id="todasBebidas">
                 <header>
-                    <h2 id="tituloBebidas">BEBIDAS</h2>
+                    <h2 id="tituloBebidas">BEBIDAS</h2> 
                 </header>
+
+                
+
+                <h2 class="nomeBebida">Refrigerante Lata</h2>
+                    <section id="coca350ML">
+                     <p class="preço">R$ 4,50</p>
+                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Refrigerante Lata', 4.50), addQuantidadeRefriLata()">+</button> <p id="quantidadeRefriLata">0</p> <button class="remove" class="remove" onclick="removeItem('Refrigerante Lata', 4.50),removeQuantidadeRefriLata()">-</button> </article>
+                    </section>
+
+                    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        
+                    <div id="linhaBotaoPro"></div>
+        
+                    <h2 class="nomeBebida">Refrigerante 600ML</h2>
+                    <section id="coca350ML">
+                     <p class="preço">R$ 5,50</p>
+                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Refrigerante 600ML', 5.50), addQuantidadeRefri600()">+</button> <p id="quantidadeRefri600">0</p> <button class="remove" class="remove" onclick="removeItem('Refrigerante 600ML', 5.50),removeQuantidadeRefri10()">-</button> </article>
+                    </section>
+
+                    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        
+                    <div id="linhaBotaoPro"></div>
+        
+                    <h2 class="nomeBebida">Refrigerante 600ML</h2>
+                    <section id="coca350ML">
+                     <p class="preço">R$ 10,00</p>
+                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Refrigerante 2L', 10), addQuantidadeRefri600()">+</button> <p id="quantidadeRefri600">0</p> <button class="remove" class="remove" onclick="removeItem('Refrigerante 2L', 10),removeQuantidadeRefri10()">-</button> </article>
+                    </section>
+
             </article>
 
         </article>
@@ -452,7 +487,7 @@
 
     <section id="descricao">
         <article id="containerDescricao">
-            <h2 id="tituloDescricao">Complementos</h2>
+            <h2 id="tituloDescricao">+ ADICIONAIS</h2>
             <div id="todaDescrição">
                     <form id="formComplemento">
                         <label>
@@ -478,6 +513,23 @@
         </article>
     </section>
 
+    <section id="removaComplementoXEGG" class="removerComplemento">
+
+        
+        
+        <article>
+            <h1>REMOVER ADICIONAIS X-EGG</h1>
+
+            <button class="remove-complemento" onclick="removerComplemento('X-EGG - COM FRANGO', 6, 0, 'COM FRANGO')">Remover Frango</button>
+
+            <button class="remove-complemento" onclick="removerComplemento('X-EGG - COM BACON', 6, 0, 'COM BACON')">Remover Bacon</button>
+
+            <button class="remove-complemento" onclick="removerComplemento('X-EGG - COM CALABRESA', 6, 0, 'COM CALABRESA')">Remover Calabresa</button>
+
+            <button class="remove-complemento" onclick="removerComplemento('X-EGG - COM OVO', 6, 0, 'COM OVO')">Remover Ovo</button>
+        </article>
+    </section>
+
     <div style="display: none;" id="mandar"></div>
     <footer>
         <section id="sectionFooter">
@@ -490,6 +542,7 @@
     </footer>
     
     <!--Scirpts-->
+    <script src="scripts/remove-adicionais/tela-remove-adicionais.js"></script>
     <script src="scripts/sistema pedidos/sistema-pedidios.js"></script>
     <script src="scripts/sistema pedidos/sistema-paginas-pedidos.js"></script>
     <script src="scripts/sistema botao cor/botaoCor.js"></script>

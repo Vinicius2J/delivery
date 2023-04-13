@@ -1,1 +1,80 @@
-fe192ddbdfdaf8a6733bb21d1128b5803370abf0
+// objeto carrinho
+let carrinho = {
+  itens: [],
+  precoTotal: 0
+};
+
+// objeto preço Complementos
+const complementoPreco = {
+ "COM FRANGO": 3.00,
+ "COM BACON": 3.00,
+ "COM CALABRESA": 3.00,
+ "COM OVO": 1.50,
+ "Sem Complemento": 0.00
+};
+
+
+// função para adicionar item ao carrinho
+
+function addItem(nome, preco, complemento) {
+  complemento = ""
+
+  const itemIndex = carrinho.itens.findIndex(item => item.nome === nome && item.complemento === complemento);
+  if (itemIndex !== -1) {
+    carrinho.itens[itemIndex].quantidade += 1;
+  } else {
+    carrinho.itens.push({ nome, preco, quantidade: 1, complemento });
+  }
+  carrinho.precoTotal += preco;
+  renderizarCarrinho();
+}
+
+// função para remover item do carrinho
+
+function removeItem(nome, preco, complemento, itemIndex) {
+  const complementoSelecionado = document.querySelector('input[name="complemento"]:checked').value;
+
+  // verifica se a quantidade do item é maior que 0
+  if (carrinho.itens[itemIndex].quantidade > 0) {
+    let itensDoMeuCarrinho = carrinho.itens.splice(itemIndex, 1); // remove o item do array "itens" pelo índice
+  
+    carrinho.precoTotal -= preco;
+  
+    carrinho.precoTotal -= parseFloat(complementoPreco[complementoSelecionado]);
+  
+    renderizarCarrinho();
+  }
+}
+
+// função para limpar o carrinho
+function limparCarrinho() {
+  carrinho.itens = [];
+  carrinho.precoTotal = 0;
+  renderizarCarrinho();
+};
+
+//esta função adiciona o complemento ao seu carrinho
+
+function adicionarComplemento() {
+  const complementosSelecionados = document.querySelectorAll('input[name="complemento[]"]:checked');
+  
+  if (complementosSelecionados.length > 0) {
+    const complementos = [];
+    complementosSelecionados.forEach(complemento => {
+      complementos.push(complemento.value);
+    });
+    
+    const complementosString = complementos.join(' - ');
+    
+    const itemIndex = carrinho.itens.length - 1;
+    carrinho.itens[itemIndex].nome += " - " + complementosString;
+    
+    complementosSelecionados.forEach(complementoSelecionado => {
+      carrinho.itens[itemIndex].preco += parseFloat(complementoPreco[complementoSelecionado.value]);
+      carrinho.precoTotal += parseFloat(complementoPreco[complementoSelecionado.value]);
+    });
+    
+    renderizarCarrinho();
+  };
+};
+

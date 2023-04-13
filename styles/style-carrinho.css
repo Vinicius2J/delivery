@@ -84,18 +84,22 @@ h2#tituloBebidas {
 }
 
 section#descricao {
-    position: absolute;
-
-    width: 100vw;
-    height: 100vh;
-
     display: none;
     flex-direction: column;
 
     align-items: center;
-    justify-content: center;
 
-    background-color: rgba(0, 0, 0, 0.37);
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.842);
+
+    width: 100vw;
+    height: 340vh;
+
+    position: absolute;
+
+    z-index: 9999;
 }
 
 form#formComplemento {
@@ -133,6 +137,9 @@ article#containerDescricao {
     justify-content: center;
 
     font-family: Arial, Helvetica, sans-serif;
+
+    margin: 200px;
+    position: fixed;
 }
 
 article#containerDescricao > p {
@@ -222,7 +229,7 @@ h1#nomePedido {
 
     cursor: pointer;
 
-    z-index: 9999;
+    z-index: 9998;
 }
 
 section#fazer-pedidos > h2 {
@@ -271,7 +278,7 @@ article#btnsComprarCoca350ML {
 
     position: relative;
     left: 70%;
-    bottom: 90px;
+    bottom: 40px;
     
     width: 100px;
     height: 30px;
@@ -1115,7 +1122,7 @@ a#zap {
     
     form#formComplemento {
         height: 150px;
-    }
+    }   
     
     article#containerDescricao > p {
         padding: 15px;
