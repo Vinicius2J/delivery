@@ -2,7 +2,7 @@
 
 main {
     width: 800px;
-    height: 3200px;
+    height: 1500px;
 
     margin-top: 100px;
     display: flex;
@@ -99,8 +99,6 @@ section#hamburguer > div {
 }
 
 section#hamburguer > article {
-    background-color: rgba(0, 0, 0, 0.637);
-
     width: 770px;
     height: 250px;
 
@@ -111,13 +109,17 @@ section#hamburguer > article {
     justify-content: center;
 }
 
+section#hamburguer > article > img {
+    width: 770px;
+}
+
 section#hamburguer > article > h1 {
     font: normal 2em arial;
     color: white;
 
 }
 
-section#hamburguer > article:hover {
+section#hamburguer > article > img:hover {
     box-shadow: 0px 0px 14px black;
 }
 
@@ -148,7 +150,6 @@ section#bebidas > div {
 }
 
 section#bebidas > article {
-    background-color: rgba(0, 0, 0, 0.637);
 
     width: 770px;
     height: 250px;
@@ -156,7 +157,11 @@ section#bebidas > article {
     margin: 15px;
 }
 
-section#bebidas > article:hover {
+section#bebidas > article > img {
+    width: 770px;
+}
+
+section#bebidas > article > img:hover {
     box-shadow: 0px 0px 14px black;
 }
 
@@ -290,4 +295,55 @@ section.removerComplemento > article > button:hover {
     color: black;
 
     transition: 1s;
+}
+
+section#bebidas {
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+section#hamburguer {
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 488px) {
+    
+    section#hamburguer {
+        height: 500px;
+    
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: center;
+    }
+
+    section#hamburguer > article > img {
+        border: 1px solid black;
+    }
+
+    section#bebidas {
+        height: 500px;
+    
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: center;
+    }
+
+    section#bebidas > article > img {
+        border: 1px solid black;
+    }
 }

@@ -851,21 +851,7 @@ footer > section > article {
 
     main {
         width: 100vw;
-    }
-
-    section#combos > article{
-        width: 100vw;
-        height: 105px;
-
-        margin: 0;
-        margin-top: 5px;
-    }
-
-    section#lanches > article{
-        width: 100vw;
-        height: 150px;
-        margin: 0;
-        margin-top: 5px;
+        height: 900px;
     }
 
     section#bebidas > article{
@@ -873,6 +859,10 @@ footer > section > article {
         height: 150px;
         margin: 0;
         margin-top: 5px;
+    }
+
+    section#bebidas > article > img{
+        width: 100vw;
     }
 
     section#hamburguer > article{

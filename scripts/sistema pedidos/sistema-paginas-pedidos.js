@@ -1,6 +1,5 @@
-//HAMBURGUER 1
-let btn = document.getElementById('hamburguer1');
-btn.addEventListener('click', () => {
+//função para ir para o carrinho
+function irParaCarrinho() {
     document.querySelector('footer').style.display = 'none'; //some o footer
     document.querySelector('header').style.display = 'none'; //some o header
     document.querySelector('main').style.display = 'none'; //some o main
@@ -18,4 +17,4 @@ btn.addEventListener('click', () => {
         document.querySelector('header').style.display = 'flex'; //Volta o header
         document.querySelector('main').style.display = 'flex'; //Volta o main
     })
-})
+}

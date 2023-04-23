@@ -19,6 +19,7 @@ article#todasBebidas {
     padding: 0;
 
     width: 100vw;
+    height: 100vh;
 }
 
 section#tituloHamburguer > header {
@@ -53,8 +54,6 @@ article#todasBebidas > header {
 
     align-items: center;
     justify-content: top;
-
-    
 
     width: 80vw;
     height: 130px;
@@ -95,7 +94,7 @@ section#descricao {
     background-color: rgba(0, 0, 0, 0.842);
 
     width: 100vw;
-    height: 340vh;
+    height: 100vh;
 
     position: absolute;
 
@@ -278,7 +277,7 @@ article#btnsComprarCoca350ML {
 
     position: relative;
     left: 70%;
-    bottom: 40px;
+    bottom: 50px;
     
     width: 100px;
     height: 30px;
@@ -333,10 +332,12 @@ section#itensCarrinho {
     background-color: white;
     margin-top: 15px;
 
-    display: flex;
+    display: inline-block;
     flex-direction: column;
 
     font-family: Arial, Helvetica, sans-serif;
+
+    z-index: 9555;
 }
 
 section#itensCarrinho > article#listaProdutos {
@@ -413,15 +414,17 @@ section#botaoProximo {
 
     font: bold 13pt monospace;
 
-    width: 78.6vw;
+    width: 80vw;
     height: 50px;
 
 
-    background: none;
+    background-color: rgb(255, 0, 0);
 
     position: fixed;
     bottom: 0;
     left: 0;
+
+    z-index: 0;
 
 }
 
@@ -632,7 +635,9 @@ a#zap {
         bottom: 0;
         left: 0;
 
-        background: none;
+        background-color: rgb(255, 0, 0);
+
+        z-index: 0;
     }
 
     article#btnsComprarCoca350ML {
@@ -783,15 +788,17 @@ a#zap {
 
         font: bold 13pt monospace;
 
-        width: 71.4vw;
+        width: 70vw;
         height: 30px;
 
         position: fixed;
-        background-color: white;
+        background-color: rgb(255, 0, 0);
 
         position: fixed;
         bottom: 0;
         left: 0;
+
+        z-index: 0;
     }
 
     p.descricaoProduto {
@@ -804,6 +811,28 @@ a#zap {
     }
 
     
+}
+
+@media (max-width: 600px) {
+    section#botaoProximo {
+        display: flex;
+        align-items: center;
+
+
+        font: bold 13pt monospace;
+
+        width: 65vw;
+        height: 30px;
+
+        position: fixed;
+        background-color: rgb(255, 0, 0);
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        z-index: 0;
+    }
 }
 
 
@@ -918,17 +947,19 @@ a#zap {
     
         font: bold 13pt monospace;
     
-        width: 65vw;
+        width: 70vw;
         height: 50px;
     
         position: fixed;
     
-        background: none;
+        background-color: rgb(255, 0, 0);
         position: fixed;
 
         position: fixed;
         bottom: 0;
         left: 0;
+
+        z-index: 0;
     
     }
     
@@ -1145,19 +1176,19 @@ a#zap {
     
         font: bold 13pt monospace;
     
-        width: 60vw;
+        width: 65vw;
         height: 60px;
     
         position: fixed;
     
-        background: none;
+        background-color: rgb(255, 0, 0);
         position: fixed;
 
         position: fixed;
         bottom: 0;
         left: 0;
 
-    
+        z-index: 0;
     }
     
     button#btnProximoPagamento {

@@ -46,35 +46,53 @@ function removeItem(nome, preco, complemento) {
   }
 }
 
-//verificar se tem complemento
-
-function verificarComplemento() {
-  const temComplemento = carrinho.itens.some(item => item.complemento !== "");
-  if (temComplemento) {
-    console.log("Tem complemento");
-  } else {
-    console.log("Não tem complemento");
-  }
-}
-
-
-// função para remover complemento do item do carrinho
-function removerComplemento(nome, preco, itemIndex, complementoSelecionado) {
-  // Verifica se o item tem um complemento selecionado
-  if (carrinho.itens[itemIndex].complemento !== "Sem Complemento") {
-    // Remove o preço do complemento selecionado do preço total do item e do carrinho
-    if (complementoSelecionado !== "Sem Complemento") {
-      const precoComplemento = parseFloat(complementoPreco[complementoSelecionado]);
-      carrinho.itens[itemIndex].preco -= precoComplemento;
-      carrinho.precoTotal -= precoComplemento;
-    }
+//esta função adiciona o complemento ao seu carrinho
+function adicionarComplemento() {
+  const complementosSelecionados = document.querySelectorAll('input[name="complemento[]"]:checked');
+  
+  if (complementosSelecionados.length > 0) {
+    const complementos = [];
+    complementosSelecionados.forEach(complemento => {
+      complementos.push(complemento.value);
+    });
     
-    // Remove o complemento selecionado do nome do item
-    carrinho.itens[itemIndex].nome = nome.replace(" - " + complementoSelecionado, "");
+    const complementosString = complementos.join(' - ');
+    
+    const itemIndex = carrinho.itens.length - 1;
+    carrinho.itens[itemIndex].nome += " - " + complementosString;
+    
+    complementosSelecionados.forEach(complementoSelecionado => {
+      carrinho.itens[itemIndex].preco += parseFloat(complementoPreco[complementoSelecionado.value]);
+      carrinho.precoTotal += parseFloat(complementoPreco[complementoSelecionado.value]);
+    });
     
     renderizarCarrinho();
-  }
+  };
+};
+
+function renderizarCarrinho() {
+  const itensCarrinho = document.querySelector('#itens-carrinho');
+  const precoTotal = document.querySelector('#preco-total');
+  const produtos = document.querySelector('#produtos');
+
+  itensCarrinho.innerHTML = '';
+
+  // verifica se tem algum complemento selecionado
+  const temComplemento = carrinho.itens.some(item => item.complemento !== "");
+
+  // renderiza os itens do carrinho
+  carrinho.itens.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = ` ${item.quantidade+'°'} - 🛒 ${item.nome} ${item.complemento}`;
+    itensCarrinho.appendChild(li);
+    const br = document.createElement('br');
+    itensCarrinho.appendChild(br);
+  });
+
+  precoTotal.textContent = `Preço total: R$ ${carrinho.precoTotal.toFixed(2).replace('.',(','))}`;
 }
+
+
 
 // função para limpar o carrinho
 function limparCarrinho() {
@@ -151,69 +169,20 @@ function limparCarrinho() {
 
 function monstrarComplementos() {
   document.getElementById('descricao').style.display = 'flex';
+  document.getElementById('fazer-pedidos').style.overflow = 'hidden';
 };
 
 //sair da pagina de complementos
 
 function sairComplemento() {
   document.getElementById('descricao').style.display = 'none';
+  document.getElementById('fazer-pedidos').style.overflow = 'visible';
 };
-
-
-//esta função adiciona o complemento ao seu carrinho
-
-function adicionarComplemento() {
-  const complementosSelecionados = document.querySelectorAll('input[name="complemento[]"]:checked');
-  
-  if (complementosSelecionados.length > 0) {
-    const complementos = [];
-    complementosSelecionados.forEach(complemento => {
-      complementos.push(complemento.value);
-    });
-    
-    const complementosString = complementos.join(' - ');
-    
-    const itemIndex = carrinho.itens.length - 1;
-    carrinho.itens[itemIndex].nome += " - " + complementosString;
-    
-    complementosSelecionados.forEach(complementoSelecionado => {
-      carrinho.itens[itemIndex].preco += parseFloat(complementoPreco[complementoSelecionado.value]);
-      carrinho.precoTotal += parseFloat(complementoPreco[complementoSelecionado.value]);
-    });
-    
-    renderizarCarrinho();
-  };
-};
-
-var itensDoMeuCarrinho;
-
-function renderizarCarrinho() {
-  const itensCarrinho = document.querySelector('#itens-carrinho');
-  const precoTotal = document.querySelector('#preco-total');
-  const produtos = document.querySelector('#produtos');
-
-  itensCarrinho.innerHTML = '';
-
-  // verifica se tem algum complemento selecionado
-  const temComplemento = carrinho.itens.some(item => item.complemento !== "");
-
-  // renderiza os itens do carrinho
-  carrinho.itens.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = ` ${item.quantidade+'°'} - 🛒 ${item.nome} ${item.complemento}`;
-    itensCarrinho.appendChild(li);
-  });
-
-  precoTotal.textContent = `Preço total: R$ ${carrinho.precoTotal.toFixed(2).replace('.',(','))}`;
-}
-
-//pegar a variavel do botao e cria o evento de click
-let btnVerificarCarrinho = document.getElementById('btnProximoPagamento');
-btnVerificarCarrinho.addEventListener('click', verificarCarrinho);
 
 //sair da tela do erro ao aperta no botao
 function sairErro() {
   document.getElementById('erroCarrinho').style.display = 'none';
+  document.getElementById('fazer-pedidos').style.overflow = 'visible';
 }
 
 //sair do erro do form
@@ -238,12 +207,23 @@ if (select.value == "entrega") {
 };
 };
 
+//pegar a variavel do botao e cria o evento de click
+let btnVerificarCarrinho = document.getElementById('btnProximoPagamento');
+btnVerificarCarrinho.addEventListener('click', verificarCarrinho);
+
 //Verificar se tem item no carrinho
 function verificarCarrinho() {
   if (carrinho.itens.length === 0) {
       document.getElementById('erroCarrinho').style.display = 'flex';
-  } else {
-      //ir para a tela de finalizar produto
+      document.getElementById('erroCarrinho').style.zIndex = '99999';
+      document.getElementById('fazer-pedidos').style.overflow = 'hidden';
+  }else {
+
+      let hora = new Date()
+      let horaFechar = hora.getHours();
+
+      if (horaFechar > 20 || horaFechar < 02){
+        //ir para a tela de finalizar produto
       const btnVolvarCarrinho = document.getElementById('voltaCarrinho');
       document.getElementById('formFinal').style.display = 'flex';
       document.getElementById('fazer-pedidos').style.display = 'none';
@@ -356,251 +336,247 @@ function verificarCarrinho() {
                     link.setAttribute('target', '_blank');
             
                     link = document.getElementById("zap").href = 'https://wa.me/554188217121?text='+textComEmail;
-                  }  
-            
-                };
+                  
+              };  
+            };
           }
+        };
+      }else {
+        document.getElementById('erroCarrinho').style.display = 'flex';
+        document.getElementById('erroCarrinho').style.zIndex = '99999';
+        document.getElementById('fazer-pedidos').style.overflow = 'hidden';
       };
-  
-          };
+    };
   };
 
 //Função para adicionar quantidade escondida
           
-          //X-EGG
-          let quantidadeXeggTs = 0;
+  //X-EGG
+  let quantidadeXeggTs = 0;
         
-          function addQuantidadeCoca350() {
-              quantidadeXeggTs++;
-              if (quantidadeXeggTs >= 0) {
-                let quantidadeCOCA350 = document.getElementById('quantidadeCoca350');
-                let valorAtualCoca350 = parseInt(quantidadeCOCA350.textContent);
-                let novoValor350 = valorAtualCoca350 + 1;
-                quantidadeCOCA350.textContent = novoValor350;
-              }
-            }
+  function addQuantidadeCoca350() {
+      quantidadeXeggTs++;
+      if (quantidadeXeggTs >= 0) {
+        let quantidadeCOCA350 = document.getElementById('quantidadeCoca350');
+        let valorAtualCoca350 = parseInt(quantidadeCOCA350.textContent);
+        let novoValor350 = valorAtualCoca350 + 1;
+        quantidadeCOCA350.textContent = novoValor350;
+      }
+  }
           
-            function removeQuantidadeCoca350() {
+  function removeQuantidadeCoca350() {
 
-              if (quantidadeXeggTs == 0) {
-              }else {
-                quantidadeXeggTs--
-                let quantidadeCOCA350 = document.getElementById('quantidadeCoca350');
-                let valorAtualCoca350 = parseInt(quantidadeCOCA350.textContent);
-                let novoValor350 = valorAtualCoca350 - 1;
-                quantidadeCOCA350.textContent = novoValor350;
-              }
-            }
+    if (quantidadeXeggTs == 0) {
+    }else {
+      quantidadeXeggTs--
+      let quantidadeCOCA350 = document.getElementById('quantidadeCoca350');
+      let valorAtualCoca350 = parseInt(quantidadeCOCA350.textContent);
+      let novoValor350 = valorAtualCoca350 - 1;
+      quantidadeCOCA350.textContent = novoValor350;
+    }
+  }
           
-            //X-BURGUER
-            let quantidadeXburguerTs = 0;
+  //X-BURGUER
+  let quantidadeXburguerTs = 0;
           
-            function addQuantidadeCoca550() {
-              quantidadeXburguerTs++;
-              if (quantidadeXburguerTs >= 0) {
-                let quantidadeCOCA550 = document.getElementById('quantidadeCoca550');
-                let valorAtualCoca550 = parseInt(quantidadeCOCA550.textContent);
-                let novoValorCoca550 = valorAtualCoca550 + 1;
+  function addQuantidadeCoca550() {
+    quantidadeXburguerTs++;
+    if (quantidadeXburguerTs >= 0) {
+      let quantidadeCOCA550 = document.getElementById('quantidadeCoca550');
+      let valorAtualCoca550 = parseInt(quantidadeCOCA550.textContent);
+      let novoValorCoca550 = valorAtualCoca550 + 1;
                 quantidadeCOCA550.textContent = novoValorCoca550;
-              }
-            }
+    }
+  }
           
-            function removeQuantidadeCoca550() {
-              if (quantidadeXburguerTs == 0) {
-              }else {
-                quantidadeXburguerTs--
-                let quantidadeCOCA550 = document.getElementById('quantidadeCoca550');
-                let valorAtualCoca550 = parseInt(quantidadeCOCA550.textContent);
-                let novoValorCoca550 = valorAtualCoca550 - 1;
-                quantidadeCOCA550.textContent = novoValorCoca550;
-              }
-            }
+  function removeQuantidadeCoca550() {
+    if (quantidadeXburguerTs == 0) {
+    }else {
+      quantidadeXburguerTs--
+      let quantidadeCOCA550 = document.getElementById('quantidadeCoca550');
+      let valorAtualCoca550 = parseInt(quantidadeCOCA550.textContent);
+      let novoValorCoca550 = valorAtualCoca550 - 1;
+      quantidadeCOCA550.textContent = novoValorCoca550;
+    }
+  }
           
-            //x-SALADA
-            let quantidadeXsaladaTs = 0;
+  //x-SALADA
+  let quantidadeXsaladaTs = 0;
           
-            function addQuantidadeCoca2L() {
-              quantidadeXsaladaTs++;
-              if (quantidadeXsaladaTs >= 0) {
-                let quantidadeCOCA2L = document.getElementById('quantidadeCoca2L');
-                let valorAtualCoca2L = parseInt(quantidadeCOCA2L.textContent);
-                let novoValorCoca2L = valorAtualCoca2L + 1;
-                quantidadeCOCA2L.textContent = novoValorCoca2L;
-              }
-
-              if (quantidadeXsaladaTs == 0) {
-              }else {
-                quantidadeXsaladaTs--
-                let quantidadeCOCA2L = document.getElementById('quantidadeCoca2L');
-                let valorAtualCoca2L = parseInt(quantidadeCOCA2L.textContent);
-                let novoValorCoca2L = valorAtualCoca2L - 1;
-                quantidadeCOCA2L.textContent = novoValorCoca2L;
-              }
-            }
+  function addQuantidadeCoca2L() {
+    quantidadeXsaladaTs++;
+    if (quantidadeXsaladaTs >= 0) {
+      let quantidadeCOCA2L = document.getElementById('quantidadeCoca2L');
+      let valorAtualCoca2L = parseInt(quantidadeCOCA2L.textContent);
+      let novoValorCoca2L = valorAtualCoca2L + 1;
+      quantidadeCOCA2L.textContent = novoValorCoca2L;
+    }
+  }
           
-            function removeQuantidadeCoca2L() {
-              if (quantidadeXsaladaTs == 0) {
-              }else {
-                quantidadeXsaladaTs--
-                let quantidadeCOCA2L = document.getElementById('quantidadeCoca2L');
-                let valorAtualCoca2L = parseInt(quantidadeCOCA2L.textContent);
-                let novoValorCoca2L = valorAtualCoca2L - 1;
-                quantidadeCOCA2L.textContent = novoValorCoca2L;
-              }
-            }
+  function removeQuantidadeCoca2L() {
+    if (quantidadeXsaladaTs == 0) {
+    }else {
+      quantidadeXsaladaTs--
+      let quantidadeCOCA2L = document.getElementById('quantidadeCoca2L');
+      let valorAtualCoca2L = parseInt(quantidadeCOCA2L.textContent);
+      let novoValorCoca2L = valorAtualCoca2L - 1;
+      quantidadeCOCA2L.textContent = novoValorCoca2L;
+    }
+  }
 
-            //X-BACON
-            let quantidadeXbaconTs = 0;
+  //X-BACON
+  let quantidadeXbaconTs = 0;
 
-            function addQuantidadeXbacon() {
-              quantidadeXbaconTs++;
-              if (quantidadeXbaconTs >= 0) {
-                let quantidadeXBACON = document.getElementById('quantidadeXbacon');
-                let valorAtualXbacon = parseInt(quantidadeXBACON.textContent);
-                let novoValorXbacon = valorAtualXbacon + 1;
-                quantidadeXBACON.textContent = novoValorXbacon;
-              }
-            }
+  function addQuantidadeXbacon() {
+    quantidadeXbaconTs++;
+    if (quantidadeXbaconTs >= 0) {
+      let quantidadeXBACON = document.getElementById('quantidadeXbacon');
+      let valorAtualXbacon = parseInt(quantidadeXBACON.textContent);
+      let novoValorXbacon = valorAtualXbacon + 1;
+      quantidadeXBACON.textContent = novoValorXbacon;
+    }
+  }
 
-            function removeQuantidadeXbacon() {
-              if (quantidadeXbaconTs == 0) {
-              }else {
-                quantidadeXbaconTs--
-                let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
-                let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
-                let novoValorXcalabresa = valorAtualXcalabresa - 1;
-                quantidadeXCALABRESA.textContent = novoValorXcalabresa;
-              }
-            }
+  function removeQuantidadeXbacon() {
+    if (quantidadeXbaconTs == 0) {
+    }else {
+      quantidadeXbaconTs--
+      let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
+      let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
+      let novoValorXcalabresa = valorAtualXcalabresa - 1;
+      quantidadeXCALABRESA.textContent = novoValorXcalabresa;
+    }
+  }
 
-            //X CALABRESA
-            let quantidadeXcalabresaTs = 0;
+  //X CALABRESA
+  let quantidadeXcalabresaTs = 0;
 
-            function addQuantidadeXcalabresa() {
-              quantidadeXcalabresaTs++;
-              if (quantidadeXcalabresaTs >= 0) {
-                let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
-                let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
-                let novoValorXcalabresa = valorAtualXcalabresa + 1;
-                quantidadeXCALABRESA.textContent = novoValorXcalabresa;
-              }
-            }
+  function addQuantidadeXcalabresa() {
+    quantidadeXcalabresaTs++;
+    if (quantidadeXcalabresaTs >= 0) {
+      let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
+      let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
+      let novoValorXcalabresa = valorAtualXcalabresa + 1;
+      quantidadeXCALABRESA.textContent = novoValorXcalabresa;
+    }
+    
 
-            function removeQuantidadeXcalabresa() {
-              if (quantidadeXcalabresaTs == 0) {
-              }else {
-                let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
-                let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
-                let novoValorXcalabresa = valorAtualXcalabresa - 1;
-                quantidadeXCALABRESA.textContent = novoValorXcalabresa;
-              }
-            }
+  function removeQuantidadeXcalabresa() {
+    if (quantidadeXcalabresaTs == 0) {
+    }else {
+      let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
+      let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
+      let novoValorXcalabresa = valorAtualXcalabresa - 1;
+      quantidadeXCALABRESA.textContent = novoValorXcalabresa;
+    }
+  }
 
-            //X-FRANGO
-            let quantidadeXfrangoTs = 0;
+  //X-FRANGO
+  let quantidadeXfrangoTs = 0;
 
-            function addQuantidadeXfrango() {
-              quantidadeXfrangoTs++;
-              if (quantidadeXfrangoTs >= 0) {
-                let quantidadeXFRANGO = document.getElementById('quantidadeXfrango');
-                let valorAtualXfrango = parseInt(quantidadeXFRANGO.textContent);
-                let novoValorXfrango = valorAtualXfrango + 1;
-                quantidadeXFRANGO.textContent = novoValorXfrango;
-              }
-            }
+  function addQuantidadeXfrango() {
+    quantidadeXfrangoTs++;
+    if (quantidadeXfrangoTs >= 0) {
+      let quantidadeXFRANGO = document.getElementById('quantidadeXfrango');
+      let valorAtualXfrango = parseInt(quantidadeXFRANGO.textContent);
+      let novoValorXfrango = valorAtualXfrango + 1;
+      quantidadeXFRANGO.textContent = novoValorXfrango;
+    }
+  }
 
-            function removeQuantidadeXfrango() {
+    function removeQuantidadeXfrango() {
 
-              if (quantidadeXfrangoTs == 0) {
-              }else {
-                quantidadeXfrangoTs--
-                let quantidadeXFRANGO = document.getElementById('quantidadeXfrango');
-                let valorAtualXfrango = parseInt(quantidadeXFRANGO.textContent);
-                let novoValorXfrango = valorAtualXfrango - 1;
-                quantidadeXFRANGO.textContent = novoValorXfrango;
-              }
-            }
+      if (quantidadeXfrangoTs == 0) {
+      }else {
+        quantidadeXfrangoTs--
+        let quantidadeXFRANGO = document.getElementById('quantidadeXfrango');
+        let valorAtualXfrango = parseInt(quantidadeXFRANGO.textContent);
+        let novoValorXfrango = valorAtualXfrango - 1;
+        quantidadeXFRANGO.textContent = novoValorXfrango;
+      }
+    }
 
 
-           //X-TUDO
-           let quantidadeXtudoTs = 0;
+    //X-TUDO
+    let quantidadeXtudoTs = 0;
 
-           function addQuantidadeXtudo() {
-            quantidadeXtudoTs++;
-            if (quantidadeXtudoTs >= 0) {
+    function addQuantidadeXtudo() {
+    quantidadeXtudoTs++;
+    if (quantidadeXtudoTs >= 0) {
             
-            let quantidadeXtudo = document.getElementById('quantidadeXtudo');
-            let valorAtualXtudo = parseInt(quantidadeXtudo.textContent);
-            let novoValorXtudo = valorAtualXtudo + 1;
-            quantidadeXtudo.textContent = novoValorXtudo;
-          }
-          }
+    let quantidadeXtudo = document.getElementById('quantidadeXtudo');
+    let valorAtualXtudo = parseInt(quantidadeXtudo.textContent);
+    let novoValorXtudo = valorAtualXtudo + 1;
+    quantidadeXtudo.textContent = novoValorXtudo;
+  }
+  }
 
-          function removeQuantidadeXtudo() {
+  function removeQuantidadeXtudo() {
 
-            if (quantidadeXtudoTs == 0) {
-            }else {
-              quantidadeXtudoTs--;
-              let quantidadeXtudo = document.getElementById('quantidadeXtudo');
-              let valorAtualXtudo = parseInt(quantidadeXtudo.textContent);
-              let novoValorXtudo = valorAtualXtudo - 1;
-              quantidadeXtudo.textContent = novoValorXtudo;
-            }
-          }
+    if (quantidadeXtudoTs == 0) {
+    }else {
+      quantidadeXtudoTs--;
+      let quantidadeXtudo = document.getElementById('quantidadeXtudo');
+      let valorAtualXtudo = parseInt(quantidadeXtudo.textContent);
+      let novoValorXtudo = valorAtualXtudo - 1;
+       quantidadeXtudo.textContent = novoValorXtudo;
+    }
+  }
 
-          //X-MONTE-HERMOM
+  //X-MONTE-HERMOM
 
-          let quantidadeXmonthermomTs = 0;
+  let quantidadeXmonthermomTs = 0;
           
-          function addQuantidadeXmontehermom() {
-            quantidadeXmonthermomTs++;
-            if (quantidadeXmonthermomTs >= 0) {
+  function addQuantidadeXmontehermom() {
+     quantidadeXmonthermomTs++;
+    if (quantidadeXmonthermomTs >= 0) {
             
-              let quantidadeXmonthermom = document.getElementById('quantidadeXmontehermom');
-              let valorAtualXmontehermom = parseInt(quantidadeXmonthermom.textContent);
-              let novoValorXmontehermom = valorAtualXmontehermom + 1;
-              quantidadeXmonthermom.textContent = novoValorXmontehermom;
-          }
-          }
+      let quantidadeXmonthermom = document.getElement('quantidadeXmontehermom');
+      let valorAtualXmontehermom = parseInt(quantidadeXmonthertextContent);
+      let novoValorXmontehermom = valorAtualXmontehermom + 1;
+      quantidadeXmonthermom.textContent = novoValorXmontehermom;
+  }
+  }
 
-          function removeQuantidadeXmomtehermom() {
+  function removeQuantidadeXmomtehermom() {
 
-            if (quantidadeXmonthermomTs == 0) {
-            }else {
-              quantidadeXmonthermomTs--;
-              let quantidadeXmonthermom = document.getElementById('quantidadeXmontehermom');
-              let valorAtualXmontehermom = parseInt(quantidadeXmonthermom.textContent);
-              let novoValorXmontehermom = valorAtualXmontehermom - 1;
-              quantidadeXmonthermom.textContent = novoValorXmontehermom;
-            }
-         }
+    if (quantidadeXmonthermomTs == 0) {
+    }else {
+      quantidadeXmonthermomTs--;
+      let quantidadeXmonthermom = document.getElementById('quantidadeXmontehermom');
+      let valorAtualXmontehermom = parseInt(quantidadeXmonthermom.textContent);
+      let novoValorXmontehermom = valorAtualXmontehermom - 1;
+      quantidadeXmonthermom.textContent = novoValorXmontehermom;
+    }
+  }
 
-         //BEBIDA REFRI-LATA
-         var quantidadeRefriLataTs = 0;
+  //BEBIDA REFRI-LATA
+  var quantidadeRefriLataTs = 0;
 
-         function addQuantidadeRefriLata() {
+  function addQuantidadeRefriLata() {
 
-          quantidadeRefriLataTs++;
-          if (quantidadeRefriLataTs >= 0) {
+  quantidadeRefriLataTs++;
+  if (quantidadeRefriLataTs >= 0) {
             
-            let quantidadeRefriLata = document.getElementById('quantidadeRefriLata');
-            let valorAtualRefriLata = parseInt(quantidadeRefriLata.textContent);
-            let novoValorRefriLata = valorAtualRefriLata + 1;
-            quantidadeRefriLata.textContent = novoValorRefriLata; 
-          }
+    let quantidadeRefriLata = document.getElementById('quantidadeRefriLata');
+    let valorAtualRefriLata = parseInt(quantidadeRefriLata.textContent);
+    let novoValorRefriLata = valorAtualRefriLata + 1;
+    quantidadeRefriLata.textContent = novoValorRefriLata; 
+  }
           
-         }
+  }
 
-         function removeQuantidadeRefriLata() {
+  function removeQuantidadeRefriLata() {
 
-              if (quantidadeRefriLataTs == 0) {
-              }else {
-                quantidadeRefriLataTs--;
+      if (quantidadeRefriLataTs == 0) {
+      }else {
+        quantidadeRefriLataTs--;
 
-                let quantidadeRefriLata = document.getElementById('quantidadeRefriLata');
-                let valorAtualRefriLata = parseInt(quantidadeRefriLata.textContent);
-                let novoValorRefriLata = valorAtualRefriLata - 1;
-                quantidadeRefriLata.textContent = novoValorRefriLata;
-              }
-         }
-         
+        let quantidadeRefriLata = document.getElementById('quantidadeRefriLata');
+        let valorAtualRefriLata = parseInt(quantidadeRefriLata.textContent);
+        let novoValorRefriLata = valorAtualRefriLata - 1;
+        quantidadeRefriLata.textContent = novoValorRefriLata;
+      }
+  }
+
+}
