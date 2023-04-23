@@ -459,16 +459,7 @@ function verificarCarrinho() {
       let novoValorXcalabresa = valorAtualXcalabresa + 1;
       quantidadeXCALABRESA.textContent = novoValorXcalabresa;
     }
-    
 
-  function removeQuantidadeXcalabresa() {
-    if (quantidadeXcalabresaTs == 0) {
-    }else {
-      let quantidadeXCALABRESA = document.getElementById('quantidadeXcalabresa');
-      let valorAtualXcalabresa = parseInt(quantidadeXCALABRESA.textContent);
-      let novoValorXcalabresa = valorAtualXcalabresa - 1;
-      quantidadeXCALABRESA.textContent = novoValorXcalabresa;
-    }
   }
 
   //X-FRANGO
@@ -484,18 +475,6 @@ function verificarCarrinho() {
     }
   }
 
-    function removeQuantidadeXfrango() {
-
-      if (quantidadeXfrangoTs == 0) {
-      }else {
-        quantidadeXfrangoTs--
-        let quantidadeXFRANGO = document.getElementById('quantidadeXfrango');
-        let valorAtualXfrango = parseInt(quantidadeXFRANGO.textContent);
-        let novoValorXfrango = valorAtualXfrango - 1;
-        quantidadeXFRANGO.textContent = novoValorXfrango;
-      }
-    }
-
 
     //X-TUDO
     let quantidadeXtudoTs = 0;
@@ -510,19 +489,6 @@ function verificarCarrinho() {
     quantidadeXtudo.textContent = novoValorXtudo;
   }
   }
-
-  function removeQuantidadeXtudo() {
-
-    if (quantidadeXtudoTs == 0) {
-    }else {
-      quantidadeXtudoTs--;
-      let quantidadeXtudo = document.getElementById('quantidadeXtudo');
-      let valorAtualXtudo = parseInt(quantidadeXtudo.textContent);
-      let novoValorXtudo = valorAtualXtudo - 1;
-       quantidadeXtudo.textContent = novoValorXtudo;
-    }
-  }
-
   //X-MONTE-HERMOM
 
   let quantidadeXmonthermomTs = 0;
@@ -531,23 +497,11 @@ function verificarCarrinho() {
      quantidadeXmonthermomTs++;
     if (quantidadeXmonthermomTs >= 0) {
             
-      let quantidadeXmonthermom = document.getElement('quantidadeXmontehermom');
-      let valorAtualXmontehermom = parseInt(quantidadeXmonthertextContent);
+      let quantidadeXmonthermom = document.getElementById('quantidadeXmontehermom');
+      let valorAtualXmontehermom = parseInt(quantidadeXmonthermom.textContent);
       let novoValorXmontehermom = valorAtualXmontehermom + 1;
       quantidadeXmonthermom.textContent = novoValorXmontehermom;
   }
-  }
-
-  function removeQuantidadeXmomtehermom() {
-
-    if (quantidadeXmonthermomTs == 0) {
-    }else {
-      quantidadeXmonthermomTs--;
-      let quantidadeXmonthermom = document.getElementById('quantidadeXmontehermom');
-      let valorAtualXmontehermom = parseInt(quantidadeXmonthermom.textContent);
-      let novoValorXmontehermom = valorAtualXmontehermom - 1;
-      quantidadeXmonthermom.textContent = novoValorXmontehermom;
-    }
   }
 
   //BEBIDA REFRI-LATA
@@ -565,18 +519,3 @@ function verificarCarrinho() {
   }
           
   }
-
-  function removeQuantidadeRefriLata() {
-
-      if (quantidadeRefriLataTs == 0) {
-      }else {
-        quantidadeRefriLataTs--;
-
-        let quantidadeRefriLata = document.getElementById('quantidadeRefriLata');
-        let valorAtualRefriLata = parseInt(quantidadeRefriLata.textContent);
-        let novoValorRefriLata = valorAtualRefriLata - 1;
-        quantidadeRefriLata.textContent = novoValorRefriLata;
-      }
-  }
-
-}

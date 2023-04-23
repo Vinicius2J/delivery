@@ -985,7 +985,8 @@ a#zap {
     }
 
     section#itensCarrinho > article#listaProdutos {
-        width: 300px;
+        width: 200px;
+        margin-left: 40px;
     }
 
     section.tituloHamburger {
@@ -1020,6 +1021,64 @@ a#zap {
     p.descricaoProduto {
         width: 200px;
         font-size: 10pt;
+    }
+
+    /*Descrição*/
+
+
+    section#descricao {
+        position: absolute;
+    
+        width: 100vw;
+        height: 100vh;
+    
+        display: none;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: center;
+    
+        background-color: rgba(0, 0, 0, 0.37);
+    }
+    
+    input[type="radio"] {
+        margin: 5px;
+      }
+    
+    article#containerDescricao {
+        width: 400px;
+        height: 400px;
+    
+        border-radius: 0;
+    
+        color: rgb(255, 255, 255);
+    
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: center;
+    
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    form#formComplemento {
+        height: 150px;
+    }   
+    
+    article#containerDescricao > p {
+        padding: 15px;
+    }
+    
+    article#containerDescricao > button {
+        width: 100px;
+        height: 30px;
+    
+        background: none;
+        color: white;
+        
+        border: 1px solid white;
+        outline: none;
     }
 
 }
