@@ -137,7 +137,7 @@ form {
   }
 
   section#confirmarDados > article > h1 {
-    font-size: 2em;
+    font-size: 1.3em;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 
@@ -148,12 +148,12 @@ form {
     font-family: Arial, Helvetica, sans-serif;
     margin: 5px 9px;
     font-weight: bold;
-    font-size: 14pt;
+    font-size: 10pt;
   }
 
   section#confirmarDados > article > #itensParaVer > p {
     font-family: monospace, Arial, Helvetica, sans-serif;
-    font-size: 15pt;
+    font-size: 7pt;
   }
 
   section#confirmarDados > article > #obs {

@@ -131,8 +131,7 @@ section#bebidas {
     display: flex;
     flex-direction: column;
 
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 section#bebidas > h1 {
@@ -316,6 +315,27 @@ section#hamburguer {
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 800px) {
+    section#hamburguer > article > img {
+        width: 700px;
+    }
+
+    section#bebidas > article > img {
+        width: 700px;
+    }
+}
+
+@media (max-width: 700px) {
+    section#hamburguer > article > img {
+        width: 500px;
+    }
+
+    section#bebidas > article > img {
+        width: 500px;
+    }
+}
+
 
 @media (max-width: 488px) {
     

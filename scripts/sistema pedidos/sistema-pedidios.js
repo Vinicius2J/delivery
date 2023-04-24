@@ -222,7 +222,7 @@ function verificarCarrinho() {
       let hora = new Date()
       let horaFechar = hora.getHours();
 
-      if (horaFechar > 20 || horaFechar < 02){
+      if (horaFechar >= 20 || horaFechar < 2){
         //ir para a tela de finalizar produto
       const btnVolvarCarrinho = document.getElementById('voltaCarrinho');
       document.getElementById('formFinal').style.display = 'flex';
@@ -240,19 +240,40 @@ function verificarCarrinho() {
           var nomeSobrenome = document.getElementById('nome').value;
           var email = document.getElementById('email').value;
           var formaEnvio = document.getElementById('forma-envio').value;
-          var endereco = document.getElementById('endereco').value;
           var formaPagamento = document.getElementById('forma-pagamento').value;
+
+          //verificar se o enderço esta preenchido
+          var endereco = document.getElementById('endereco').value;
+          if (formaEnvio == "entrega" && endereco == "") {
+            document.getElementById('endereco').style.border = '1px solid red';
+            document.getElementById('forma-envio').style.border = '1px solid red';
+            return;
+          }else {
+            document.getElementById('endereco').style.border = '1px solid black';
+            document.getElementById('forma-envio').style.border = '1px solid black';
+          }
+         
+          if (nomeSobrenome == "") {
+            document.getElementById('nome').style.border = '1px solid red';
+          }else {
+            document.getElementById('nome').style.border = '1px solid black';
+          }
+
+          if (formaEnvio == "") {
+            document.getElementById('forma-envio').style.border = '1px solid red';
+          }else {
+            document.getElementById('forma-envio').style.border = '1px solid black';
+          }
+
+          if (formaPagamento == "") {
+            document.getElementById('forma-pagamento').style.border = '1px solid red';
+          }else {
+            document.getElementById('forma-pagamento').style.border = '1px solid black';
+          }
 
           //Parte com Email
           if (nomeSobrenome == "" || formaEnvio == "" || formaPagamento == "") {
-            document.getElementById('erroFormIncompleto').style.display = 'flex';
-            document.getElementById('finalizar_pedido').style.display = 'none';
-
-            const btnVoltarPageForm = document.getElementById('sairErroForm');
-            btnVoltarPageForm.addEventListener('click', () => {
-                document.getElementById('erroFormIncompleto').style.display = 'none';
-                document.getElementById('finalizar_pedido').style.display = 'flex';
-            });
+            
           }else {
             const divItens = document.getElementById('itensParaVer');
               divItens.innerHTML = '';
@@ -519,3 +540,35 @@ function verificarCarrinho() {
   }
           
   }
+
+    //BEBIDA REFRI-600
+    var quantidadeRefri600Ts = 0;
+
+    function addQuantidadeRefri600() {
+  
+      quantidadeRefri600Ts++;
+    if (quantidadeRefri600Ts >= 0) {
+              
+      let quantidadeRefri600 = document.getElementById('quantidadeRefri600');
+      let valorAtualRefri600 = parseInt(quantidadeRefri600.textContent);
+      let novoValorRefri600 = valorAtualRefri600 + 1;
+      quantidadeRefri600.textContent = novoValorRefri600; 
+    }
+            
+    }
+
+    //BEBIDA REFRI-600
+    var quantidadeRefri2lTs = 0;
+
+    function addQuantidadeRefri2l() {
+      
+      quantidadeRefri2lTs++;
+    if (quantidadeRefri2lTs >= 0) {
+                  
+      let quantidadeRefri2l = document.getElementById('quantidadeRefri2L');
+      let valorAtualRefri2l = parseInt(quantidadeRefri2l.textContent);
+      let novoValorRefri2l = valorAtualRefri2l + 1;
+      quantidadeRefri2l.textContent = novoValorRefri2l; 
+    }
+  }           
+      

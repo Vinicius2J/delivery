@@ -3,7 +3,9 @@ let horaFechar = hora.getHours();
 
 let placaAbertoFechado = document.getElementById('aberto-fechado');
 
-if (horaFechar > 20 || horaFechar < 02) {
+console.log(horaFechar);
+
+if (horaFechar >= 20 || horaFechar < 2) {
     placaAbertoFechado.style.color = 'rgb(81, 255, 0)';
     placaAbertoFechado.innerText = 'ABERTO';
 }else {

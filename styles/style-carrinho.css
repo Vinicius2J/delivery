@@ -756,7 +756,7 @@ a#zap {
         width: 400px;
     }
     section#erroCarrinho > main > section#imgErro {
-        width: 0px;
+        display: none;
     }
 
     section#itensCarrinho > article#listaProdutos > ol > li {
@@ -810,6 +810,10 @@ a#zap {
         font-size: 7pt;
     }
 
+    section#erroFormIncompleto > main > section#imgErroForm {
+        display: none;
+    }
+
     
 }
 
@@ -854,6 +858,10 @@ a#zap {
 
         border-left: 2px solid black;
         
+    }
+
+    section#erroFormIncompleto > main > section#imgErroForm {
+        display: none;
     }
 
     article#btnsComprarCoca350ML {

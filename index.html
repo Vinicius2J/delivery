@@ -381,7 +381,7 @@
                     <h2 class="nomeBebida">Refrigerante 2L</h2>
                     <section id="coca350ML">
                      <p class="preço">R$ 10,00</p>
-                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Refrigerante 2L', 10), addQuantidadeRefri2L()">+</button> <p id="quantidadeRefri2L">0</p></article>
+                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Refrigerante 2L', 10), addQuantidadeRefri2l()">+</button> <p id="quantidadeRefri2L">0</p></article>
                     </section>
 
             </article>
@@ -420,19 +420,6 @@
                 <h1>ATENÇÃO</h1>
                 <p><strong>SEU CARRINHO ESTA VAZIO OU O ESTABELECIMENTO ESTA FECHADO VERIFIQUE O HORARIO COM CUIDADO ANTES DE COMPRAR CASO ESTE PROBLEMA PERSISTA ENTRE EM CONTATO COM O SUPORTE :) <span style="font-weight: bolder;">Boas! Compras</span></strong></p>
                 <button onclick="sairErro()"">Recarregar</button>
-            </section>
-        </main>
-    </section>
-
-    <section id="erroFormIncompleto">
-        <main>
-            <section id="imgErroForm">
-                <img src="images/diaRuim.svg" width="375px">
-            </section>
-            <section id="sobreErroCarrinhoForm">
-                <h1>PUTS QUE DIA RUIM</h1>
-                <p>Nos parece que infelizmente você deixou de informar algum dado seu,nao deixe isso te desanimar e so aperta no botao de recarregar e inserir seus dados novamente.</p>
-                <button id="sairErroForm" onclick="sairErroForm()"">RECARREGAR</button>
             </section>
         </main>
     </section>
@@ -483,11 +470,11 @@
             <p class="info" id="formaEnvio">Forma de Envio: </p>
             <p class="info" id="enderecoInfo">Endereço: </p>
             <div id="TesteMandar"></div>
-            <h1>PRODUTOS</h1>
+            <h1>PEDIDOS</h1>
             <div id="itensParaVer"></div>
             <h1>OBSERVAÇÕES</h1>
             <textarea _ngcontent-yyb-c139="" type="text" autocomplete="off" id="obs" rows="3" placeholder="Digite aqui" class="ng-valid ng-touched ng-dirty"></textarea>
-            <p class="info" id="precoTotalInfo">Preço Total R$0,00</p>
+            <p class="info" id="precoTotalInfo" style="font-family: monospace; font-size: 16pt; font-weight: bolder;">Preço Total R$0,00</p>
             <button id="comprar"><a id="zap" rel="external" href="#" target="_blank">COMPRAR</a></button>
             
         </article>
@@ -527,7 +514,7 @@
             <article id="dados-Desenvolvedor">
                 <h3>Desenvolvido por</h1>
                 <a href="#"><img src="images/Logo.png" width="70px"></a>
-                <h3><a href="#">José Vinicius Batista Dos Santos</a></h3>
+                <h3><a href="https://github.com/Vinicius2J" target="_blank">José Vinicius Batista Dos Santos</a></h3>
             </article>
         </section>
     </footer>
