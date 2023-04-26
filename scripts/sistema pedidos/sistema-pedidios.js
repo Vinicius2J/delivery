@@ -290,6 +290,17 @@ function verificarCarrinho() {
           var formaEnvio = document.getElementById('forma-envio').value;
           var formaPagamento = document.getElementById('forma-pagamento').value;
 
+          //verificar se o troco esta preenchido
+          var troco = document.getElementById("troco").value;
+          if (formaPagamento == "dinheiro" && troco == "") {
+            document.getElementById('forma-pagamento').style.border = '1px solid red';
+            document.getElementById('troco').style.border = '1px solid red';
+            return
+          }else {
+            document.getElementById('forma-pagamento').style.border = '1px solid black';
+            document.getElementById('troco').style.border = '1px solid black';
+          }
+
           //verificar se o enderço esta preenchido
           var endereco = document.getElementById('endereco').value;
           if (formaEnvio == "entrega" && endereco == "") {
@@ -350,8 +361,18 @@ function verificarCarrinho() {
               }else {
                 document.getElementById('enderecoInfo').innerHTML =  `Endereço: ${endereco}`;
               }
+
+              
+
               document.getElementById('formaPagamentoInfo').innerHTML = `Forma de Pagamento: ${formaPagamento}`;
               document.getElementById('formaEnvio').innerHTML = `Forma de Envio: ${formaEnvio}`;
+            
+              if (troco == "") {
+                document.getElementById('trocoPara').style.display = 'none';
+              }else {
+                document.getElementById('trocoPara').innerHTML = `Troco para: ${troco}`;
+              }
+              
               document.getElementById('precoTotalInfo').innerHTML = `Preço Total: R$ ${carrinho.precoTotal.toFixed(2).replace('.',(','))}`;
 
               //Função comprar
@@ -391,7 +412,9 @@ function verificarCarrinho() {
                   //Mensagem que vai ser envidad por whatssap para o numero de  telefone da loja
 
                   if (email == "" || semEndereco) {
-                    textSemEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n*\n\n*⇩ Dados Entraga ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
+
+                    
+                    textSemEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n*\n\n*⇩ Dados Entraga ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n*Preço Total: ${carrinho.precoTotal.toFixed(2).replace('.',',')}*\n*Troco para: ${troco}*  \n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
 
                     let link = document.querySelector('a');
                     link.setAttribute('target', '_blank');
@@ -399,7 +422,7 @@ function verificarCarrinho() {
                     link = document.getElementById("zap").href = 'https://wa.me/554188217121?text='+textSemEmail;
 
                   }else {
-                    textComEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n*Email: ${email}*\n\n*⇩ Dados Entraga ⇩*\n\n*Endereço: ${endereco}*\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
+                    textSemEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n**Email: ${email}*\n\n*⇩ Dados Entraga ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n*Preço Total: ${carrinho.precoTotal.toFixed(2).replace('.',',')}*\n*Troco para: ${troco}* \n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
 
                     let link = document.querySelector('a');
                     link.setAttribute('target', '_blank');
