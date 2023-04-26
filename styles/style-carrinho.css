@@ -19,7 +19,7 @@ article#todasBebidas {
     padding: 0;
 
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
 }
 
 section#tituloHamburguer > header {
@@ -359,6 +359,7 @@ section#itensCarrinho > article#listaProdutos > ol > li {
 
 section#itensCarrinho > article#listaProdutos > h1 {
     position: relative;
+    margin-bottom: 15px;    
 }
 
 section#itensCarrinho > article#preçoEbotaoContinuar {
@@ -517,10 +518,6 @@ section#erroCarrinho > main > section#sobreErroCarrinho > button {
 
     cursor: pointer;
 }
-
-section#erroCarrinho > main > section#imgErro {
-    width: 130vw;
-}
 /*Erro form*/
 
 section#erroFormIncompleto {
@@ -593,9 +590,6 @@ section#erroFormIncompleto > main > section#sobreErroCarrinhoForm > button {
     cursor: pointer;
 }
 
-section#erroFormIncompleto > main > section#imgErroForm {
-    width: 130vw;
-}
 
 a#zap {
     color: black;
@@ -755,13 +749,10 @@ a#zap {
     section#erroCarrinho > main {
         width: 400px;
     }
-    section#erroCarrinho > main > section#imgErro {
-        display: none;
-    }
 
     section#itensCarrinho > article#listaProdutos > ol > li {
         font-size:  8pt;
-        padding-top: 15px;
+        padding-top: 0px;
         width: 170px;
     }
 
@@ -810,10 +801,6 @@ a#zap {
         font-size: 7pt;
     }
 
-    section#erroFormIncompleto > main > section#imgErroForm {
-        display: none;
-    }
-
     
 }
 
@@ -858,10 +845,6 @@ a#zap {
 
         border-left: 2px solid black;
         
-    }
-
-    section#erroFormIncompleto > main > section#imgErroForm {
-        display: none;
     }
 
     article#btnsComprarCoca350ML {
@@ -988,9 +971,6 @@ a#zap {
     section#erroCarrinho > main {
         width: 400px;
     }
-    section#erroCarrinho > main > section#imgErro {
-        width: 0px;
-    }
 
     section#itensCarrinho > article#listaProdutos {
         width: 200px;
@@ -1009,7 +989,7 @@ a#zap {
 
     section#itensCarrinho > article#listaProdutos > ol > li {
         font-size: 6pt;
-        padding-top: 15px;
+        padding-top: 0px;
     }
 
     section#formFinal > form {
@@ -1089,6 +1069,45 @@ a#zap {
         outline: none;
     }
 
+    section#tituloHamburguer > header {
+        border-radius: 0;
+        box-shadow: none;
+    
+        margin-bottom: 50px;
+        padding: 0;
+    
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: top;
+    
+        width: 80vw;
+        height: 30px;
+
+    }
+
+    h2#tituloHamburguer {
+        margin-right: 80px;
+        width: 300px;
+    }
+
+    
+    section#itensCarrinho > article#listaProdutos {
+        width: 140px;
+
+        margin-right: 40px;
+    }
+
+    section#itensCarrinho > article#listaProdutos > h1 {
+        margin-bottom: 15px;
+    }
+    
+    section#itensCarrinho > article#listaProdutos > ol > li {
+        max-width: 130px;
+        padding-top: 0px;
+    }
+
 }
 
 
@@ -1116,13 +1135,10 @@ a#zap {
     }
     
     h2#tituloHamburguer {
-        color: black;
+        margin-right: 80px;
+        width: 300px;
 
-        padding-bottom: 15px;
-    
-        width: 30vw;
-    
-        font: bold 1em Arial, Helvetica, sans-serif;
+        font-size: 12pt;
     }
 
     article#btnsComprarCoca350ML {
@@ -1273,8 +1289,20 @@ a#zap {
     }
 
     section#tituloHamburguer > header {
-        height: 35px;
-        width: 65vw;
+        border-radius: 0;
+        box-shadow: none;
+    
+        margin-bottom: 50px;
+        padding: 0;
+    
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: top;
+    
+        width: 80vw;
+        height: 30px;
 
     }
 
@@ -1285,4 +1313,65 @@ a#zap {
         ;
     }
 
+    section#itensCarrinho > article#listaProdutos {
+        width: 140px;
+
+        margin-right: 40px;
+    }
+
+    section#itensCarrinho > article#listaProdutos > h1 {
+        margin-bottom: 15px;
+    }
+    
+    section#itensCarrinho > article#listaProdutos > ol > li {
+        max-width: 130px;
+    }
+
+}
+
+
+
+@media (max-width: 380px){
+    section#tituloHamburguer > header {
+        border-radius: 0;
+        box-shadow: none;
+    
+        margin-bottom: 50px;
+        padding: 0;
+    
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: top;
+    
+        width: 80vw;
+        height: 30px;
+
+    }
+
+    h2#tituloHamburguer {
+        margin-right: 80px;
+        width: 300px;
+    }
+
+    
+    section#itensCarrinho > article#listaProdutos {
+        width: 140px;
+
+        margin-right: 40px;
+    }
+
+    section#itensCarrinho > article#listaProdutos > h1 {
+        margin-bottom: 15px;
+    }
+    
+    section#itensCarrinho > article#listaProdutos > ol > li {
+        max-width: 130px;
+        padding-top: 0px;
+    }
+
+    button#btnProximoPagamento {
+        margin-right: 25px;
+    }
 }

@@ -154,12 +154,48 @@ function limparCarrinho() {
    let novoValorXmontehermom = valorAtualXmontehermom = 0;
    quantidadeXmonthermom.textContent = novoValorXmontehermom;
 
-   //bebidas
+   //coca 200ml
 
-   let quantidadeRefriLata = document.getElementById('quantidadeRefriLata');
-   let valorAtualRefriLata = parseInt(quantidadeRefriLata.textContent);
-   let novoValorRefriLata = valorAtualRefriLata = 0;
-   quantidadeRefriLata.textContent = novoValorRefriLata;
+   let quantidadeCoca200ML = document.getElementById('quantidadeRefriCoca200ml');
+   let valorAtualRefriCoca200ML = parseInt(quantidadeCoca200ML.textContent);
+   let novoValorRefriCoca200ML = valorAtualRefriCoca200ML = 0;
+  quantidadeCoca200ML.textContent = novoValorRefriCoca200ML;
+
+  //coca lata
+
+  let quantidadeRefriLata = document.getElementById('quantidadeRefriLata');
+  let valorAtualRefriLata = parseInt(quantidadeRefriLata.textContent);
+  let novoValorRefriLata = valorAtualRefriLata = 0;
+  quantidadeRefriLata.textContent = novoValorRefriLata;
+
+  //del vale lata
+
+  let quantidadeRefriDelVale = document.getElementById('quantidadeRefriDelVale');
+  let valorAtualRefriDelVale = parseInt(quantidadeRefriDelVale.textContent);
+  let novoValorRefriDelVale = valorAtualRefriDelVale = 0;
+  quantidadeRefriDelVale.textContent = novoValorRefriDelVale; 
+
+
+  //coca 600ML
+
+  let quantidadeRefri600 = document.getElementById('quantidadeRefri600');
+  let valorAtualRefri600 = parseInt(quantidadeRefri600.textContent);
+  let novoValorRefri600 = valorAtualRefri600 = 0;
+  quantidadeRefri600.textContent = novoValorRefri600;
+
+  //coca 2L
+
+  let quantidadeRefri2l = document.getElementById('quantidadeRefri2L');
+  let valorAtualRefri2l = parseInt(quantidadeRefri2l.textContent);
+  let novoValorRefri2l = valorAtualRefri2l = 0;
+  quantidadeRefri2l.textContent = novoValorRefri2l;
+
+  //kuat 2l
+
+  let quantidadeKuat2l = document.getElementById('quantidadeKuat2L');
+  let valorAtualKuat2l = parseInt(quantidadeKuat2l.textContent);
+  let novoValorKuat2l = valorAtualKuat2l = 0;
+  quantidadeKuat2l.textContent = novoValorKuat2l; 
 
 
   renderizarCarrinho();
@@ -197,6 +233,18 @@ var semEndereco
 var comEndereco
 
 var testeEndereco = 0;
+
+function exibirCampoTroco() {
+  var formaPagamento = document.getElementById("forma-pagamento").value;
+  var campoTroco = document.getElementById("campo-troco");
+
+  if (formaPagamento === "dinheiro") {
+    campoTroco.style.display = "block";
+  } else {
+    campoTroco.style.display = "none";
+  }
+}
+
 
 function exibirEndereco(select) {
 let campoEndereco = document.getElementById('endrecoCaso');
@@ -526,6 +574,24 @@ function verificarCarrinho() {
   }
 
   //BEBIDA REFRI-LATA
+
+    //coca 200ML
+
+    var quantidadeRefriCoca200mlTs = 0;
+
+    function addQuantidadeRefriCoca200Ml() {
+  
+      quantidadeRefriCoca200mlTs++;
+    if (quantidadeRefriCoca200mlTs >= 0) {
+              
+      let quantidadeCoca200ML = document.getElementById('quantidadeRefriCoca200ml');
+      let valorAtualRefriCoca200ML = parseInt(quantidadeCoca200ML.textContent);
+      let novoValorRefriCoca200ML = valorAtualRefriCoca200ML + 1;
+      quantidadeCoca200ML.textContent = novoValorRefriCoca200ML; 
+    }
+    }
+
+  //coca lata
   var quantidadeRefriLataTs = 0;
 
   function addQuantidadeRefriLata() {
@@ -539,6 +605,22 @@ function verificarCarrinho() {
     quantidadeRefriLata.textContent = novoValorRefriLata; 
   }
           
+  }
+
+  //Del Vale Lata
+
+  var quantidadeRefriDelValeLataTs = 0;
+
+  function addQuantidadeDelValeLata() {
+
+  quantidadeRefriDelValeLataTs++;
+  if (quantidadeRefriDelValeLataTs >= 0) {
+            
+    let quantidadeRefriDelVale = document.getElementById('quantidadeRefriDelVale');
+    let valorAtualRefriDelVale = parseInt(quantidadeRefriDelVale.textContent);
+    let novoValorRefriDelVale = valorAtualRefriDelVale + 1;
+    quantidadeRefriDelVale.textContent = novoValorRefriDelVale; 
+  }
   }
 
     //BEBIDA REFRI-600
@@ -557,7 +639,7 @@ function verificarCarrinho() {
             
     }
 
-    //BEBIDA REFRI-600
+    //Coca 2L
     var quantidadeRefri2lTs = 0;
 
     function addQuantidadeRefri2l() {
@@ -570,5 +652,21 @@ function verificarCarrinho() {
       let novoValorRefri2l = valorAtualRefri2l + 1;
       quantidadeRefri2l.textContent = novoValorRefri2l; 
     }
-  }           
+  }      
+  
+  //Kuat 2l
+
+  var quantidadeKuat2lTs = 0;
+
+    function addQuantidadeKuat2l() {
+      
+      quantidadeKuat2lTs++;
+    if (quantidadeKuat2lTs >= 0) {
+                  
+      let quantidadeKuat2l = document.getElementById('quantidadeKuat2L');
+      let valorAtualKuat2l = parseInt(quantidadeKuat2l.textContent);
+      let novoValorKuat2l = valorAtualKuat2l + 1;
+      quantidadeKuat2l.textContent = novoValorKuat2l; 
+    }
+  }   
       

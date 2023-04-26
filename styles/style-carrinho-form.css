@@ -12,11 +12,6 @@ section#formFinal {
     justify-content: center;
 }
 
-section#formFinal > img {
-    width: 600px;
-    margin-left: 25px;
-}
-
 section#formFinal > h1 {
 
     background-color: red;
@@ -80,7 +75,7 @@ form {
     height: 35px;
 
     left: 130px;
-    top: 100px;
+    top: 80px;
 
     display: flex;
     flex-direction: row;
@@ -102,6 +97,11 @@ form {
     font-weight: bold;
 
     font-size: 12pt;
+  }
+
+  div#trocoCaso {
+    display: none;
+    flex-direction: column;
   }
 
   div#endrecoCaso {

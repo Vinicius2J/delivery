@@ -356,34 +356,62 @@
                     <h2 id="tituloBebidas">BEBIDAS</h2> 
                 </header>
 
-                
+                <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
-                <h2 class="nomeBebida">Refrigerante Lata</h2>
+                <h2 class="nomeBebida">Coca 200ml</h2>
+                <section id="coca350ML">
+                 <p class="preço">R$ 2,50</p>
+                <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Coca 200ml', 2.50), addQuantidadeRefriCoca200Ml()">+</button> <p id="quantidadeRefriCoca200ml">0</p></article>
+                </section>
+
+                <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+                <div id="linhaBotaoPro"></div>
+
+                    <h2 class="nomeBebida">Coca lata</h2>
                     <section id="coca350ML">
                      <p class="preço">R$ 4,50</p>
                     <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Refrigerante Lata', 4.50), addQuantidadeRefriLata()">+</button> <p id="quantidadeRefriLata">0</p></article>
                     </section>
 
                     <!--/////////////////////////////////////////////////////////////////////////////////////-->
-        
+
                     <div id="linhaBotaoPro"></div>
-        
-                    <h2 class="nomeBebida">Refrigerante 600ML</h2>
+
+                    <h2 class="nomeBebida">Del vale lata</h2>
                     <section id="coca350ML">
-                     <p class="preço">R$ 5,50</p>
-                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Refrigerante 600ML', 5.50), addQuantidadeRefri600()">+</button> <p id="quantidadeRefri600">0</p></article>
+                     <p class="preço">R$ 4,50</p>
+                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Del vale lata', 4.50), addQuantidadeDelValeLata()">+</button> <p id="quantidadeRefriDelVale">0</p></article>
                     </section>
 
                     <!--/////////////////////////////////////////////////////////////////////////////////////-->
         
                     <div id="linhaBotaoPro"></div>
         
-                    <h2 class="nomeBebida">Refrigerante 2L</h2>
+                    <h2 class="nomeBebida">Coca 600ml</h2>
                     <section id="coca350ML">
-                     <p class="preço">R$ 10,00</p>
-                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Refrigerante 2L', 10), addQuantidadeRefri2l()">+</button> <p id="quantidadeRefri2L">0</p></article>
+                     <p class="preço">R$ 6,00</p>
+                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Coca 600ML', 6), addQuantidadeRefri600()">+</button> <p id="quantidadeRefri600">0</p></article>
                     </section>
 
+                    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        
+                    <div id="linhaBotaoPro"></div>
+        
+                    <h2 class="nomeBebida">Coca 2L</h2>
+                    <section id="coca350ML">
+                     <p class="preço">R$ 12,00</p>
+                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Coca 2L', 12), addQuantidadeRefri2l()">+</button> <p id="quantidadeRefri2L">0</p></article>
+                    </section>
+
+                    <div id="linhaBotaoPro"></div>
+        
+                    <h2 class="nomeBebida">Kuat 2L</h2>
+                    <section id="coca350ML">
+                     <p class="preço">R$ 8,00</p>
+                    <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Kuat 2L', 8), addQuantidadeKuat2l()">+</button> <p id="quantidadeKuat2L">0</p></article>
+                    </section>
+                    
             </article>
 
         </article>
@@ -413,9 +441,6 @@
 
     <section id="erroCarrinho">
         <main>
-            <section id="imgErro">
-                <img src="images/erroCarrinho.svg" width="375px">
-            </section>
             <section id="sobreErroCarrinho"> 
                 <h1>ATENÇÃO</h1>
                 <p><strong>SEU CARRINHO ESTA VAZIO OU O ESTABELECIMENTO ESTA FECHADO VERIFIQUE O HORARIO COM CUIDADO ANTES DE COMPRAR CASO ESTE PROBLEMA PERSISTA ENTRE EM CONTATO COM O SUPORTE :) <span style="font-weight: bolder;">Boas! Compras</span></strong></p>
@@ -426,7 +451,7 @@
 
     <section id="formFinal">
         <h1 id="voltaCarrinho">&lt; SUAS INFORMAÇÔES</h1>
-        <img src="images/informações.svg">
+
         <form onsubmit="return verificarDados()">
             <label for="nome">Nome e sobrenome:</label>
             <input type="text" id="nome" name="nome" required placeholder="(obrigatório)"> 
@@ -435,12 +460,17 @@
             <input type="email" id="email" name="email" placeholder="(opcional)">
           
             <label for="forma-pagamento">Forma de pagamento: *obrigatório*</label>
-            <select id="forma-pagamento" name="forma-pagamento" required>
+            <select id="forma-pagamento" name="forma-pagamento" onchange="exibirCampoTroco(this)" required>
               <option value="">Selecione uma opção</option>
               <option value="cartao">Cartão de crédito</option>
               <option value="dinheiro">Dinheiro</option>
               <option value="pix">Pix</option>
             </select>
+
+            <div id="campo-troco" style="display: none;">
+                <label for="troco">Troco para:</label> <br>
+                <input type="number" id="troco" name="troco" placeholder="Digite o valor do troco">
+            </div>
 
             <label for="forma-envio">Forma de envio: *obrigatório*</label>
             <select id="forma-envio" onchange="exibirEndereco(this)">
@@ -453,8 +483,6 @@
                 <label for="endereco">Endereço:</label>
                 <input type="text" id="endereco" name="endereco" placeholder="(obrigatório)">
             </div>
-
-            
           
             <button type="submit" id="finalizar_pedido">Finalizar Pedidio</button>
           </form>
