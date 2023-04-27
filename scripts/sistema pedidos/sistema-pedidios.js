@@ -382,6 +382,8 @@ function verificarCarrinho() {
 
               function comprar() {
 
+                console.log(troco)
+
                   //pegar valor do nome do prodtuo
                       const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
                       let nomePedido = '';
@@ -422,7 +424,7 @@ function verificarCarrinho() {
                     link = document.getElementById("zap").href = 'https://wa.me/554188217121?text='+textSemEmail;
 
                   }else {
-                    textSemEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n**Email: ${email}*\n\n*⇩ Dados Entraga ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n*Preço Total: ${carrinho.precoTotal.toFixed(2).replace('.',',')}*\n*Troco para: ${troco}* \n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
+                    textComEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n**Email: ${email}*\n\n*⇩ Dados Entraga ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n*Preço Total: ${carrinho.precoTotal.toFixed(2).replace('.',',')}*\n*Troco para: ${troco}* \n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
 
                     let link = document.querySelector('a');
                     link.setAttribute('target', '_blank');
