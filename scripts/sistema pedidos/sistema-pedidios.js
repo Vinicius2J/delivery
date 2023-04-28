@@ -270,7 +270,7 @@ function verificarCarrinho() {
       let hora = new Date()
       let horaFechar = hora.getHours();
 
-      if (horaFechar >= 20 || horaFechar < 3){
+      if (horaFechar >= 20 || horaFechar < 5){
         //ir para a tela de finalizar produto
       const btnVolvarCarrinho = document.getElementById('voltaCarrinho');
       document.getElementById('formFinal').style.display = 'flex';
