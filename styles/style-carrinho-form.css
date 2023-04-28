@@ -271,5 +271,22 @@ form {
     #trocoPara {
       font-size: 10pt;
     }
+
+    section#confirmarDados > article > .info {
+      height: 30px;
+    }
+
+    section#confirmarDados > article > h1 {
+      height: 40px;
+    }
+
+    section#confirmarDados > article > #itensParaVer {
+      overflow: visible;
+  }
+
+  section#confirmarDados > article > button {
+    height: 70px;
+  }
+
   }
  
