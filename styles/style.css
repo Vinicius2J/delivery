@@ -882,41 +882,88 @@ footer > section > article {
     header > section#stutus > p#aberto-fechado {
         font-size: 12pt;
     }
+
+    /*------------------------------------------------*/
     
 
     main {
         width: 100vw;
-        height: 800px;
+        height: 3200px;
+    }
+
+    /*------------------------------------------------*/
+
+    section#hamburguer {
+        height: 1200px;
+    }
+
+    section#hamburguer > h1 {
+        margin-top: 15px;
+        overflow: hidden;
+    }
+
+    section#hamburguer > article{
+        width: 100vw;
+        height: 1400px;
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    section#hamburguer > article > img{
+        width: 100vw;
+    }
+
+    /*------------------------------------------------*/
+
+    section#bebidas{
+        height: 920px;
+        margin-top: 0;
+    }
+
+    section#bebidas > h1 {
+        margin-bottom: 25px;
+        overflow: hidden;
     }
 
     section#bebidas > article{
         width: 100vw;
-        height: 150px;
+        height: 1050px;
         margin: 0;
         margin-top: 5px;
+
+        overflow: hidden;
     }
 
     section#bebidas > article > img{
         width: 100vw;
     }
 
+    /*------------------------------------------------*/
+
+    section#lanches{
+        height: 950px;
+        margin-top: 0;
+    }
+
+    section#lanches > h1 {
+        margin-bottom: 25px;
+        overflow: hidden;
+    }
+
     section#lanches > article{
         width: 100vw;
-        height: 150px;
+        height: 1050px;
         margin: 0;
         margin-top: 5px;
+
+        overflow: hidden;
     }
 
     section#lanches > article > img{
         width: 100vw;
     }
 
-    section#hamburguer > article{
-        width: 100vw;
-        height: 150px;
-        margin: 0;
-        margin-top: 5px;
-    }
+    /*------------------------------------------------*/
 
 
     *{
