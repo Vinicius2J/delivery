@@ -2,7 +2,7 @@
 
 main {
     width: 800px;
-    height: 1500px;
+    height: 4800px;
 
     margin-top: 100px;
     display: flex;
@@ -87,14 +87,14 @@ section#hamburguer {
 section#hamburguer  > h1 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 2em;
-    text-align: center;
 
     padding: 5px;
+    margin-top: 350px;
 }
 
 section#hamburguer > div {
     width: 56vw;
-    height: 1px;
+    height: 100px;
     background-color: rgb(255, 0, 0);
 }
 
@@ -103,14 +103,19 @@ section#hamburguer > article {
     height: 250px;
 
     margin: 15px;
+    margin-top: 720px;
 
     display: flex;
+    flex-direction: column;
+
     align-items: center;
     justify-content: center;
 }
 
 section#hamburguer > article > img {
     width: 770px;
+
+    margin-top: 15px;
 }
 
 section#hamburguer > article > h1 {
@@ -132,6 +137,8 @@ section#bebidas {
     flex-direction: column;
 
     text-align: center;
+
+    margin-top: 850px;
 }
 
 section#bebidas > h1 {
@@ -158,6 +165,7 @@ section#bebidas > article {
 
 section#bebidas > article > img {
     width: 770px;
+    margin-top: 15px;
 }
 
 section#bebidas > article > img:hover {
@@ -173,6 +181,8 @@ section#lanches {
     flex-direction: column;
 
     text-align: center;
+
+    margin-top: 900px;
 }
 
 section#lanches > h1 {
@@ -199,6 +209,7 @@ section#lanches > article {
 
 section#lanches > article > img {
     width: 770px;
+    margin-top: 15px;
 }
 
 section#lanches > article > img:hover {

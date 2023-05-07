@@ -900,6 +900,17 @@ footer > section > article {
         width: 100vw;
     }
 
+    section#lanches > article{
+        width: 100vw;
+        height: 150px;
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    section#lanches > article > img{
+        width: 100vw;
+    }
+
     section#hamburguer > article{
         width: 100vw;
         height: 150px;
