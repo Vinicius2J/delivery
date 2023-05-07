@@ -14,8 +14,43 @@ article#article-Hamburgeurs {
     background-color: white;
 }
 
-article#todasBebidas {
+/*--------------------------------------------------------------*/
+
+
+article#todosHotDog {
     margin: 0;
+    padding: 0;
+
+    width: 100vw;
+    height: 150vh;
+}
+
+article#todosHotDog > header {
+    border-radius: 0;
+    box-shadow: none;
+
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: top;
+
+    width: 80vw;
+    height: 50px;
+    text-align: center;
+
+    border-bottom: 1px solid black;
+    
+    margin-top: 50px;
+
+}
+
+/*--------------------------------------------------------------*/
+
+article#todasBebidas {
+    margin-top: 220px;
     padding: 0;
 
     width: 100vw;
@@ -64,6 +99,15 @@ article#todasBebidas > header {
 }
 
 div#linhaBebidas {
+    width: 100vw;
+    height: 1px;
+    background-color: black;
+    margin-top: 125px;
+
+    position: fixed;
+}
+
+h2#tituloHotDog {
     width: 100vw;
     height: 1px;
     background-color: black;

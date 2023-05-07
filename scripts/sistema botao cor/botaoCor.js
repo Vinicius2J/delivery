@@ -14,8 +14,8 @@ function mudarCorBotaoCombos() {
 
     //botoes segundario
 
-    botaoBebidas.style.color = 'black'
-    botaoSaches.style.color = 'black'
+    botaoBebidas.style.color = 'black';
+    botaoSaches.style.color = 'black';
     botaoDiversos.style.color = 'black';
 }
 
@@ -24,11 +24,13 @@ function mudarCorBotaoCombos() {
 botaoBebidas.addEventListener('click', mudarCorBotaoBebidas);
 
 function mudarCorBotaoBebidas() {
-    botaoBebidas.style.color="red";//botao principal
+    botaoCombos.style.color="black";//botao principal
 
-    botaoCombos.style.color = 'black'
-    botaoDiversos.style.color = 'black'
+    //botoes segundario
+
+    botaoBebidas.style.color = 'red';
     botaoSaches.style.color = 'black';
+    botaoDiversos.style.color = 'black';
 }
 
 //Botao saches clickado
@@ -36,15 +38,18 @@ function mudarCorBotaoBebidas() {
 botaoSaches.addEventListener('click', mudarCorBotaoSashes);
 
 function mudarCorBotaoSashes() {
-    botaoSaches.style.color="red";//botao principal
+    botaoCombos.style.color="black";//botao principal
 
-    botaoCombos.style.color = 'black'
-    botaoDiversos.style.color = 'black' 
+    //botoes segundario
+
     botaoBebidas.style.color = 'black';
+    botaoSaches.style.color = 'red';
+    botaoDiversos.style.color = 'black';
 }
 
 //Botao diversos clickado
 
+/*
 botaoDiversos.addEventListener('click', mudarCorBotaoDiversos);
 
 function mudarCorBotaoDiversos() {
@@ -54,3 +59,4 @@ function mudarCorBotaoDiversos() {
     botaoSaches.style.color = 'black' 
     botaoBebidas.style.color = 'black';
 }
+*/

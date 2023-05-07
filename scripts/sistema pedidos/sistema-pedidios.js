@@ -154,6 +154,48 @@ function limparCarrinho() {
    let novoValorXmontehermom = valorAtualXmontehermom = 0;
    quantidadeXmonthermom.textContent = novoValorXmontehermom;
 
+   //DOG-SIMPLES
+
+   let quantidadeDogSimples = document.getElementById('quantidadeDogSimples');
+   let valorAtualDogSimples = parseInt(quantidadeDogSimples.textContent);
+   let novoValorDogSimples = valorAtualDogSimples = 0;
+   quantidadeDogSimples.textContent = novoValorDogSimples;
+
+   //DOG-DUPLO
+
+   let quantidadeDogDuplo = document.getElementById('quantidadeDogDuplo');
+   let valorAtualDogDuplo = parseInt(quantidadeDogDuplo.textContent);
+   let novoValorDogDuplo = valorAtualDogDuplo = 0;
+   quantidadeDogDuplo.textContent = novoValorDogDuplo;
+
+   //DOG-BACON
+
+   let quantidadeDogBacon = document.getElementById('quantidadeDogBacon');
+   let valorAtualDogBacon = parseInt(quantidadeDogBacon.textContent);
+   let novoValorDogBacon = valorAtualDogBacon = 0;
+   quantidadeDogBacon.textContent = novoValorDogBacon;
+
+   //DOG-CALABRESA
+
+   let quantidadeDogCalabresa = document.getElementById('quantidadeDogCalabresa');
+   let valorAtualDogCalabresa = parseInt(quantidadeDogCalabresa.textContent);
+   let novoValorDogCalabresa = valorAtualDogCalabresa = 0;
+   quantidadeDogCalabresa.textContent = novoValorDogCalabresa;
+
+   //DOG-FRANGO
+
+   let quantidadeDogFrango = document.getElementById('quantidadeDogFrango');
+   let valorAtualDogFrango = parseInt(quantidadeDogFrango.textContent);
+   let novoValorDogFrango = valorAtualDogFrango = 0;
+   quantidadeDogFrango.textContent = novoValorDogFrango;
+
+   //DOG-HERMOM
+
+   let quantidadeDogHermom = document.getElementById('quantidadeDogHermom');
+   let valorAtualDogHermom = parseInt(quantidadeDogHermom.textContent);
+   let novoValorDogHermom = valorAtualDogHermom = 0;
+   quantidadeDogHermom.textContent = novoValorDogHermom;
+
    //coca 200ml
 
    let quantidadeCoca200ML = document.getElementById('quantidadeRefriCoca200ml');
@@ -597,6 +639,96 @@ function verificarCarrinho() {
       quantidadeXmonthermom.textContent = novoValorXmontehermom;
   }
   }
+
+  //HOT-DOGS
+
+    //dog simples
+
+  let quantidadeDogSimplesTs = 0;
+          
+  function addQuantidadeDogSimples() {
+    quantidadeDogSimplesTs++;
+    if (quantidadeDogSimplesTs >= 0) {
+            
+      let quantidadeDogSimples = document.getElementById('quantidadeDogSimples');
+      let valorAtualDogSimples = parseInt(quantidadeDogSimples.textContent);
+      let novoValorDogSimples = valorAtualDogSimples + 1;
+      quantidadeDogSimples.textContent = novoValorDogSimples;
+  }
+  }
+   //dog duplo
+
+   let quantidadeDogDuploTs = 0;
+          
+  function addQuantidadeDogDuplo() {
+    quantidadeDogDuploTs++;
+    if (quantidadeDogDuploTs >= 0) {
+            
+      let quantidadeDogDuplo = document.getElementById('quantidadeDogDuplo');
+      let valorAtualDogDuplo = parseInt(quantidadeDogDuplo.textContent);
+      let novoValorDogDuplo = valorAtualDogDuplo + 1;
+      quantidadeDogDuplo.textContent = novoValorDogDuplo;
+  }
+  }
+
+    //dog bacon
+
+    let quantidadeDogBaconTs = 0;
+          
+  function addQuantidadeDogBacon() {
+    quantidadeDogBaconTs++;
+    if (quantidadeDogBaconTs >= 0) {
+            
+      let quantidadeDogBacon = document.getElementById('quantidadeDogBacon');
+      let valorAtualDogBacon = parseInt(quantidadeDogBacon.textContent);
+      let novoValorDogBacon = valorAtualDogBacon + 1;
+      quantidadeDogBacon.textContent = novoValorDogBacon;
+  }
+  }
+    //dog calabresa
+
+    let quantidadeDogCalabresaTs = 0;
+          
+    function addQuantidadeDogCalabresa() {
+      quantidadeDogCalabresaTs++;
+      if (quantidadeDogCalabresaTs >= 0) {
+              
+        let quantidadeDogCalabresa = document.getElementById('quantidadeDogCalabresa');
+        let valorAtualDogCalabresa = parseInt(quantidadeDogCalabresa.textContent);
+        let novoValorDogCalabresa = valorAtualDogCalabresa + 1;
+        quantidadeDogCalabresa.textContent = novoValorDogCalabresa;
+    }
+    }
+
+      //dog frango
+
+    let quantidadeDogFrangoTs = 0;
+          
+    function addQuantidadeDogFrango() {
+      quantidadeDogFrangoTs++;
+      if (quantidadeDogFrangoTs >= 0) {
+              
+      let quantidadeDogFrango = document.getElementById('quantidadeDogFrango');
+      let valorAtualDogFrango = parseInt(quantidadeDogFrango.textContent);
+      let novoValorDogFrango = valorAtualDogFrango + 1;
+      quantidadeDogFrango.textContent = novoValorDogFrango;
+    }
+    }
+
+      //dog hermom
+
+   let quantidadeDogHermomTs = 0;
+          
+    function addQuantidadeDogHermom() {
+      quantidadeDogHermomTs++;
+      if (quantidadeDogHermomTs >= 0) {
+              
+      let quantidadeDogHermom = document.getElementById('quantidadeDogHermom');
+      let valorAtualDogHermom = parseInt(quantidadeDogHermom.textContent);
+      let novoValorDogHermom = valorAtualDogHermom + 1;
+      quantidadeDogHermom.textContent = novoValorDogHermom;
+    }
+    }
 
   //BEBIDA REFRI-LATA
 

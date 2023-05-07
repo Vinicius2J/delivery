@@ -44,14 +44,9 @@
                 <span></span>
                 <a href="#bebidas" id="btn-bebidas">BEBIDAS</a>
                 <span></span>
-
-                <!--
-
-                <a href="#lanches" id="btn-saches">LANCHES</a>
+                <a href="#lanches" id="btn-saches">HOT-DOGS</a>
                 <span></span>
-                <a href="#combos" id="btn-diversos">COMBOS</a>
-
-                -->
+                <a id="btn-diversos">EM-BREVE</a>
             </section>
         </header>
 
@@ -79,17 +74,17 @@
 
             </section>
 
-            <!--
-
             <section id="lanches" class="produtos">
-                <h1>Lanches</h1>
+                <h1>Hot Dogs</h1>
                 <div></div>
 
-                <article class="pedido"></article>
-
-                <article class="pedido"></article>
+                <article class="pedido">
+                    <img onclick="irParaCarrinho()" src="images/imgame_dos_produtos/x-mont-hermon.png">
+                </article>
 
             </section>
+
+            <!-- 
 
             <section id="combos" class="produtos">
                 <h1>Combos</h1>
@@ -343,7 +338,85 @@
 
                 </article>
 
-            <article id="todasBebidas">
+                <article id="todosHotDog">
+                    <header>
+                        <h2>HOT DOGS</h2>
+                    </header>
+
+                    <!------------------------------------------------------------------------------------------------------------------------
+                    ------------------------------------------------------------>
+                    
+                    <h2 class="nomeBebida">DOG SIMPLES</h2>
+                    <section id="coca350ML">
+                        <p class="preço">R$ 8,00</p>
+                        <p class="descricaoProduto">Descição DOG-SIMPLES: Pão, maionese, ketchup, vina, tomate, cebola, milho, cheddar, catupiry e batata palha </p>
+                        <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('DOG SIMPLES', 8), addQuantidadeDogSimples(), monstrarComplementos()">+</button> <p id="quantidadeDogSimples">0</p></article>
+                    </section>
+
+                    <!------------------------------------------------------------------------------------------------------------------------
+                    ------------------------------------------------------------>
+                    
+                    <div id="linhaBotaoPro"></div>
+
+                    <h2 class="nomeBebida">DOG DUPLO</h2>
+                    <section id="coca350ML">
+                        <p class="preço">R$ 11,00</p>
+                        <p class="descricaoProduto">Descição DOG-DUPLO: Pão, maionese, 2 vinas, ketchup, tomate, cebola, milho, cheddar, catupiry e batata palha</p>
+                        <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('DOG DUPLO', 11), addQuantidadeDogDuplo(), monstrarComplementos()">+</button> <p id="quantidadeDogDuplo">0</p></article>
+                    </section>
+
+                    <!------------------------------------------------------------------------------------------------------------------------
+                    ------------------------------------------------------------>
+                    
+                    <div id="linhaBotaoPro"></div>
+
+                    <h2 class="nomeBebida">DOG BACON</h2>
+                    <section id="coca350ML">
+                        <p class="preço">R$ 14,00</p>
+                        <p class="descricaoProduto">Descição DOG-BACON: Pão, maionese, ketchup, vina, bacon, tomate, cebola, milho, cheddar, catupiry e batata palha</p>
+                        <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('DOG BACON', 14), addQuantidadeDogBacon(), monstrarComplementos()">+</button> <p id="quantidadeDogBacon">0</p></article>
+                    </section>
+
+                    <!------------------------------------------------------------------------------------------------------------------------
+                    ------------------------------------------------------------>
+                    
+                    <div id="linhaBotaoPro"></div>
+
+                    <h2 class="nomeBebida">DOG CALABRESA</h2>
+                    <section id="coca350ML">
+                        <p class="preço">R$ 14,00</p>
+                        <p class="descricaoProduto">Descição DOG-CALABRESA: Pão, maionese, ketchup, vina, calabresa, tomate, cebola, milho, cheddar, catupiry e batata palha</p>
+                        <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('DOG CALABRESA', 14), addQuantidadeDogCalabresa(), monstrarComplementos()">+</button> <p id="quantidadeDogCalabresa">0</p></article>
+                    </section>
+
+                    <!------------------------------------------------------------------------------------------------------------------------
+                    ------------------------------------------------------------>
+                    
+                    <div id="linhaBotaoPro"></div>
+
+                    <h2 class="nomeBebida">DOG FRANGO</h2>
+                    <section id="coca350ML">
+                        <p class="preço">R$ 14,00</p>
+                        <p class="descricaoProduto">Descição DOG-FRANGO: Pão, maionese, ketchup, vina, frango, tomate, cebola, milho, cheddar, catupiry e batata palha.</p>
+                        <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('DOG FRANGO', 14), addQuantidadeDogFrango(), monstrarComplementos()">+</button> <p id="quantidadeDogFrango">0</p></article>
+                    </section>
+
+                    <!------------------------------------------------------------------------------------------------------------------------
+                    ------------------------------------------------------------>
+                    
+                    <div id="linhaBotaoPro"></div>
+
+                    <h2 class="nomeBebida">DOG HERMOM</h2>
+                    <section id="coca350ML">
+                        <p class="preço">R$ 24,00</p>
+                        <p class="descricaoProduto">Descição DOG-HERMOM: Big Pão, 2 vinas, maionese, ketchup, tomate, cebola, bacon, calabresa, frango, milho, cheddar, catupiry e batata palha (cortado ao meio) (serve 2 pessoas)</p>
+                        <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('DOG HERMOM', 24), addQuantidadeDogHermom(), monstrarComplementos()">+</button> <p id="quantidadeDogHermom">0</p></article>
+                    </section>
+                    
+                    
+                </article>
+
+                <article id="todasBebidas">
                 <header>
                     <h2 id="tituloBebidas">BEBIDAS</h2> 
                 </header>
@@ -404,9 +477,9 @@
                     <article id="btnsComprarCoca350ML"> <button class="add" onclick="addItem('Kuat 2L', 8), addQuantidadeKuat2l()">+</button> <p id="quantidadeKuat2L">0</p></article>
                     </section>
                     
-            </article>
+                </article>
 
-        </article>
+            </article>
 
         <section id="itensCarrinho">
             <article id="listaProdutos">
