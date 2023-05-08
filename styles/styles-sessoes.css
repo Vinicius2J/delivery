@@ -2,7 +2,7 @@
 
 main {
     width: 800px;
-    height: 4900px;
+    height: 5000px;
 
     margin-top: 100px;
     display: flex;
@@ -88,6 +88,7 @@ section#hamburguer  > h1 {
     font-size: 2em;
 
     margin-top: 400px;
+    margin-bottom: 25px;
 }
 
 section#hamburguer > div {
@@ -186,7 +187,7 @@ section#lanches > h1 {
     text-align: center;
 
     padding: 5px;
-    margin-top: 100px;
+    margin-top: 250px;
 }
 
 section#lanches > div {
