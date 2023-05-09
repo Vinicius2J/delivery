@@ -1029,3 +1029,102 @@ footer > section > article {
     }
 
   }
+
+  @media (max-width: 380px){
+    main {
+        width: 100vw;
+        height: 3000px;
+    }
+
+    main > h1 {
+        height: 100px;
+    }
+    
+    /*------------------------------------------------*/
+    
+    section#hamburguer {
+        height: 1500px;
+        margin-top: 50px;
+    }
+    
+    section#hamburguer > h1 {
+        margin-top: 15px;
+        overflow: hidden;
+        margin-bottom: 0;
+
+        font-size: 15pt;
+
+        z-index: 9999;
+    }
+    
+    section#hamburguer > article{
+        width: 100vw;
+        height: 1300px;
+        margin: 0;
+        margin-top: -250px;
+    }
+    
+    section#hamburguer > article > img{
+        width: 100vw;
+    }
+    
+    /*------------------------------------------------*/
+    
+    section#bebidas{
+        height: 1300px;
+        margin-top: 0;
+    }
+    
+    section#bebidas > h1 {
+        margin-bottom: 25px;
+        overflow: hidden;
+
+        font-size: 15pt;
+    }
+    
+    section#bebidas > article{
+        width: 100vw;
+        height: 1050px;
+        margin: 0;
+        margin-top: -10px;
+    
+        overflow: hidden;
+    }
+    
+    section#bebidas > article > img{
+        width: 100vw;
+    }
+    
+    /*------------------------------------------------*/
+    
+    section#lanches{
+        height: 1100px;
+        margin-top: 0;
+    }
+    
+    section#lanches > h1 {
+        margin-bottom: 25px;
+        margin-top: 100px;
+        overflow: hidden;
+        height: 50px;
+
+        font-size: 15pt;
+    }
+    
+    section#lanches > article{
+        width: 100vw;
+        height: 1050px;
+        margin: 0;
+        margin-top: -30px;
+    
+        overflow: hidden;
+    }
+    
+    section#lanches > article > img{
+        width: 100vw;
+    }
+    
+    /*------------------------------------------------*/
+  }
+
+  
