@@ -845,6 +845,12 @@ a#zap {
         font-size: 7pt;
     }
 
+    article#todosHotDog {
+        height: 1500px;
+
+        overflow: hidden;
+    }
+
     
 }
 
@@ -867,6 +873,12 @@ a#zap {
         left: 0;
 
         z-index: 0;
+    }
+
+    article#todosHotDog {
+        height: 1500px;
+
+        overflow: hidden;
     }
 }
 
@@ -1152,6 +1164,16 @@ a#zap {
         padding-top: 0px;
     }
 
+    article#todosHotDog {
+        height: 1500px;
+
+        overflow: hidden;
+    }
+
+    article#todasBebidas {
+        margin-top: -200px;
+    }
+
 }
 
 
@@ -1371,6 +1393,16 @@ a#zap {
         max-width: 130px;
     }
 
+    article#todosHotDog {
+        height: 1500px;
+
+        overflow: hidden;
+    }
+
+    article#todasBebidas {
+        margin-top: -100px;
+    }
+
 }
 
 
@@ -1417,5 +1449,9 @@ a#zap {
 
     button#btnProximoPagamento {
         margin-right: 25px;
+    }
+
+    article#todasBebidas {
+        margin-top: -100px;
     }
 }

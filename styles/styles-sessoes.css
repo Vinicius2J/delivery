@@ -360,3 +360,44 @@ section#hamburguer {
         margin-bottom: -80px;
     }
 }
+
+article#todosHotDog > h2#tituloHot {
+    display: none;
+}
+
+@media (max-width: 488px) {
+    article#todosHotDog > h2#tituloHot {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16pt;
+
+        margin-top: 50px;
+        margin-bottom: -50px;
+
+        text-align: center;
+        margin-right: 150px;
+
+        display: block;
+    }
+
+    article#todosHotDog > header {
+        height: 0px;
+    }
+
+    article#todosHotDog > header > h2 {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    article#todosHotDog > h2#tituloHot {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13pt;
+
+        margin-top: 50px;
+        margin-bottom: -40px;
+
+        text-align: center;
+        margin-right: 150px;
+    }
+}
+
