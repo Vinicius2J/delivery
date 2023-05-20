@@ -80,6 +80,8 @@ section#hamburguer {
 
     align-items: center;
     justify-content: center;
+
+    
 }
 
 
@@ -178,7 +180,7 @@ section#lanches {
 
     text-align: center;
 
-    margin-top: 900px;
+    margin-top: 650px;
 }
 
 section#lanches > h1 {

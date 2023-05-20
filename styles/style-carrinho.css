@@ -405,6 +405,18 @@ section#itensCarrinho > article#listaProdutos > h1 {
     margin-bottom: 15px;    
 }
 
+#semItens {
+    color: rgb(0, 0, 0);
+
+    width: 400px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #preçoEbtn {
     display: flex;
     flex-direction: column;
@@ -684,6 +696,10 @@ section#formFinal > form > button {
 /*Sistema android*/
 
 @media(max-width: 488px) {
+
+    #semItens {
+        font-size: 12pt;
+    }
 
     section#itensCarrinho > article#preçoEbtn > p {
         font: bold 10pt monospace;

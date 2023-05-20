@@ -22,28 +22,12 @@ function addItem(nome, preco, complemento) {
   const itemIndex = carrinho.itens.findIndex(item => item.nome === nome && item.complemento === complemento);
   if (itemIndex !== -1) {
     carrinho.itens[itemIndex].quantidade += 1;
+    document.getElementById('semItens').style.display = 'none';
   } else {
     carrinho.itens.push({ nome, preco, quantidade: 1, complemento });
   }
   carrinho.precoTotal += preco;
   renderizarCarrinho();
-}
-
-// função para remover item do carrinho
-function removeItem(nome, preco, complemento) {
-  complemento = ""
-
-  const itemIndex = carrinho.itens.findIndex(item => item.nome === nome && item.complemento === complemento);
-  if (itemIndex !== -1) {
-    const item = carrinho.itens[itemIndex];
-    if (item.quantidade > 1) {
-      item.quantidade -= 1;
-    } else {
-      carrinho.itens.splice(itemIndex, 1);
-    }
-    carrinho.precoTotal -= preco;
-    renderizarCarrinho();
-  }
 }
 
 //esta função adiciona o complemento ao seu carrinho
@@ -92,12 +76,18 @@ function renderizarCarrinho() {
   precoTotal.textContent = `Preço total: R$ ${carrinho.precoTotal.toFixed(2).replace('.',(','))}`;
 }
 
+// função para poder tirar a mensagem de sem itens
 
+function tirarErroCarrinho() {
+  document.getElementById('semItens').style.display = 'none';
+}
 
 // função para limpar o carrinho
 function limparCarrinho() {
   carrinho.itens = [];
   carrinho.precoTotal = 0;
+
+  document.getElementById('semItens').style.display = 'flex';
 
    //XEGG
    let quantidadeCOCA350 = document.getElementById('quantidadeCoca350');
