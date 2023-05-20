@@ -61,7 +61,7 @@
                     
                     <img onclick="irParaCarrinho(),addItem('X-BURGUER', 8), addQuantidadeCoca550(),monstrarComplementos()" src="images/imgame_dos_produtos/2.png">
 
-                    <img onclick="irParaCarrinho(),Item('X-SALADA', 11), addQuantidadeCoca2L(),monstrarComplementos()" src="images/imgame_dos_produtos/3.png">
+                    <img onclick="irParaCarrinho(),addItem('X-SALADA', 11), addQuantidadeCoca2L(),monstrarComplementos()" src="images/imgame_dos_produtos/3.png">
 
                     <img onclick="irParaCarrinho(),addItem('X-BACON', 14), addQuantidadeXbacon(),monstrarComplementos()" src="images/imgame_dos_produtos/4.png">
 
@@ -267,19 +267,11 @@
 
     <section id="fazer-pedidos">
 
-        <nav id="titulosAdd">
-            <a  href="#tpHam">HAMBURGUES</a>
-            <span></span>
-            <a href="#tpHot">HOT-DOGS</a>
-            <span></span>
-            <a id="aT" href="#tpBed">BEBIDAS</a>    
-        </nav>
-
-        <h1 id="nomePedido">&lt; Nome do pedido</h1>
+        <h1 onclick="voltarPagina()" id="nomePedido">&lt; Nome do pedido</h1>
 
         <section id="tpHam"></section>
 
-            <article id="article-Hamburgeurs">
+            <article id="article-Hamburgeurs" style="display: none;">
 
                 <section id="tituloHamburguer">
                     <header>
@@ -538,17 +530,14 @@
                     
                 </ol>
             </article>
-    
-            <article id="preçoEbotaoContinuar">
+
+            <article id="preçoEbtn">
                 <p id="preco-total">Preço total: R$ 0,00</p>
                 
+                <button id="btnProximoPagamento">PROXIMO</button>
                 <button onclick="limparCarrinho()" id="limparCarrinho">Limpar Carrinho</button>
             </article>
             
-    </section>
-
-    <section id="botaoProximo">
-        <button id="btnProximoPagamento">PROXIMO</button>
     </section>
     
     </section>
@@ -653,6 +642,12 @@
 
             <button id="Confimar-Complemento" onclick="adicionarComplemento(), sairComplemento()">Comfirmar</button>
         </article>
+    </section>
+
+    <section id="mudarCarrinho">
+        <img onclick="voltarPagina()" src="images/lista-de-pedidos.png">
+        <span></span>
+        <img onclick="irParaCarrinho()" src="images/carrinho-de-compras.png">
     </section>
 
     <div style="display: none;" id="mandar"></div>

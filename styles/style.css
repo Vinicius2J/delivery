@@ -478,7 +478,32 @@ section#infoAdd > section#allInfo > section.infoEndereço > a#telefone {
     width: 100vw;
 }
 
+/*Mudar Carrinhno*/
 
+#mudarCarrinho {
+    background-color: #2e0006;
+    width: 100vw;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+
+    bottom: 0;
+}
+
+#mudarCarrinho > img {
+    width: 40px;
+
+}
+
+#mudarCarrinho > span {
+    width: 40px;
+}
 
 /*Footer*/
 

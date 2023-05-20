@@ -321,7 +321,11 @@ function verificarCarrinho() {
       btnVolvarCarrinho.addEventListener('click', () => {
       document.getElementById('formFinal').style.display = 'none';
       document.getElementById('fazer-pedidos').style.display = 'flex';
+      document.getElementById('mudarCarrinho').style.display = 'flex';
       });
+
+      //remover fotos
+      document.getElementById('mudarCarrinho').style.display = 'none';
 
       let btnVerificarDados = document.getElementById('finalizar_pedido');
       btnVerificarDados.addEventListener('click', verificarDados);

@@ -74,21 +74,11 @@ form {
     width: 150px;
     height: 35px;
 
-    left: 130px;
-    top: 40px;
-
     display: flex;
     flex-direction: row;
 
     align-items: center;
     justify-content: center;
-
-    position: relative;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  button#finalizar_pedido:hover {
-    background-color: #02ff0a;
   }
 
   button#voltarCardapio > a {
@@ -203,11 +193,6 @@ form {
 
   @media (max-width: 488px) {
 
-    button#finalizar_pedido {
-      position: relative;
-      left: 50px;
-    }
-
     section#formFinal{
       height: 100vh;
     }
@@ -241,12 +226,6 @@ form {
       font-weight: bold;
     }
 
-    button#finalizar_pedido {
-      position: relative;
-      left: 100px;
-      top: 50px;
-    }
-
     #trocoPara {
       font-size: 10pt;
     }
@@ -255,11 +234,6 @@ form {
   
 
   @media (max-width: 400px) {
-    button#finalizar_pedido {
-      position: relative;
-      left: 75px;
-      top: 50px;
-    }
 
     #trocoPara {
       font-size: 10pt;
