@@ -333,8 +333,8 @@ function verificarCarrinho() {
             document.getElementById('troco').style.border = '1px solid red';
             return
           }else {
-            document.getElementById('forma-pagamento').style.border = '1px solid black';
-            document.getElementById('troco').style.border = '1px solid black';
+            document.getElementById('forma-pagamento').style.border = '2px solid black';
+            document.getElementById('troco').style.border = '2px solid black';
           }
 
           //verificar se o enderço esta preenchido
@@ -344,26 +344,26 @@ function verificarCarrinho() {
             document.getElementById('forma-envio').style.border = '1px solid red';
             return;
           }else {
-            document.getElementById('endereco').style.border = '1px solid black';
-            document.getElementById('forma-envio').style.border = '1px solid black';
+            document.getElementById('endereco').style.border = '2px solid black';
+            document.getElementById('forma-envio').style.border = '2px solid black';
           }
          
           if (nomeSobrenome == "") {
-            document.getElementById('nome').style.border = '1px solid red';
+            document.getElementById('nome').style.border = '2px solid red';
           }else {
-            document.getElementById('nome').style.border = '1px solid black';
+            document.getElementById('nome').style.border = '2px solid black';
           }
 
           if (formaEnvio == "") {
-            document.getElementById('forma-envio').style.border = '1px solid red';
+            document.getElementById('forma-envio').style.border = '2px solid red';
           }else {
-            document.getElementById('forma-envio').style.border = '1px solid black';
+            document.getElementById('forma-envio').style.border = '2px solid black';
           }
 
           if (formaPagamento == "") {
-            document.getElementById('forma-pagamento').style.border = '1px solid red';
+            document.getElementById('forma-pagamento').style.border = '2px solid red';
           }else {
-            document.getElementById('forma-pagamento').style.border = '1px solid black';
+            document.getElementById('forma-pagamento').style.border = '2px solid black';
           }
 
           //Parte com Email
@@ -375,7 +375,7 @@ function verificarCarrinho() {
 
               carrinho.itens.forEach(item => {
                   const p = document.createElement('p');
-                  p.textContent = `${item.quantidade}/9 - ${item.nome} 💵 R$:${item.preco} `;
+                  p.textContent = `${item.quantidade}/9 : ${item.nome}`;
                   divItens.appendChild(p);
               });
 
@@ -452,7 +452,7 @@ function verificarCarrinho() {
                   if (email == "" || semEndereco) {
 
                     
-                    textSemEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n*\n\n*⇩ Dados Entraga ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n*Preço Total: ${carrinho.precoTotal.toFixed(2).replace('.',',')}*\n*Troco para: ${troco}*  \n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
+                    textSemEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n\n*⇩ Dados Entraga ⇩*\n*Forma de Envio: ${formaEnvio}*\n*Local de retirada: R. Des. Ernâni Almeida de Abreu, 1111*\n\n*⇩ Forma de Pagamento ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n*Preço Total: ${carrinho.precoTotal.toFixed(2).replace('.',',')}*\n*Troco para:* *${troco}*\n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
 
                     let link = document.querySelector('a');
                     link.setAttribute('target', '_blank');
@@ -460,7 +460,7 @@ function verificarCarrinho() {
                     link = document.getElementById("zap").href = 'https://wa.me/554188217121?text='+textSemEmail;
 
                   }else {
-                    textComEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n**Email: ${email}*\n\n*⇩ Dados Entraga ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n*Forma de Envio: ${formaEnvio}*\n*Preço Total: ${carrinho.precoTotal.toFixed(2).replace('.',',')}*\n*Troco para: ${troco}* \n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
+                    textComEmail = encodeURIComponent(`*⇩ Dados Pedido ⇩*\n\n*📌 Novo Pedido: ${ nomePedido }*\n*🏷️ Numero: ${numeroPedido}*\n*📜 Pedido: ${ valores }*\n\n*⇩ Dados cliente ⇩*\n\n*Nome e Sobrenome: ${ nomeSobrenome }*\n*Email: ${email}*\n\n*⇩ Dados Entraga ⇩*\n\n*Forma de Envio: ${formaEnvio}*\n*Endereço: ${endereco}*\n\n*⇩ Forma de Pagamento ⇩*\n\n*Forma de pagamento: ${formaPagamento}*\n\n*Preço Total: ${carrinho.precoTotal.toFixed(2).replace('.',',')}*\n*Troco para:* *${troco}* \n\n*⇩ Observações ⇩*\n\n*${observacoes}*`);
 
                     let link = document.querySelector('a');
                     link.setAttribute('target', '_blank');

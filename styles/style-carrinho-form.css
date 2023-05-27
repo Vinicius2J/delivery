@@ -3,13 +3,29 @@ section#formFinal {
     width: 100vw;
     height: 100vh;
 
-    background-color: white;
+    background-color: brown;
 
     display: none;
     flex-direction: row;
 
     align-items: center;
     justify-content: center;
+}
+
+section#formFinal > form {
+  background-color: rgb(255, 0, 0);
+}
+
+section#formFinal > form > label {
+  color: white;
+}
+
+section#formFinal > form > input {
+  border: 2px solid black;
+}
+
+section#formFinal > form > select {
+  border: 2px solid black;
 }
 
 section#formFinal > h1 {
@@ -52,9 +68,9 @@ form {
   select {
     padding: 10px;
     margin-bottom: 15px;
-    border: none;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid black;
   }
   
   input:focus,
@@ -81,9 +97,15 @@ form {
     justify-content: center;
   }
 
+  button#voltarCardapio {
+    background: none;
+    outline: none;
+    border: 2px solid black;
+  }
+
   button#voltarCardapio > a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
 
     font-size: 12pt;
@@ -111,7 +133,7 @@ form {
     align-items: center;
     justify-content: center;
 
-    background-color: white;
+    background-color: brown;
   }
 
   section#confirmarDados > article {
@@ -119,8 +141,12 @@ form {
     flex-direction: column;
     width: 400px;
     height: 800px;
+
     margin: 50px auto;
-    background-color: #f2f2f2;
+
+    background-color: #a80000;
+    color: white;
+
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -138,11 +164,13 @@ form {
     font-family: Arial, Helvetica, sans-serif;
     margin: 5px 9px;
     font-weight: bold;
-    font-size: 16pt;
+
+    border-bottom: 2px solid black;
   }
 
   section#confirmarDados > article > #itensParaVer > p {
     font-family: monospace, Arial, Helvetica, sans-serif;
+    border-bottom: 2px solid #00E07A;
   }
 
   section#confirmarDados > article > #obs {
@@ -160,7 +188,7 @@ form {
   }
 
   section#confirmarDados > article > button {
-    width: 120px;
+    width: 150px;
     height: 40px;
 
     position: relative;

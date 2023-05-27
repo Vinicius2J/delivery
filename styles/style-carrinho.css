@@ -655,8 +655,10 @@ section#erroFormIncompleto > main > section#sobreErroCarrinhoForm > button {
 
 
 a#zap {
-    color: black;
+    color: white;
     text-decoration: none;
+
+    border: 2px solid black;
 }
 
 /*Tutulos adicionais*/
@@ -694,12 +696,16 @@ nav#titulosAdd > a {
 }
 
 
+
 section#formFinal > form > button {
     outline: none;
     border-radius: 25px;
 
     background-color: red;
     color: white;
+
+    outline: none;
+    border: 2px solid black;
 
     margin: auto;
 }
